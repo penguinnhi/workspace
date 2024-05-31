@@ -24,6 +24,6 @@ public class Test4 {
         System.out.print("총점 : "+total);
         System.out.println();
         System.out.print("평균 : "+avg);
-        
+
     }
 }
