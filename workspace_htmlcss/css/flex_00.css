@@ -1,0 +1,165 @@
+.container1{
+  width: 600px;
+  height: 400px;
+  border: 1px solid black;
+  margin: auto;
+  margin-top: 16px;
+  text-align: center;
+}
+
+
+.header{
+  background-color: #10439F;
+  width: 100%;
+  height: 10%;
+  padding: 20px;
+}
+
+.main{
+  display: flex;
+  height: 80%;
+}
+
+
+.main>div:nth-child(1){
+  background-color: #874CCC;
+  flex-basis: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main>div:nth-child(2){
+  background-color: #C65BCF;
+  flex-basis: 80%;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer{
+  background-color: #F27BBD;
+  padding: 20px;
+  height: 10%;
+  
+}
+
+
+
+/* !!!!!!!!!!!!!!!!!!!!!! */
+
+.container2{
+  width: 600px;
+  height: 400px;
+  border: 1px solid black;
+  margin: auto;
+  text-align: center;
+  
+}
+
+/* 
+.container2 > div {display flex}로 줘도 됨
+ */
+
+.header2{
+  display: flex;
+  height: 30%;
+}
+
+.header2 > div:nth-child(1){
+  background-color: #F6F5F2;
+  flex-basis: 60%;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header2 > div:nth-child(2){
+  background-color: #F0EBE3;
+  flex-basis: 40%;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main2{
+  display: flex;
+  height: 40%;
+}
+
+.main2 > div:nth-child(1){
+  background-color: #F3D0D7;
+  flex-basis: 10%;
+}
+.main2 > div:nth-child(2){
+  background-color: #FFEFEF;
+  flex-basis: 90%;
+}
+
+.footer2{
+  display: flex;
+  height: 30%;
+
+}
+
+.footer2 > div:nth-child(1){
+  flex-basis: 60%;
+  background-color: #EADBC8;
+}
+
+.footer2 > div:nth-child(2){
+  flex-basis: 40%;
+  background-color: #DAC0A3;
+}
+
+
+/* !!!!!!!!!!!!!!!!!!!!!!! */
+
+.container3{
+  
+  width: 600px;
+  height: 400px;
+  border: 1px solid black;
+  margin: auto;
+  text-align: center;
+
+}
+
+.header3{
+  background-color: yellow;
+  height: 30%;
+}
+
+.main3{
+  display: flex;
+  height: 70%;
+
+}
+
+.m1{
+  flex-basis: 60%;
+  background-color: #074173;
+}
+
+.m2{
+  display: flex;
+  flex-direction: column;
+  flex-basis: 40%;
+  justify-content: space-around;
+
+}
+
+.r{
+  background-color: #1679AB;
+  flex-basis: 33%;
+}
+.g{
+  background-color: #5DEBD7;
+  flex-basis: 33%;
+}
+.o{
+  background-color: #C5FF95;
+  flex-basis: 34%;
+}

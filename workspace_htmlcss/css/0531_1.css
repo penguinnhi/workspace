@@ -1,0 +1,103 @@
+body{
+  background-color: gray;
+
+}
+
+.box{
+  width: 100vw;
+  height: 100vh; 
+  /* height 안주는게 좋음  */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  /* margin 상하주고 좌우auto주는게 알아서 가운데 */
+}
+
+.container{
+  background-color: white;
+  width:900px ;
+  /* 퍼센테이지로 주는게 자동으로 늘어남  */
+  display: flex;
+  flex-direction: column;
+
+}
+
+.ot{
+  background-color: coral; 
+  color: white; 
+  font-weight: bold; 
+  margin: 10px;
+  padding: 5px 8px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+
+.header{
+    font-weight: bold;
+    font-size: 30px;
+    margin: 10px 150px;
+}
+
+.content{
+  justify-content: space-around;
+  margin: 10px 100px;
+}
+
+.pic{
+  
+  display: grid;
+  grid-template-areas: 
+  "a b c d"
+  "e f g h"
+  ;
+}
+
+.pic img{
+  width: 200px;
+  margin: 5px;
+}
+
+.pic>div:nth-child(1){grid-area:a;
+  position: relative;
+}
+
+.pic>div:nth-child(1):hover
+  .p1{
+  display: block;
+}
+
+.p1{
+  background-color: rgba(128, 128, 128, 0.692);
+  color: white;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  margin: 5px;
+  width: 200px;
+  height: 95%;
+
+
+  /* display:none; */
+
+
+}
+
+
+
+
+.pic>div:nth-child(2){       grid-area:b; 
+}
+.pic>div:nth-child(3){ grid-area:c; 
+} 
+.pic>div:nth-child(4){ grid-area:d; 
+}
+.pic>div:nth-child(5){ grid-area:e; 
+}
+.pic>div:nth-child(6){ grid-area:f; 
+}
+.pic>div:nth-child(7){ grid-area:g; 
+}
+.pic>div:nth-child(8){ grid-area:h; 
+}

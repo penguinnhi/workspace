@@ -1,0 +1,21 @@
+.content{
+  background-image: url('배경.jpg');
+  width: 100vw;
+  height: 90vh;
+  /* border: 1px solid black; */
+  background-repeat: no-repeat;
+  /* 
+    cover : 영역에 여백없이 꽉 채움. 이미지 비율 유지 
+    contain : 
+  */
+  background-size: cover;
+}
+
+hr{
+  margin: 0px;
+  padding: 0px;
+}
+
+body{
+  margin: 0px;
+}

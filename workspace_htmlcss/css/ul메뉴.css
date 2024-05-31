@@ -1,0 +1,69 @@
+
+
+.header01{
+  background-color: black;
+  color: white;
+  display: flex;
+  width: 100vw;
+  height: 50px;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.c0{
+  font-size: 25px;
+}
+
+.header01 > div{
+  color: white;
+}
+
+.u0{
+  display: flex;
+  width: 400px;
+  justify-content: space-between;
+  font-size: 13px;
+}
+
+
+
+.u1{
+  display: flex;
+  justify-content: space-between;
+  width: 60vw;
+  padding: 15px;
+  margin: auto;
+  font-size: 14px;
+}
+
+
+body{
+  margin: 0px;
+  width: 100vw;
+  height: 100wh;
+  margin: auto;
+  
+}
+
+.back01{
+  background-image: url(화면구현_메인배경.PNG);
+  background-repeat: no-repeat ;
+  background-size: 100vw;
+
+  width: 100vw;
+  height: 800px;
+
+}
+
+a{
+  color: white;
+  text-decoration-line: none ;
+}
+
+.glass{
+  color: black;
+  vertical-align: 3px;
+  position: absolute;
+  left: 595px;
+  top: 10px;
+}

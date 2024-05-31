@@ -1,0 +1,30 @@
+body{
+  margin: 0px;
+}
+
+div{
+  border: 1px solid black;
+  width: 200px;
+  height: 200px;
+  text-align: center;
+  line-height: 200px;
+}
+
+.d1{
+  background-color: rgba(255, 44, 44, 0.87);
+  z-index: 100;
+  position: absolute;
+}
+
+.d2{
+  background-color: rgba(255, 127, 80, 0.904);
+  position: absolute;
+  top: 50px;
+  left: 50px;
+
+}
+.d3{
+  background-color: rgba(255, 255, 76, 0.836);
+
+}
+

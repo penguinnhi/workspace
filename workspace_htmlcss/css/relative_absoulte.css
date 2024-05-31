@@ -1,0 +1,24 @@
+.img-div{
+  background-color: antiquewhite;
+  position: relative;
+}
+
+.img-div img{
+  border: 2px solid rgb(106, 165, 255);
+  border-radius: 50%;
+  position: absolute;
+}
+
+.img-div img:nth-child(1){
+  z-index: 3;
+}
+
+.img-div img:nth-child(2){
+  left: 40px;
+  z-index: 2;
+}
+
+.img-div img:nth-child(3){
+  left: 80px;
+  z-index: 1;
+}

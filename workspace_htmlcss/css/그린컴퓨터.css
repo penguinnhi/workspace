@@ -1,0 +1,97 @@
+
+body{
+
+  display: flex;
+  justify-content: center;
+  height: 80vh;
+  align-items: center;
+}
+
+
+.main01{
+  display: flex;
+  flex-direction: column;
+  width: 900px;
+  box-shadow: 0px 0px 10px lightgray;
+  
+  border-radius: 7px;
+  /* 
+    첫번째 : x축으로의 그림자 이동
+    두번째 : y축으로의 그림자 이동
+    세번째 : 그림자의 퍼짐 정도
+    네번째 : 그림자의 색
+  */
+  padding: 20px;
+}
+
+.main00{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.log1{
+  padding: 10px;
+  border: 1px solid lightgray;
+  background-color: rgb(231, 231, 231);
+  flex-basis:60% ;
+  line-height: 30px;
+  border-radius: 10px;
+  justify-content: space-around;
+  box-shadow: 0px 0px 10px lightgray;
+  height: 235px;
+}
+
+.te01{
+  width: 90%;
+  height: 35px;
+  border-radius: 5px;
+  margin: 5px;
+  padding: 10px;
+  outline: none;
+}
+.te01:focus{
+  border: 2px solid #378CE7;
+}
+
+
+.bu01{
+  width: 120px;
+  height: 30px;
+  border-radius: 5px;
+  background-color: #378CE7;
+  color: white;
+  border: 0px;
+}
+
+.bu01:focus{
+  background-color: gray;
+}
+
+.log2{
+  padding: 15px;
+  flex-basis: 45%;
+}
+
+
+i{
+  color: greenyellow;
+}
+
+.detail1{
+  background-color: orange;
+  text-align: center;
+  color: white;
+  border-radius: 10px;
+  padding: 8px;
+}
+
+.de2, .de3{
+  color: green;
+  text-align: center;
+  padding: 2px;
+  margin: 2px;
+}
+
+a{
+  text-decoration: white;
+}

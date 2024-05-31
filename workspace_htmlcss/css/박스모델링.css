@@ -1,0 +1,46 @@
+/* 태그의 너비는 기본적으로 
+  width+padding+border의 합 */
+
+
+.p1{
+  border: 4px solid lightslategray;
+  margin: 30px;
+  padding: 50px;
+  font-size: 40px;
+  color: indianred;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+}
+
+.p2{
+  margin-left: 20px;
+  padding-top: 50px;
+  border: 3px dashed moccasin;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 25px;
+  color: rgb(156, 187, 212);
+
+}
+
+.p3{
+  border: 3px dotted darkolivegreen;
+  /* 12시부터 시계방향 */
+  padding: 5px 10px 15px 20px;
+  /* 상하.좌우 */
+  margin: 50px 20px 
+
+}
+.p4{
+  border: 1px solid black;
+  width: 500px;
+  height: 100px;
+
+}
+
+.a1{
+  border: 1px solid darkolivegreen;
+  /* a태그 margin 좌우 ㅇㅇ 상하 ㄴㄴ 
+    width, height ㄴㄴ */
+  margin: 50px 50px;
+
+}

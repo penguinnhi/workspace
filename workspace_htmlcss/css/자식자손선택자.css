@@ -1,0 +1,54 @@
+.u1{
+  background-color: rgba(72, 122, 126, 0.432);
+  padding: 20px;
+}
+/* li{
+  background-color: bisque;
+  margin: 10px;
+} */
+
+/* 자식 선택자 */
+
+/* u1이라는 클래스 안의 자식 li 태그들을 선택 */
+.u1 > li{
+  background-color: bisque;
+  margin: 10px;
+}
+
+/* d1클래스를 가진 태그의 자식 중 div태그만 선택 */
+.d1>div{
+  background-color: aqua;
+}
+
+/* d1클래스를 가진 태그의 자식 중 span태그만 선택 */
+.d1>span{
+  background-color: rgb(255, 193, 152);
+}
+
+/* 자손 선택자 (=하위 선택자) */
+
+.d2 div{
+  color: red
+  ;
+}
+
+/* ul태그 안의 test라는 클래스를 가진 자식에서 하위 div 전체 선택  */
+ul > .test div{
+}
+/* 
+.u2 > li:first-child{
+  color: blue;
+}
+
+.u2 > li:last-child{
+  color: red;
+} */
+
+.u2 > li:nth-child(even){
+  color: green;
+}
+
+.u2 > li:nth-child(odd){
+  color: blanchedalmond
+}
+

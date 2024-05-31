@@ -1,0 +1,30 @@
+
+
+.container{
+  width: 800px;
+  height: 600px;
+  margin: 20px auto;
+  border: 1px solid black;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  grid-template-rows: repeat(3,1fr);
+  gap: 20px 10px;
+}
+
+.container>div{
+  border: 1px solid red;
+}
+
+
+
+/* 첫번째 선부터 세번째 선까지 병합이라는 뜻 */
+.container>div:first-child{
+  /* grid-column-end: 3;
+  grid-column-start: 1; */
+}
+
+.container>div:nth-child(2){
+  /* grid-row-start:1 ;
+  grid-row-end:3 ; */
+}
+

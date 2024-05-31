@@ -1,0 +1,25 @@
+.container{
+  border: 5px solid red;
+  width: 500px;
+  margin: 20px;
+}
+
+.inner{
+  font-size: 2rem;
+  border: 5px solid black;
+  width: 500px;
+  padding: 0px 10px;
+}
+
+.inner1{
+  /* padding,border 값은 별개로 취급  */
+  box-sizing: content-box;
+
+}
+
+.inner2{
+  /* 테두리까지 너비로 취급하겠다~ */
+  box-sizing: border-box;
+
+}
+

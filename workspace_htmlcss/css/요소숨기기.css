@@ -1,0 +1,16 @@
+.img1{
+
+  /* hidden */
+  visibility: visible;
+}
+
+.img2{
+  /* none */
+  display: none;
+}
+
+.img3{
+  /* 0~1 */
+  opacity: 0.5;
+}
+

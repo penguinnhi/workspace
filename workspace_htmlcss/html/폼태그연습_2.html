@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    table{
+      border-collapse: collapse;
+      border: 1px solid black;
+      width: 700px;
+      height: 100px;
+    }
+    tr, td{
+      border: 1px solid black;
+    }
+  </style>
+  <link rel="stylesheet" href="폼태그연습_2.css">
+</head>
+<body>
+  <!-- 버튼 만들기
+  -->
+  <input type="button" value="버튼1" onclick="alert(123)">
+  <br>
+  <button type="button">버튼2</button>
+  <hr>
+  
+  <h1>_________________</h1>
+  <table>
+    <colgroup>
+    <col width="*">
+    <col width="80%">
+    <tr>
+      <td class="c1"
+      colspan="2">
+      <i><span>(*필수입력)</span></i> 
+      <b>회원 기본 정보</b></td>
+    </tr>
+    <tr>
+      <td class="c2"><span>*</span>아이디:</td>
+      <td><input type="text" placeholder="4~12자의 영문 대소문자,숫자만 입"> <input type="button" value="아이디 검사"></td>
+    </tr>
+    <tr>
+      <td class="c2"><span>*</span>비밀번호:</td>
+      <td><input type="password"> 4~12자의 영문 대소만자와 숫자로만 입력</td>
+    </tr>
+    <tr>
+      <td class="c2"><span>*</span>비밀번호확인:</td>
+      <td><input type="password"> <input type="button" value="비밀번호 확인"></td>
+    </tr>
+    <tr>
+      <td class="c2"><span>*</span>메일 주소:</td>
+      <td><input type="text"> <input type="button" value="메일 확인"> 예)id@domain.com</td>
+    </tr>
+    <tr>
+      <td class="c2"><span>*</span>이름:</td>
+      <td><input type="text"></td>
+    </tr>
+    <tr>
+      <td class="c1" colspan="2"><b>개인 신상 정보</b></td>
+    </tr>
+    <tr>
+      <td class="c2"><span>*</span>주민 등록번호:</td>
+      <td><input type="number" min="000001" max="9999999"> - <input type="number" min="000000001" max="99999999"> <input type="button" value="확인"> 예)123456-1234567</td>
+    </tr>
+    <tr>
+      <td class="c2">생일 :</td>
+      <td><input type="number" min="0000" max="0000">년 <input type="number" min="00" max="00">월
+        <input type="number" min="00" max="00">일</td>
+      
+    </tr>
+    <tr>
+      <td class="c2" >주소 :</td>
+      
+      <td>
+      <div></div><input type="text"> <input class="in1" type="button" value="우편번호 찾기">
+      </div> 
+      <div>
+      <input type="text">
+      <input type="text">
+      </div>
+      </td>
+    </tr>
+    <tr>
+      <td class="c2">관심분야:</td>
+      <td><input type="checkbox"> 컴퓨터 <input type="checkbox"> 인터넷 <input type="checkbox"> 여행 <input type="checkbox"> 영화감상 <input type="checkbox"> 음악감상 </td>
+    </tr>
+    <tr>
+      <td class="c2">자기소개:</td>
+      <td><textarea rows="10" cols="65"></textarea></td>
+    </tr>
+  </table>
+
+  <div class="bu01">
+  <button type="button">회원 가입</button>
+  <button type="button">다시 입력</button>
+  </div>
+</body>
+</html>

@@ -1,0 +1,67 @@
+/* 크기 단위
+  px : 기본(default) 16px
+  %  : 100%=16px
+  em (절댓값
+  rem : 1rem=16px / 2rem=32px 
+    /0.5rem=8px
+   */
+
+/* 색상
+  1. 정해진 문자 사용(red,blue,yellow)
+  2. RGB
+    color : #000000;
+    color : rgb(00,00,00); (~255)
+    color : rgba(0,0,255, 0~1 =a)       a=alpha=투명도
+
+   */
+
+
+/* 기본 폰트 사이즈 16px */
+
+.p1{
+  font-size: 30px;
+  /* fontweight 400nomal 700bold  */
+  font-weight: bold;
+  font-style: italic;
+  /* 줄간격 */
+  line-height: 35px;
+  /* 글자 가로 정렬 */
+  text-align: center;
+  color: rgb(151, 66, 151);
+  
+}
+.p2{
+  font-size: 50px;
+  color:darkseagreen;
+  /* 글자 꾸밈 */
+  text-decoration: overline;
+  font-style: italic;
+  font-family: serif;
+  letter-spacing: 10px;
+  text-align: justify;
+}
+
+a{
+  color: rgb(39, 128, 77,);
+  font-size: 60px;
+  text-decoration: none;
+  letter-spacing: 30px;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+#c_1{
+  color: #999999;
+}
+
+#c_2{
+  color: rgb(255, 0, 0)
+}
+
+#c_3{
+  color: rgba(0, 0, 255, 0.2);
+}
+
+#c_4{
+  color: #999999;
+}
+

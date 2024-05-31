@@ -1,0 +1,109 @@
+
+
+.main00{
+  border: 1px solid gainsboro;
+  box-shadow: 0px 0px 3px gray;
+  width: 800px;
+  height: 350px;
+  margin: 20px ;
+  padding: 20px 10px;
+  border-radius: 5px;
+}
+
+.content{
+  display: flex;
+  align-items: center;
+  height: 220px;
+  justify-content: space-around;
+  margin: 20px 5px;
+}
+
+.login-form{
+  background-color: gainsboro;
+  border-radius: 8px;
+  flex-basis: 60%;
+  padding: 20px;
+  box-shadow: 0px 0px 3px gray;
+}
+
+input[type="text"],
+input[type="password"]{
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+  padding: 4px;
+  border-radius: 5px;
+  border: 1px solid lightgray;
+  outline: none;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus{
+  border: 2px solid lightblue;
+}
+
+
+label{
+  font-size: 0.8rem;
+  font-weight: bold;
+
+}
+
+button{
+  background-color: #3F72AF;
+  border: 0px;
+  border-radius: 5px;
+  width: 100px;
+  color: white;
+  margin-top: 10px;
+  outline: none;
+  padding: 4px 10px;
+}
+
+button:hover{
+  background-color: rgb(0, 65, 187);
+  cursor: pointer;
+}
+
+.intro{
+  flex-basis: 40%;
+  padding: 20px;
+  
+}
+
+.intro>h4{
+  margin-bottom: 6px;
+}
+
+.intro li{
+  font-size: 0.8rem;
+  margin-bottom: 4px;
+
+}
+
+.input[type="checkbox"]{
+  position: relative;
+  top: 1px;
+}
+
+i{
+  color: #ADC4CE;
+  font-size: 0.6rem;
+}
+.intro a{
+  background-color: #EEE0C9;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  padding: 2px 0px;
+  display: block;
+  text-align: center;
+}
+
+p{
+  color: #96B6C5;
+  text-align: center;
+  margin: 6px 0px;
+  font-size: 0.7rem;
+}

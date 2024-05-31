@@ -1,0 +1,27 @@
+.d1{
+  border: 2px solid rgb(255, 203, 172);
+  width: 200px;
+  height: 300px;
+  display: inline-block;
+}
+
+input{
+  width: 80px;
+
+}
+
+.d2{
+  background-color: rgb(255, 185, 127);
+  width: 400px;
+  height: 100px;
+  margin-top: 10px;
+}
+
+span{
+  color: rgb(218, 255, 159);
+  font-size: 30px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  border: 1px solid white;
+  font-style: italic;
+  font-weight: bold;
+}

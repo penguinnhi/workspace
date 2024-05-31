@@ -1,0 +1,20 @@
+body{
+  padding: 20px;
+
+}
+
+input{
+  margin: 16px;
+}
+
+
+/* 속성 선택자 */
+input[type="text"]{
+  width: 300px;
+}
+
+input[class="aaa"]{
+  border: 3px solid royalblue;
+}
+
+
