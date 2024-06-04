@@ -5,8 +5,10 @@ public class Test_5 {
         int i=1;
         int sum=0;
 
+
+        //(i<11)
         while (i<=10){
-            sum=sum+i;
+            sum=sum+i; // sum += i;
             i++;
         }
         System.out.println(sum);
@@ -17,4 +19,7 @@ public class Test_5 {
 //1+2=3
 //i=3
 //3+3=6
+//4
+//6+4=10
+//
 
