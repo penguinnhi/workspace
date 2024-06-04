@@ -19,6 +19,9 @@ public class Test1 {
         if ((a+b)>c && (b+c)>a && (a+c)>b){
             System.out.println("삼각형~~ ");
         }
+        else {
+            System.out.println("안됨");
+        }
 
     }
 }
