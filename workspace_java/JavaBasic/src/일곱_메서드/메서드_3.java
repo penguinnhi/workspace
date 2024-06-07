@@ -1,7 +1,7 @@
 package 일곱_메서드;
 
 
-//매개변수(parameter) : 메서드 정의 부분 소괄호 안에서 정의된 변수
+
 
 public class 메서드_3 {
     public static void main(String[] args) {

@@ -38,8 +38,10 @@ public class Test_12_an {
 
         for (int i=0; i<(scores.length-1); i++) {
             scores[scores.length-1]=scores[scores.length-1]+scores[i];
+            //총점 scores[scores.length-1]을 만드려면 scores[scores.length-1]을 scores[i]만큼 반복해서 더한다?????
 
         }
+        //scores[scores.length-1]이 총점을 저장하는 자리 / 4개의 칸이 있는데 그 중 0,1,2,3 - 3번자리에 저장하니까.............
 
         avg=scores[scores.length-1]/(double)(scores.length-1);
 

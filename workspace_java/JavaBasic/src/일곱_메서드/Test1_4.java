@@ -83,7 +83,7 @@ public class Test1_4 {
 
     }
 
-    public static void test19(String str,int a){
+    public static void test19(String str,int a){//**********모름
         String result="";
 
         for (int i=0; i<a; i++){
