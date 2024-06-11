@@ -12,7 +12,7 @@ public class Member {
     public Member(String name,String id){
         this.name=name;
         this.id=id;
-    }
+    }//생성자
 
     public void setName(String name,String id){
         this.name=name;

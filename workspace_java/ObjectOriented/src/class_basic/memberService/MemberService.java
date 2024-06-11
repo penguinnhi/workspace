@@ -1,9 +1,6 @@
 package class_basic.memberService;
 
 import class_basic.memberAgain.Member;
-import jdk.swing.interop.SwingInterOpUtils;
-
-import java.time.OffsetDateTime;
 
 public class MemberService {
 
@@ -23,6 +20,7 @@ public class MemberService {
         System.out.println("로그아웃 되었습니다.");
 
     }
+
 
     public static void main(String[] args) {
         MemberService memberService=new MemberService();

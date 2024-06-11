@@ -10,7 +10,8 @@ package class_basic.car;
 //멤버변수에는 무조건 private
 //메서드는 무조건 public
 
-//멤버변수? 지역변수? 먼데?
+//멤버변수? 클래스 안에서 선언된 거
+// 지역변수? 메서드 안에서 선언된 거
 
 import java.time.OffsetDateTime;
 
@@ -18,6 +19,7 @@ public class Phone {
     private int price;
     private String modelName;
     String brand;
+    //멤버변수인듯
 
 
     //생성자
@@ -38,3 +40,4 @@ public class Phone {
 
 
 }
+
