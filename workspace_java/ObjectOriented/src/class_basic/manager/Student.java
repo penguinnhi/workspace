@@ -1,6 +1,6 @@
 package class_basic.manager;
 
-public class Sungjuk {
+public class Student {
     private int koreanScore;
     private int englishScore;
     private int mathScore;

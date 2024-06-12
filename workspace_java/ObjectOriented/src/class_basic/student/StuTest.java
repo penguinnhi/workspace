@@ -39,13 +39,7 @@ public class StuTest {
 
             }
 
-
         }
-
-
-
-
-
 
     }
 }
