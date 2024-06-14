@@ -5,9 +5,9 @@ public class MathTest {
 
         MyMath mm= new MyMath();
 
-        System.out.println(mm.getMin(2,3));
+        //System.out.println(mm.getMin(2,3));
         System.out.println(mm.getMultiple(2,3));
-        System.out.println(mm.getCircleArea(5));
+        //System.out.println(mm.getCircleArea(5));
 
     }
 }

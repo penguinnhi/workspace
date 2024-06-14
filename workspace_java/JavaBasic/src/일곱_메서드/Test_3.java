@@ -1,8 +1,7 @@
 package 일곱_메서드;
 
-import java.sql.SQLOutput;
 import java.util.Arrays;
-import java.util.Formattable;
+
 
 public class Test_3 {
     public static void main(String[] args) {

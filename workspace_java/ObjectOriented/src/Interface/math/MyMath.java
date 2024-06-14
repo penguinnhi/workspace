@@ -1,5 +1,7 @@
 package Interface.math;
 
+import java.security.DrbgParameters;
+
 public class MyMath implements MathUtil {
 
     @Override
@@ -12,7 +14,7 @@ public class MyMath implements MathUtil {
             min=a;
         }
         return min;*/
-        return a<b ? a:b;
+        return a<b ? a:b; //********** 맨날 까먹는 삼항연산자
 
     }
 
@@ -36,10 +38,10 @@ public class MyMath implements MathUtil {
     public int getMultiple(int num1, int n) {//************************** ㅁㄹ
 
 
-        int result=1;
+        int result=1;//******************
         for (int i=0;i<n;i++){
-            result = result*num1;
-            //result*=num1;
+            //result = result*num1;
+            result*=num1;
         }
         return result ;
 
