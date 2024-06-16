@@ -61,7 +61,7 @@ public class MyStudent implements StudentUtil {
     @Override
     public int[] getTotalScoresToArray(Student[] students) {//*************??
         //학생들의 총점이 저장될 배열
-        int[] totalScores =new int[students.length];
+        int[] totalScores =new int[students.length];//****************************************
 
         /*for (Student stu:students){
             for (int i=0;i<totalScores.length;i++){

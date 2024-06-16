@@ -12,5 +12,7 @@ public class ESTest {
         Worker_li w3=new Worker_li(1003,"최길동","개발부","1113","3000");
 
 
+
+
     }
 }

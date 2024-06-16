@@ -29,8 +29,8 @@ public class EmpService extends Worker_li {
     }
 
     public void printPay(){
-        int totalPay=;
-        double avgPay=;
+        int totalPay=0;
+        double avgPay=0.0;
 
         System.out.print("부서명");
         String on = sc.next();
