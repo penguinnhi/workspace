@@ -58,11 +58,11 @@ public class MyStudent_2 implements StudentUtil{
         if (total1>total2){
             return stu1;
         }
-        else if (total2>total1){
+        else{
             return stu2;
         }
 
-        return total1>total2?stu1:stu2;
+        //return total1>total2?stu1:stu2;
 
         //근데 이 맥스는 점수야 점수로 인간을 어떻게 구해?
 

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <div th:each="member : ${List}">[[${member.name}]]</div>
+  <th:block th:each="m : ${List}">
+    [[${m.age}]]
+  </th:block>
+
+  <hr>
+
+  <table border="1">
+    <tr>
+      <td>이름</td>
+      <td>나이</td>
+      <td>점수</td>
+    </tr>
+    <tr th:each="m : ${List}">
+      <td>[[${m.name}]]</td>
+      <td>[[${m.age}]]</td>
+      <td>[[${m.score}]]</td>
+    </tr>
+
+  </table>
+  
+  <hr>
+  <div>이름 <input type="text"></div>
+  <div>연락처 <input type="tel"></div>
+  <div>성별 <input type="radio" checked id="gender"> 남 <input type="radio" id="gender"> 여</div>
+  <div>취미 <input type="checkbox" checked> 독서 <input type="checkbox"> 게임 <input type="checkbox"> 운동 </div>
+  <div>가입경로 
+    <select style="width: 100px;">
+      <option>인터넷</option>
+      <option>지인추천</option>
+      <option>신문</option>
+    </select>
+  </div>
+  <button type="button">회원가입</button>
+  <button type="button"><a href="/main">뒤로가기</a></button>
+
+</body>
+</html>

@@ -1,16 +1,16 @@
 package collection.list;
 
 public class Worker_li {
-    int workerNum;
+    private int workerNum;
     private String name;
-    private String officeName;
+    private String dept;
     private String tel;
-    private String pay;
+    private int pay;
 
-    public Worker_li(int workerNum, String name, String officeName, String tel, String pay) {
+    public Worker_li(int workerNum, String name, String dept, String tel, int pay) {
         this.workerNum = workerNum;
         this.name = name;
-        this.officeName = officeName;
+        this.dept = dept;
         this.tel = tel;
         this.pay = pay;
     }
@@ -31,12 +31,12 @@ public class Worker_li {
         this.name = name;
     }
 
-    public String getOfficeName() {
-        return officeName;
+    public String getdept() {
+        return dept;
     }
 
-    public void setOfficeName(String officeName) {
-        this.officeName = officeName;
+    public void setdept(String dept) {
+        this.dept = dept;
     }
 
     public String getTel() {
@@ -47,22 +47,28 @@ public class Worker_li {
         this.tel = tel;
     }
 
-    public String getPay() {
+    public int getPay() {
         return pay;
     }
 
-    public void setPay(String pay) {
+    public void setPay(int pay) {
         this.pay = pay;
     }
+
+    public String getPw(){
+
+        return this.tel.substring(5);
+
+    }
+
+
 
     @Override
     public String toString() {
         return "Worker_li{" +
-                "workerNum=" + workerNum +
-                ", name='" + name + '\'' +
-                ", officeName='" + officeName + '\'' +
-                ", tel='" + tel + '\'' +
+                " name='" + name + '\'' +
                 ", pay='" + pay + '\'' +
                 '}';
     }
+
 }

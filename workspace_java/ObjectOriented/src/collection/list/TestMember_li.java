@@ -15,10 +15,10 @@ public class TestMember_li {
 
         //3개 저장
         Member_li ml1=new Member_li("yu","123","유",32); //생성자
-
         Member_li ml2=new Member_li("kk","852","강",25);
-
         Member_li ml3=new Member_li();//set으로 만들어도 됨
+
+
         ml3.setId("java");
         ml3.setPw("963");
         ml3.setAge(41);
@@ -41,8 +41,6 @@ public class TestMember_li {
         for (Member_li memberLi : memli) {
             System.out.println(memberLi);
         }
-
-
 
 
 
