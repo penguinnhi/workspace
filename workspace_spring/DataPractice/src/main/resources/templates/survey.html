@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <form action="/sResult" method="post">
+
+    자기소개<textarea cols="50" rows="5" name="intro"></textarea> <br>
+    성별 
+    <input type="radio" name="gender" value="male">남 
+    <input type="radio" name="gender" value="female">여 <br>
+    취미 
+    <!-- 여러개 선택이 가능한 데이터를 넘기려면 배열이나 리스트로 받아야함  -->
+    <input type="checkbox" name="hobby" value="독서" checked >독서 
+    <input type="checkbox" name="hobby" value="게임">게임 
+    <input type="checkbox" name="hobby" value="운동">운동 <br>
+    가입경로 
+    <select name="path">
+      <option value="a">1.인터넷</option>
+      <option value="b">2.지인추천</option>
+      <option value="c">3.신문</option>
+    </select> <br>
+    <input type="submit" value="제출">
+
+  </form>
+
+</body>
+</html>
