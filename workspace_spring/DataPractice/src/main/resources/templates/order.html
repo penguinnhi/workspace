@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <h1>치킨!!</h1>
+  <form action="/delivery" method="post">
+
+    <h3>치킨 종류와 상관 없이 무조건 만원..</h3>
+    <input type="radio" name="chicken" value="후라이드치킨"> 후라이드치킨 
+    <input type="radio" name="chicken" value="양념치킨"> 양념치킨
+    <input type="radio" name="chicken" value="간장치킨"> 간장치킨 <br>
+    <input type="radio" name="chicken" value="고추바사삭"> 고추바사삭
+    <input type="radio" name="chicken" value="뿌링클"> 뿌링클
+    <input type="radio" name="chicken" value="매운핫치킨"> 매운핫치킨
+    <br>
+    <h3> 몇마리 </h3>
+    <input type="number" name="num"> <br>
+    <h3>추가할게요(추가 시 1000원)</h3>
+    <input type="checkbox" name="add" value="양념 추가"> 양념 추가 
+    <input type="checkbox" name="add" value="머스타드 추가"> 머스타드 추가 
+    <input type="checkbox" name="add" value="콜라 추가"> 콜라 추가 
+
+    <h3>요청사항</h3>
+    <textarea name="plus" cols="30" rows="3"></textarea>
+    <br>
+    <input type="submit" value="주문하러가기">
+
+  </form>
+
+</body>
+</html>

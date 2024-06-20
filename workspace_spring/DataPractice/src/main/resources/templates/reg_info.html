@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <h1>이력서 정보</h1>
+  <form action="/see_reg" method="post">
+
+    <select name="school">
+      <option value="대졸">대졸</option>
+      <option value="대학졸업예정">대학졸업예정</option>
+      <option value="전문대졸">전문대졸</option>
+      <option value="고졸">고졸</option>
+    </select>
+    <input type="text" name="col" placeholder="학교명">
+    <br>
+    지원 구분
+    <input type="radio" name="menu" value="신입"> 신입
+    <input type="radio" name="menu" value="경력"> 경력
+    <br>
+    자격정보
+    <table name="license">
+      <tr>
+        <td>자격증명</td>
+        <td>취득일자</td>
+        <td>발행기관</td>
+      </tr>
+      <tr>
+        <td><input type="text"></td>
+        <td><input type="date"></td>
+        <td><input type="text"></td>
+      </tr>
+    </table>
+    <br>
+    경력정보
+    <table name="company">
+      <tr>
+        <td>회사명</td>
+        <td>담당업무</td>
+        <td>경력기간</td>
+      </tr>
+      <tr>
+        <td><input type="text"></td>
+        <td><input type="text"></td>
+        <td><input type="text">년 <input type="text">개월</td>
+      </tr>
+    </table>
+    <br>
+    자기소개
+    <textarea name="introduce"></textarea>
+    <br>
+
+
+    <input type="hidden" name="name" th:value="${name}">
+    <input type="hidden" name="tel" th:value="${tel}">
+
+    <input type="submit" value="등록">
+
+  </form>
+
+</body>
+</html>

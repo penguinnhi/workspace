@@ -7,5 +7,29 @@
 </head>
 <body>
   
+  <h1>학생 성적 입력 프로그램</h1>
+  <p>[[${stuInfoVO.name}]] 학생의 정보입니다</p>
+    
+    이름 : [[${stuInfoVO.name}]] <br>
+    학년 : [[${stuInfoVO.grade}]] <br>
+    연락처 : [[${stuInfoVO.tel[0]}]]-[[${stuInfoVO.tel[1]}]] <br>
+    성별 : [[${stuInfoVO.gender}]] <br>
+    국어 : [[${stuInfoVO.korScore}]] <br>
+    수학 : [[${stuInfoVO.mathScore}]] <br>
+    영어 : [[${stuInfoVO.engScore}]] <br>
+    평균 : [[${avg}]] <br>
+    평균 : [[${(stuInfoVO.korScore+stuInfoVO.mathScore+stuInfoVO.engScore)/3.0}]] <br>
+    
+  <br>
+
+  <!-- 자바에서 평균내고 가져오기 / thymeleaf 써서 html에서 연산하기 -->
+  <!-- 타임리프는 주석넣어도 적용안됨 -->
+  <!-- 타임리프 주석 -->
+  <!-- /* 타임리프 */ -->
+
+  <a href="/inputName"><input type="button" value="처음으로 가기"></a>
+  
+
+
 </body>
 </html>

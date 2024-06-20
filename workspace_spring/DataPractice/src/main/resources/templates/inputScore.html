@@ -8,13 +8,27 @@
 <body>
   
   <form action="/student" method="post">
+
     <h1>학생 성적 입력 프로그램</h1>
-    000학생의 성적을 입력합니다. <br>
-    국어 <input type="text" value="korScore"> <br>
-    영어 <input type="text" value="engScore"> <br>
-    수학 <input type="text" value="mathScore"> <br>
+
+    <p>[[${stuInfoVO.name}]] 학생의 성적을 입력합니다.</p>
+
+    국어 <input type="text" name="korScore"> <br>
+    영어 <input type="text" name="engScore"> <br>
+    수학 <input type="text" name="mathScore"> <br>
+    <br>
+
+    <input type="hidden" name="name" th:value="${stuInfoVO.name}">
+    <input type="hidden" name="grade" th:value="${stuInfoVO.grade}">
+    <input type="hidden" name="tel" th:value="${stuInfoVO.tel[0]}">
+    <input type="hidden" name="tel" th:value="${stuInfoVO.tel[1]}">
+    <input type="hidden" name="gender" th:value="${stuInfoVO.gender}">
+
+
     <input type="submit" value="확인">
     
+  
+
   </form>
 
 

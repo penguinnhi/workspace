@@ -1,13 +1,16 @@
 package com.green.DataPractice.vo;
 
+import java.util.Arrays;
+
 public class StuInfoVO {
     private String name;
     private String grade;
-    private String tel;
+    private String[] tel;
     private String gender;
-    private String korScore;
-    private String engScore;
-    private String mathScore;
+    private int korScore;
+    private int engScore;
+    private int mathScore;
+
 
     public String getName() {
         return name;
@@ -25,11 +28,11 @@ public class StuInfoVO {
         this.grade = grade;
     }
 
-    public String getTel() {
+    public String[] getTel() {
         return tel;
     }
 
-    public void setTel(String tel) {
+    public void setTel(String[] tel) {
         this.tel = tel;
     }
 
@@ -41,27 +44,27 @@ public class StuInfoVO {
         this.gender = gender;
     }
 
-    public String getKorScore() {
+    public int getKorScore() {
         return korScore;
     }
 
-    public void setKorScore(String korScore) {
+    public void setKorScore(int korScore) {
         this.korScore = korScore;
     }
 
-    public String getEngScore() {
+    public int getEngScore() {
         return engScore;
     }
 
-    public void setEngScore(String engScore) {
+    public void setEngScore(int engScore) {
         this.engScore = engScore;
     }
 
-    public String getMathScore() {
+    public int getMathScore() {
         return mathScore;
     }
 
-    public void setMathScore(String mathScore) {
+    public void setMathScore(int mathScore) {
         this.mathScore = mathScore;
     }
 
@@ -70,12 +73,11 @@ public class StuInfoVO {
         return "StuInfoVO{" +
                 "name='" + name + '\'' +
                 ", grade='" + grade + '\'' +
-                ", tel='" + tel + '\'' +
+                ", tel=" + Arrays.toString(tel) +
                 ", gender='" + gender + '\'' +
-                ", korScore='" + korScore + '\'' +
-                ", engScore='" + engScore + '\'' +
-                ", mathScore='" + mathScore + '\'' +
-                '}';
+                ", korScore=" + korScore +
+                ", engScore=" + engScore +
+                ", mathScore=" + mathScore ;
     }
 
 
