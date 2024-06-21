@@ -1,0 +1,21 @@
+body{
+  width: 100vw;
+}
+
+.container{
+  width: 500px;
+  margin: 30px auto;
+}
+
+table {
+  width: 100%;
+}
+
+tr,td{
+  border: 1px solid black;
+}
+
+.but-div{
+  display: flex;
+  justify-content: space-between;
+}

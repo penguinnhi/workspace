@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/board_detail.css">
+</head>
+<body>
+<div class="container">
+  
+    <table>
+      <tr>
+        <td>글번호</td>
+        <td>
+          [[${board.boardNum}]]
+        </td>
+        <td>작성자</td>
+        <td>[[${board.writer}]]</td>
+        <td>작성일</td>
+        <td>[[${board.createDate}]]</td>
+      </tr>
+      <tr>
+        <td>제목</td>
+        <td colspan="5">[[${board.title}]]</td>
+      </tr>
+      <tr>
+        <td>내용</td>
+        <td colspan="5">[[${board.content}]]</td>
+      </tr>
+  
+    </table>
+  <div class="but-div">
+    
+     <form action="/list" method="get">
+        <div>
+          <input type="submit" value="뒤로가기">
+        </div>
+     </form>
+    
+
+     <!-- 현재 상세보기하고 있는 게시글을 삭제하고 게시글 목록 페이지로 이동 -->
+
+     
+      <div>
+        <!-- 태그안인데 대괄호 빼지 않는 이유는 매개변수라서  -->
+        <input type="button" value="삭제" th:onclick="del([[${board.boardNum}]])">
+      </div>  
+     
+    
+  </div>
+</div>
+
+<script>
+  //삭제하기 버튼 클릭 시 실행
+  function del(boardNum){
+    //confirm 실행 후 확인을 클릭하면 true 리턴 , 취소를 클릭하면 false를 리턴
+    const result = confirm("삭제?"); // 확인/취소 선택가능 | alert 확인만 가능
+    
+
+    //확인을 클릭했을 때만 삭제를 위해 자바로 이동
+    if(result){
+      //location.href='/del ? boardNum = '+boardNum;//??????
+      location.href= `/del?boardNum=${boardNum}` ; //****띄우지마 
+
+    }
+    
+  }
+</script>
+
+</body>
+</html>

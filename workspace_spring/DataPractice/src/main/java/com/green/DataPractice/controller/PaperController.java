@@ -1,5 +1,6 @@
 package com.green.DataPractice.controller;
 
+import com.green.DataPractice.vo.RegDetailVO;
 import com.green.DataPractice.vo.RegInfoVO;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,8 +21,9 @@ public class PaperController {
     }
 
     @PostMapping("/see_reg")
-    public String seeReg(RegInfoVO regInfoVO){
+    public String seeReg(RegInfoVO regInfoVO, RegDetailVO regDetailVO){
         System.out.println(regInfoVO);
+        System.out.println(regDetailVO);
         return "see_reg";
     }
 
