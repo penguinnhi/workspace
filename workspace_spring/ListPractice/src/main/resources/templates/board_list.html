@@ -43,6 +43,8 @@
             <tr th:each="board : ${boardList}">
               <td>[[${board.boardNum}]]</td>
               <td><a th:href="@{/detail( boardNum = ${board.boardNum} )}" >[[${board.title}]]</a></td>
+              <!-- ** 영원히 기억 못할 거 같은 생김새*** -->
+              <!-- board = 이름정해준거 -> 이걸 자바로 가져가서 param으로 받아서 if로 글번호 같은거 확인할거임 / board.boardNum 우리가 받아온 번호 -->
               <td>[[${board.writer}]]</td>
               <td>[[${board.createDate}]]</td>
             </tr>

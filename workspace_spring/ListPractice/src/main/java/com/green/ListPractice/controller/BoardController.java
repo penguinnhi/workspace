@@ -21,6 +21,7 @@ public class BoardController {
     public String boardList(Model model){
         //게시글 목록 데이터를 html로 전달
         model.addAttribute("boardList",boardList);
+        //regBoard에서 등록한 글을 html로 보내서 화면에 등록된 글을 보여주기위함
 
         return "board_list";
     }

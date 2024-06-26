@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/reset.css">
+  <style>
+    body{
+      width: 100vw;
+    }
+    .container{
+      width: 500px;
+      margin: 10px auto;
+    }
+    .table{
+      width: 100%;
+      text-align: center;
+    }
+    thead{
+      background-color: blanchedalmond;
+      padding: 5px;
+    }
+  </style>
+</head>
+<body>
+  
+  <div class="container">
+    <form action="/regstudent" method="post">
+    <table>
+
+      <thead>
+        <td>학번</td>
+        <td>학생명</td>
+        <td>국어점수</td>
+        <td>영어점수</td>
+        <td>총점</td>
+      </thead>
+
+      <tbody>
+        
+        <!-- 없을때 -->
+        <th:block th:if="${#lists.isEmpty(stuList)}">
+          <!-- lists!! s!!! s 붙는거임  -->
+          <tr>
+            <td colspan="5"> 없음 </td>
+          </tr>
+        </th:block>
+
+        <!-- 있을때 -->
+        <!--/* 등록된 학생 수만큼 반복해서 행을 생성 */-->
+        <th:block th:unless="${#lists.isEmpty(stuList)}">
+          
+            <tr th:each="student:${stuList}">
+              <td>[[${student.stuNum}]]</td>
+              <td>
+                <a th:href="@{/studentdetail(detail=${student.stuNum})}">[[${student.name}]]</a>
+              </td>
+              <td>[[${student.korScore}]]</td>
+              <td>[[${student.engScore}]]</td>
+              <td>[[${ student.korScore+student.engScore }]]</td>
+            </tr>
+        
+        </th:block>
+
+        
+      </tbody>
+
+    </table>
+    
+      <input type="button" value="학생등록" onclick="goRegForm()">
+
+    </form>
+
+  </div>
+
+  <script>
+    //학생 등록 버튼 클릭 시 학생 등록 페이지로 이동하는 함수
+    function goRegForm(){ //이걸 누르면 자바로 감
+      location.href='/regstudent';
+
+    }
+      
+  
+
+
+  </script>
+
+</body>
+</html>

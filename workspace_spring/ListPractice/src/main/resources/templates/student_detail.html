@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/reset.css">
+</head>
+<body>
+
+  <div class="container">
+
+    <table>
+
+      <tr>
+        <td>학번</td>
+        <td>[[${student.stuNum}]]</td>
+        <td>이름</td>
+        <td>[[${student.name}]]</td>
+      </tr>
+      <tr>
+        <td>국어점수</td>
+        <td>[[${student.korScore}]]</td>
+        <td>영어점수</td>
+        <td>[[${student.engScore}]]</td>
+      </tr>
+      <tr>
+        <td>자기소개</td>
+        <td colspan="3">[[${student.introduce}]]</td>
+      </tr>
+
+    </table>
+
+    
+    <input type="button" value="뒤로가기" onclick="goback()">
+    
+
+    <!-- <a th:href="@{/updatestu(detail=${student.stuNum})}"> -->
+      <input type="button" value="학생수정" th:onclick="goupdateFoam([[${student.stuNum}]])">
+    <!-- </a> -->
+
+    
+    <!-- <a th:href="@{/delstu(detail=${student.stuNum})}"> -->
+      <input type="button" value="학생삭제" th:onclick="godelete([[${student.stuNum}]])">
+    <!-- </a> -->
+    
+
+  </div>
+
+  <script>
+    function goback(){
+      //뒤로가기
+      //history.back(-1);
+
+      location.href='/stulist'; //학생 목록페이지로 가기 
+
+    }
+
+    function godelete(stuNum){
+      const result = confirm('삭제 ㄱ?')
+      if (result){
+        location.href=`/delstu?detail=${stuNum}`;
+        // 홀따옴표 아니고 빽틱? ~ < 이거 암튼 이거 `` 타임리프문법만 
+      }
+
+    }
+
+    //수정버튼 클릭->수정페이지로 이동 
+    function goupdateFoam(stuNum){
+      const result = confirm('수정ㄱ?')
+      if (result){
+        location.href=`/updatestu?detail=${stuNum}`;
+      }
+    }
+
+
+    
+  </script>
+  
+</body>
+</html>
