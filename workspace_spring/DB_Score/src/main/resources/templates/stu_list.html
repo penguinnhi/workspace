@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  
+  <div class="container">
+    
+    <form action="/regStudent" method="post">
+      
+      <table border="1">
+        <thead>
+          <td>학번</td>
+          <td>학생명</td>
+          <td>국어점수</td>
+          <td>영어점수</td>
+          <td>총점</td>
+        </thead>
+
+        <!-- 없음 -->
+        <th:block th:if="${#lists.isEmpty(stuList)}">
+          <tr>
+            <td colspan="5">없음</td>
+          </tr>
+        </th:block>
+      
+        
+        <!-- 있음 -->
+        <th:block th:unless="${#lists.isEmpty(stuList)}">
+          <tr th:each="student : ${stuList}">
+            <td>[[${student.stuNum}]]</td>
+            <td>
+              <a th:href="@{/studentDetail(stuNum=${student.stuNum})}">[[${student.stuName}]]</a>
+            </td>
+            <td>[[${student.korScore}]]</td>
+            <td>[[${student.engScore}]]</td>
+            <td>[[${student.korScore + student.engScore}]]</td>
+          </tr>
+        </th:block>
+
+      </table>
+      <br>
+
+      <input type="submit" value="학생등록">
+
+    </form>
+
+  </div>
+
+</body>
+</html>

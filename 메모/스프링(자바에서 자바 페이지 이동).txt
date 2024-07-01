@@ -1,0 +1,2 @@
+return "redirect:/studentDetail?stuNum="+studentVO.getStuNum(); 
+	ㄴ자바에서 자바로 갈 때 

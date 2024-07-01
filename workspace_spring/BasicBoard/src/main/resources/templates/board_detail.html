@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <div class="container">
+
+    <table>
+
+      <tr>
+        <td>글번호</td>
+        <td>[[${board.boardNum}]]</td>
+        <td>조회수</td>
+        <td>[[${board.readCnt}]]</td>
+      </tr>
+      <tr>
+        <td>작성일</td>
+        <td>[[${board.createDate}]]</td>
+        <td>작성자</td>
+        <td>[[${board.writer}]]</td>
+      </tr>
+      <tr>
+        <td>제목</td>
+        <td colspan="3">[[${board.title}]]</td>
+      </tr>
+      <tr>
+        <td>내용</td>
+        <td colspan="3">[[${board.content}]]</td>
+      </tr>
+
+    </table>
+
+    <input type="button" value="목록가기" onclick="golist()">
+    <input type="button" value="수정" th:onclick="goupdate([[${board.boardNum}]])">
+    <input type="button" value="삭제" th:onclick="godelete([[${board.boardNum}]])">
+
+  </div>
+
+
+  <script>
+    function golist(){
+      location.href=`/`;
+    }
+
+    function goupdate(boardNum){
+      location.href=`/updateForm?boardNum=${boardNum}`;
+    }
+
+    function godelete(boardNum){
+      const de=confirm("삭제 ㄱ?")
+      if(de){
+        location.href=`/deleteList?boardNum=${boardNum}`;
+      }
+    }
+
+  </script>
+
+</body>
+</html>

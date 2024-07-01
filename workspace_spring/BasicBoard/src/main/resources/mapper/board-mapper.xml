@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 해당 파일에 모든 쿼리문을 작성 -->
+<mapper namespace="boardMapper">
+    <resultMap id="board" type="com.green.BasicBoard.vo.BoardVO">
+        <result column="BOARD_NUM" property="boardNum" />
+        <result column="TITLE" property="title" />
+        <result column="WRITER" property="writer" />
+        <result column="CONTENT" property="content" />
+        <result column="CREATE_DATE" property="createDate" />
+        <result column="READ_CNT" property="readCnt" />
+    </resultMap>
+
+    <!--전체 게시글 목록-->
+    <select id="selectList" resultMap="board">
+        SELECT BOARD_NUM
+            , TITLE
+            , WRITER
+            , CREATE_DATE
+            , READ_CNT
+        FROM BASIC_BOARD
+        <if test="searchBox!=null and !searchBox.equals('')">
+            WHERE ${search} LIKE CONCAT('%',#{searchBox},'%')
+        </if>
+        <!--컬럼명이 바뀌면 ${}로-->
+    </select>
+
+    <!--상세 조회-->
+    <select id="selectDetail" resultMap="board">
+        SELECT BOARD_NUM
+            , TITLE
+            , WRITER
+            , CONTENT
+            , CREATE_DATE
+            , READ_CNT
+        FROM BASIC_BOARD
+        WHERE BOARD_NUM=#{boardNum};
+    </select>
+
+    <!--검색?-->
+<!--    <select id="search" resultMap="board">
+        SELECT BOARD_NUM
+            , TITLE
+            , WRITER
+            , CONTENT
+            , CREATE_DATE
+            , READ_CNT
+        FROM BASIC_BOARD
+        WHERE TITLE LIKE %#{title}%
+            OR WRITER LIKE %#{writer}%;
+    </select>-->
+    <!--select value가 제목일때는 제목이 같은거-->
+    <!--select value가 작성자 일때는 작성자가 같은거 -->
+
+    <!--글 작성-->
+    <insert id="insert">
+        INSERT INTO BASIC_BOARD(
+            TITLE
+            , WRITER
+            , CONTENT
+        )
+        VALUES(
+            #{title}
+            , #{writer}
+            , #{content}
+        );
+
+    </insert>
+
+    <!--글 수정-->
+    <update id="update">
+        UPDATE BASIC_BOARD
+        SET TITLE=#{title}
+            , CONTENT=#{content}
+        WHERE BOARD_NUM=#{boardNum};
+    </update>
+
+    <!--글 삭제-->
+    <delete id="delete">
+        DELETE FROM BASIC_BOARD
+        WHERE BOARD_NUM=#{boardNum};
+    </delete>
+
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

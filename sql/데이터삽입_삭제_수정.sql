@@ -73,3 +73,7 @@ ROLLBACK;
 
 
 test_membertest_member
+
+COMMIT;
+
+SELECT MEM_NUM=1 FROM test_member;
