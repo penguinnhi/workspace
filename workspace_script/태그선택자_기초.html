@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h2>태그이름, 아이디, 클래스 선택자 </h2>
+  
+  <div>
+    <div id="d1">div1</div>
+    <div class="div-class">div2</div>
+    <div class="div-class">div3</div>
+  </div>
+
+  <script>
+    //자바스크립트를 사용하여 태그의 내용을 확인 변경 가능하다 
+    //자바스크립트로 태그의 정보를 확인하려면 먼저 원하는태그를 선택할 수 있어야 한다
+
+    //h2태그를 선택
+    const h2_tag=document.querySelector('h2');
+    //console.log(h2_tag);
+
+    //아이디가 d1인 태그를 선택
+    const d1_tag=document.querySelector('#d1');
+    //console.log(d1_tag);
+
+    //클래스가 div-class인 태그를 선택학 ㅗ출력
+    const divclass_tag=document.querySelectorAll('.div-class');
+    divclass_tag.forEach(function(tag,i){
+      //console.log(tag);
+    });
+
+    const div_tag=document.querySelectorAll('div>div');
+    div_tag.forEach(function(tag,i){
+      console.log(tag);
+    })
+  </script>
+
+</body>
+</html>

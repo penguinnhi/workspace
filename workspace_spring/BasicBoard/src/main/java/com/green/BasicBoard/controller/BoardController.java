@@ -34,7 +34,6 @@ public class BoardController {
 
 
 
-
         return "board_list";
     }
 
@@ -66,10 +65,10 @@ public class BoardController {
 
     @PostMapping("/writeList")
     public String writeList(Model model,BoardVO boardVO){ // 작성하고 리스트로
-        BoardVO board=new BoardVO();
+        BoardVO board=new BoardVO();/*
         board.setTitle(boardVO.getTitle());
         board.setWriter(boardVO.getWriter());
-        board.setContent(boardVO.getContent());
+        board.setContent(boardVO.getContent());*/
         //입력을 하고
         boardService.write(board);
         //입력한거 넣고 .. 이게 등록 아니야? title이 null이래 왜?
@@ -86,13 +85,14 @@ public class BoardController {
         BoardVO board=boardService.selectDetail(boardNum);
         model.addAttribute("board",board);
 
+        boardService.updateReadCnt(boardNum);
         return "board_detail";
     }
 
     @GetMapping("/updateForm")
     public String updateForm(Model model,BoardVO boardVO,@RequestParam(name="boardNum")int boardNum){ // 게시글 수정화면
 
-        model.addAttribute(boardVO);//원래정보
+        model.addAttribute(boardVO);//원래정보 .. 왜?
         BoardVO board=boardService.selectDetail(boardNum); //한명 픽해
         model.addAttribute("board",board); // 보내
 
@@ -113,6 +113,8 @@ public class BoardController {
 
         return "redirect:/";
     }
+
+
 
 
 }

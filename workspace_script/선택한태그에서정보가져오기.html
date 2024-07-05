@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <div>
+    <input type="text" name="이름" class="input1" placeholder="이름입력">
+  </div>
+
+  <br>
+
+  <div id="d1">
+    두번째 div 
+  </div>
+
+  <br>
+
+  <table border="1">
+    <tr>
+      <td>국어점수</td>
+      <td>영어점수</td>
+    </tr>
+    <tr class="score">
+      <td>70</td>
+      <td>80</td>
+    </tr>
+  </table>
+
+  <br>
+
+  <span></span>
+
+
+  <script>
+    //선택한 태그의 속성값 받아오기
+    const inputTag=document.querySelector('input');
+    console.log(inputTag.type);
+    console.log(inputTag.name);
+    console.log(inputTag.className);
+
+    //선택한 태그의 속성값 변경
+    inputTag.name='java';
+    inputTag.placeholder='java';
+    
+
+    //두번째 div 라는 글자를 자바스크립트 콘솔에 출력
+    const di=document.querySelector('#d1');
+    console.log(di.textContent);
+
+    // 70,80 출력
+    const s=document.querySelectorAll('.score>td');
+    let sum=0;
+    s.forEach(function(tag,i){
+      //console.log(tag.textContent);
+      sum+=Number(tag.textContent);
+    })
+    console.log(sum);
+
+
+    const a=document.querySelector('.score>td:first-child').textContent;
+    const b=document.querySelector('.score>td:last-child').textContent;
+    const total=Number(a)+Number(b);
+    console.log(total);
+
+    const sp=document.querySelector('span');
+    sp.textContent=Number(sum);
+    
+
+
+  </script>
+
+</body>
+</html>

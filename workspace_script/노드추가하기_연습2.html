@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .d{
+      
+      box-shadow: 0px 3px 10px lightgray;
+      display: inline-block;
+      width: 80px;
+      height: 80px;
+      margin: 8px;
+      text-align: center;
+      line-height: 80px;
+      background-color: lightsalmon;
+      color: white;
+      font-weight: bold;
+      font-size: 1.5rem;
+    }
+  </style>
+</head>
+<body>
+  
+  <h2>노드 추가하기 연습2</h2>
+
+  <input type="text" id="java">
+  <input type="button" value="확인" onclick="addBox()">
+
+  <div id="result">
+    <!-- <div class="d">1</div> -->
+  </div>
+
+
+  <script>
+    function addBox(){
+
+      const inputTag=document.querySelector('#java');
+      //input태그에 입력한 값
+      const num=inputTag.value;
+      //alert(num);
+      
+      //추가할 태그
+      let str='';
+      for(let i=0;i<num;i++){
+        str+=`<div class="d">${i+1}</div>`;
+      }
+
+      // let box='<div class="d"></div>';
+      
+      //추가할 위치 태그 
+      const h=document.querySelector('#result');
+      h.innerHTML='';
+      h.insertAdjacentHTML('beforeend',str);
+
+
+    }
+    
+
+  </script>
+
+</body>
+</html>

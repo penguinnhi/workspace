@@ -1,0 +1,193 @@
+body{
+  width: 100vw;
+  
+}
+
+.container{
+  width: 800;
+  margin: 10px auto;
+  text-align: center;
+}
+
+.top{
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+ul{
+  display: flex;
+  gap: 50px;
+}
+
+.search{
+  position: relative;
+  
+}
+
+.top input{
+  width: 200px;
+}
+
+.top i{
+  position: absolute;
+  top: 2px;
+  right: 6px;
+
+  color: coral;
+}
+
+li{
+  font-weight: bold;
+  display: flex;
+}
+
+.mid1{
+  background-image: url(slide1.jpg);
+  background-position: center;
+  background-size: cover;
+
+  width: 100%;
+  height: 300px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  margin-bottom: 50px;
+}
+
+.mid1 p{
+  margin-bottom: 10px;
+}
+
+.mid1 input{
+  background-color: coral;
+  color: white;
+  border: none;
+  border-radius: 1px;
+  padding: 5px 25px;
+  margin-top: 10px;
+  width: 150px;
+}
+
+.mid1 input:hover{
+  cursor: pointer;
+  background-color: rgb(255, 101, 44);
+}
+
+.mid2{
+  margin-bottom: 50px;
+}
+
+.mid2>p{
+  font-size: 1.8rem ;
+}
+
+.mid2 img{
+  margin-bottom: 20px;
+}
+
+.icons{
+  display: flex;
+  justify-content: center;
+  
+}
+
+.icons div{
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.icons p{
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.icons span{
+  font-size: 0.8rem;
+}
+
+.icons>div{
+  width: 200px;
+}
+
+.icons div>div{
+  margin: 0px auto;
+}
+
+.icons i{
+  color: coral;
+  border: 15px solid coral;
+  border-radius: 50% ;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 80px;
+  height: 80px;
+
+  margin-bottom: 10px;
+}
+
+.bottom>p{
+  font-size: 1.8rem;
+}
+
+.bottom img{
+  margin-bottom: 20px;
+
+  
+}
+
+
+.image{
+  display: flex;
+  justify-content: center;
+
+  position: relative;
+  
+}
+
+.image img{
+  width: 250px;
+  margin: 10px;
+
+}
+
+.backimg{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.308);
+  margin: 10px;
+  width: 250px;
+  height: 80px;
+
+  position: absolute;
+  top: 89px;
+
+
+
+}
+
+.backimg>p,.backimg>span{
+  text-align: left;
+  padding: 0px 10px;
+  
+}
+
+.backimg p{
+  color: white;
+  font-weight: bold;
+
+}
+
+.backimg span{
+  color: coral;
+}

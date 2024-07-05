@@ -26,6 +26,6 @@ public interface BoardService {
     List<BoardVO> search(SearchVO searchVO);
 
     //조회수 증가
-    void viewCnt();
+    void updateReadCnt(int boardNum);
 
 }

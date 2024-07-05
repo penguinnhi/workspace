@@ -51,9 +51,8 @@ public class BoardServiceImpl implements BoardService{
 
     //조회수 증가
     @Override
-    public void viewCnt() {
-
-
+    public void updateReadCnt(int boardNum) {
+        sqlSession.update("boardMapper.updateReadCnt",boardNum);
     }
 
 

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h2>객체와 배열 다루기</h2>
+
+  <script>
+    const movie_info=[
+      {
+        movie_title : '인사이드아웃2',
+        theater : ['CGV울산삼산점','CGV울산진장점','CGV서면점'],
+        grade : [4.5, 5.0, 4.0]
+      },
+      {
+        movie_title : '매드맥스 : 퓨리오사 사가',
+        theater : ['CGV울산삼산점','CGV용산아이파크몰','CGV센텀시티'],
+        grade : [5.0, 4.8, 4.5]
+      },
+      {
+        movie_title : '챌린저스',
+        theater : ['CGV울산삼산점','CGV울산성남점','CGV동래점'],
+        grade : [4.0, 4.3, 4.7]
+      }
+    ];
+
+    //console.log(movie_info);
+
+    //영화 중에서 평균 평점이 가장 높은 영화의 평균 평점
+    //과 영화명을 출력 ㅠㅠ?
+
+    //반복하면서 각 영화의 평균 평점 구하기 
+    let max_grade=0;
+    movie_info.forEach(function(movie, i){
+      //console.log(`i=${i}`);
+      //console.log(movie)
+
+     //각 영화의 평점 배열
+      //movie.grade 
+
+      //각 영화의 평점 배열의 요소의 합 구하기
+      let sum=0;
+      for(const grade of movie.grade){
+        sum+=grade;
+      }
+
+      const avg=sum/movie.grade.length;
+      //console.log(avg);
+      
+      
+      if(max_grade<avg){
+        max_grade=avg;
+      }
+      
+
+    });
+    console.log(max_grade);
+
+
+    // let sum=0;
+    // for(let i=0;i<movie_info;i++){
+    //   for(let e=0;i<movie_info[i].grade.length;e++){
+    //     //console.log(movie_info[i].grade[e]);
+        
+    //   }
+    // }
+    
+    //movie_info[i].grade 이게 한 객체의 평균을 모아둔 배열
+
+    //console.log(avg);
+
+    //영화제목이 영화2(매드맥스)인 영화를 제외한 나머지 영화의 모든 상영관명을 배열에 저장하세요 .. 😡
+    // ['CGV울산삼산점','CGV울산진장점','CGV서면점','CGV울산삼산점','CGV울산성남점','CGV동래점'] 
+    
+    const theater_arr=[];
+    movie_info.forEach(function(e,index){
+      if(e.movie_title!='매드맥스 : 퓨리오사 사가'){
+        for(const each of e.theater){
+          theater_arr.push(each);
+        }
+      }
+    })
+    console.log(theater_arr);
+    
+
+    // for(const e of movie_info){
+
+    //   if(e.movie_title!='매드맥스 : 퓨리오사 사가'){
+    //   e.theater
+    //   console.log(e.theater);
+
+    //   for(let i=0;i<e.theater.length;i++){
+    //     console.log(e.theater[i]);
+    //   }
+    //   //const theater=[e.theater[0],e.theater[1]];
+
+    //   //console.log(theater);
+      
+    //   }
+
+    // }
+
+
+
+
+    
+  </script>
+
+</body>
+</html>

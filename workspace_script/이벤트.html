@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .d1{
+      width: 500px;
+      background-color: antiquewhite;
+
+    }
+  </style>
+</head>
+<body>
+  
+  <div class="d1">div태그</div>
+  <input type="text">
+
+
+  <script>
+
+    // function test1(){
+    //   alert('히히');
+    // }
+
+    //이벤트를 사용할 태그를 서 ㄴ택
+    const d1=document.querySelector('.d1');
+
+    //선택한 태그에 이벤트 추가 
+    d1.addEventListener('click',function(){
+      alert('우히히');
+    })
+
+    //개발자취향
+
+    d1.addEventListener('mousemove',function(){
+      console.log(1);
+    });
+
+    const in1=document.querySelector('input');
+    
+    //event : event의 모든 정보가 담긴 데이터 
+    in1.addEventListener('keyup',function(event){
+      console.log(event.target.value);
+
+    });
+
+
+
+  </script>
+</body>
+</html>

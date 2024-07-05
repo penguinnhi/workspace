@@ -4,19 +4,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <link rel="stylesheet" href="/board_list.css">
 </head>
 <body>
   
   <div class="container">
 
-    <form action="/" method="post">
-      <select name="search">
-        <option value="TITLE">제목</option>
-        <option value="WRITER">작성자</option>
-      </select>
-      <input type="text" name="searchBox">
-      <input type="submit" value="검색">
-    </form>
+    <div class="search">
+      <form action="/" method="post">
+        <select name="search">
+          <option value="TITLE">제목</option>
+          <option value="WRITER">작성자</option>
+        </select>
+        <input type="text" name="searchBox" width="50px">
+        <input type="submit" value="검색" class="button">
+      </form>
+    </div>
 
     <form action="/writeForm" method="post">
       <table>
@@ -37,17 +40,17 @@
         <!-- 있음 -->
         <th:block th:unless="${#lists.isEmpty(boardList)}">
           <tr th:each="board : ${boardList}">
-            <td>[[${board.boardNum}]]</td>
+            <td class="center">[[${board.boardNum}]]</td>
             <td><a th:href="@{/boardDetail(boardNum=${board.boardNum})}">[[${board.title}]]</a></td>
             <td>[[${board.writer}]]</td>
             <td>[[${board.createDate}]]</td>
-            <td>[[${board.readCnt}]]</td>
+            <td class="center">[[${board.readCnt}]]</td>
           </tr>
         </th:block>
 
       </table>
   
-      <input type="submit" value="글쓰기">
+      <input type="submit" value="글쓰기" class="button">
 
     </form>
 

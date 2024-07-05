@@ -1,0 +1,80 @@
+body{
+  width: 100vw;
+}
+
+.container{
+  width: 1000px;
+  margin: 30px auto;
+}
+
+
+
+span{
+  color: red;
+}
+
+table{
+  border: 1px solid lightgray;
+  width: 100%;
+  font-size: 0.9rem;
+}
+
+
+table td:first-child{
+  background-color: rgb(230, 230, 230);
+  width: 150px;
+  padding: 10px;
+  border: 1px solid lightgray;
+  font-weight: bold;
+}
+
+table td:last-child{
+  padding: 10px;
+  border: 1px solid lightgray;
+}
+
+.container>p{
+  font-weight: bold;
+  margin: 10px;
+}
+
+.addr input{
+  margin-bottom: 5px;
+  margin-right: 3px;
+}
+
+.addr div:first-child input:last-child{
+  background-color: white;
+  border: 1px solid lightgray;
+  border-radius: 2px;
+  font-size: 0.7rem;
+  padding: 2px 8px;
+}
+
+.addr div:first-child input:last-child:hover{
+  cursor: pointer;
+}
+
+.member p{
+  font-size: 0.8rem;
+  margin-top: 5px;
+}
+
+.two{
+  position: relative;
+}
+
+.two p:first-child{
+  font-weight: bold;
+  margin: 10px;
+}
+
+.detail{
+
+  width: 100px;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+
+  font-size: 0.7rem;
+}

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 해당 파일에 모든 쿼리문을 작성 -->
+<mapper namespace="boardMapper">
+    <resultMap id="board" type="com.green.BasicBoard3.vo.BoardVO">
+        <result column="BOARD_NUM" property="boardNum"/>
+        <result column="TITLE" property="title"/>
+        <result column="WRITER" property="writer"/>
+        <result column="CONTENT" property="content"/>
+        <result column="CREATE_DATE" property="createDate"/>
+        <result column="READ_CNT" property="viewCnt"/>
+    </resultMap>
+
+    <!--전체조회-->
+    <select id="getAllList" resultMap="board">
+        SELECT BOARD_NUM
+            , TITLE
+            , WRITER
+            , CREATE_DATE
+            , READ_CNT
+        FROM BASIC_BOARD3
+    </select>
+
+    <!--상세조회-->
+
+    <!--게시글 등록-->
+    <insert id="insert">
+        INSERT INTO BASIC_BOARD3
+        VALUES (
+            TITLE=#{title}
+            , WRITER=#{writer}
+            , CONTENT=#{content}
+        )
+    </insert>
+
+
+	
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

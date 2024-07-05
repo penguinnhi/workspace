@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <h2>객체 다루기</h2>
+
+  <script>
+    //객체 생성
+    const member={
+      name : '고길동',
+      age : 40,
+      add : '서울'
+    };
+
+    console.log(member);
+    console.log(member.name);
+    console.log(member['age']);
+
+    //문제 배열(리스트)+객체
+    const board_list=[
+      {
+        boardNum : 1,
+        title : 'java',
+        writer : 'me'
+      },
+      {
+        boardNum : 2,
+        title : 'c',
+        writer : 'you'
+      },
+      {
+        boardNum : 3,
+        title : 'cake',
+        writer : 'that'
+      }
+    ];
+
+    console.log(board_list);
+
+    //board_list에 저장된 모든 게시글의 제목만 출력
+    for(let i=0;i<board_list.length;i++){
+      console.log(board_list[i].title);
+    };
+
+    console.log('\n');
+
+    for(const e of board_list){
+      console.log(e.title);
+    };
+
+    console.log('\n');
+    
+    //?????????????????????
+    board_list.forEach(function(element,index){
+      console.log(element.title); 
+    });
+    // 이거 관련해서 자바스크립트 시험이 나올거예요 
+
+
+    
+
+
+  </script>
+</body>
+</html>
