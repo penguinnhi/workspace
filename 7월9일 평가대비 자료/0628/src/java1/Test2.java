@@ -16,7 +16,7 @@ public class Test2 {
         int[] random=new int[6];
 
         for (int i=0;i<random.length;i++) {
-            random[i]=(int) (Math.random() * 46);
+            random[i]=(int) (Math.random() * 45+1);
         }
         //이게 난수를 배열에 넣은거야
 

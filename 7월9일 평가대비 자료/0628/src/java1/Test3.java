@@ -2,6 +2,7 @@ package java1;
 
 //정수{5,11,20,40,30}의 초기값을 갖는 배열을 생성하고,
 //해당 배열에서 가장 큰 값과 가장 작은 값을 출력하시오
+//완
 public class Test3 {
     public static void main(String[] args) {
 

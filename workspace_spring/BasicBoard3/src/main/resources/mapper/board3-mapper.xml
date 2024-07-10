@@ -23,17 +23,40 @@
     </select>
 
     <!--상세조회-->
+    <select id="selectDetail" resultMap="board">
+        SELECT BOARD_NUM
+            , TITLE
+            , WRITER
+            , CREATE_DATE
+            , CONTENT
+            , READ_CNT
+        FROM BASIC_BOARD3
+        WHERE BOARD_NUM=#{boardNum}
+    </select>
 
     <!--게시글 등록-->
     <insert id="insert">
-        INSERT INTO BASIC_BOARD3
+        INSERT INTO BASIC_BOARD3(
+            TITLE
+            , WRITER
+            , CONTENT)
         VALUES (
-            TITLE=#{title}
-            , WRITER=#{writer}
-            , CONTENT=#{content}
+            #{title}
+            , #{writer}
+            , #{content}
         )
     </insert>
 
+    <update id="update">
+        UPDATE TITLE=#{title},
+            CONTENT=#{content}
+        FROM BASIC_BOARD3
+        WHERE BOARD_NUM=#{boardNum}
+    </update>
+
+    <delete id="delete">
+        DELETE FROM BASIC_BOARD3
+    </delete>
 
 	
 </mapper>

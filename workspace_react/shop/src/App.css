@@ -1,0 +1,50 @@
+.header{
+  background-color: #071952;
+  color: white;
+  padding: 10px;
+  width: 100%;
+
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.banner{
+  width: 100%;
+  height: 350px;
+  /* margin-bottom: 0px; */
+}
+
+.banner img{
+  width: 100%;
+  object-fit: cover;
+  height: 100%;
+  object-position: center;
+}
+
+
+.book{
+  background-color: #EBF4F6;
+  padding: 30px;
+  display: flex;
+  justify-content: space-evenly;
+  gap: 100px;
+
+  margin: 0 auto;
+  /* margin-top: 20px; */
+}
+
+.book>div>div{
+  display: flex;
+  justify-content: center;
+}
+
+.book>div{
+  background-color: #37B7C3;
+  padding: 10px;
+  color: white;
+}
+
+
+.book img:hover{
+  cursor: pointer;
+}

@@ -3,6 +3,7 @@ package java1;
 
 //calculate 클래스는 정수 두 개 데이터를 갖는다
 //calculate 클래스의 기능
+//완
 public class Calculate {
     int a;
     int b;
@@ -16,13 +17,14 @@ public class Calculate {
     //클래스가 가진 두 정수의 합을 리턴
     public int getSum(){
         int sum=a+b;
+        System.out.println(sum);
         return sum;
     }
 
     //클래스가 가진 두 정수 중 큰 수를 리턴
     public int getMax(){
         int max=a>b?a:b;
-
+        System.out.println(max);
         return max;
     }
 

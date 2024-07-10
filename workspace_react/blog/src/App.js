@@ -188,12 +188,14 @@ function Detail(){
 //블로그 글 하나에 대한 컴포넌트
 //전달되는 데이터는 매개변수에 props를 사용해서 전달받음
 function Board(props){
-  <div className='list'>
-    <h4>{props.title}
-    <span>🤮</span>
-    </h4>
-    <p>작성</p>
-  </div>
+  return(
+    <div className='list'>
+      <h4>{props.title}
+      <span>🤮</span>
+      </h4>
+      <p>작성</p>
+    </div>
+  )
 }
 
 

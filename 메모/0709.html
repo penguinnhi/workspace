@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  헤에이
+
+  <script>
+
+    const movie_info=[{
+      title : '비옴',
+      theater : ['천둥침','번개침','습함'],
+      grade : [2.0,1.0,2.5]
+
+    },{
+      title : '맑음',
+      theater : ['밝음','더움','ㅇㅇ'],
+      grade : [5.0,4.5,4.8]
+    },{
+      title : '실내',
+      theater : ['어두움','ㄴㄴ','암튼그럼'],
+      grade : [3.0,2.5,2.8]
+    }]
+
+    // 평균 평점이 가장 높은 영화의 평균 평점과 영화명
+    //한 객체당 
+    let sum=0;
+    let a=0;
+    movie_info.forEach((e,i)=>{
+      e //이게 영화 하나 
+      e.grade //하나의 평점들
+      e.grade.forEach((c,d)=>{
+        sum+=d;
+        
+      })
+    })
+    
+    //평균평점을 구해
+    
+
+
+
+  </script>
+
+</body>
+</html>

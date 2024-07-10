@@ -20,9 +20,25 @@ public class BoardServiceImpl implements BoardService {
     }
 
     @Override //게시글 등록
-    public void insert(int boardNum) {
-        sqlSession.insert("boardMapper.insert");
+    public void insert(BoardVO boardVO) {
+        sqlSession.insert("boardMapper.insert",boardVO);
 
+    }
+
+    @Override //상세조회
+    public BoardVO selectDetail(int boardNum) {
+
+        return sqlSession.selectOne("boardMapper.selectDetail",boardNum);
+    }
+
+    @Override // 게시글 삭제
+    public void delete(int boardNum) {
+        sqlSession.delete("boardMapper.delete",boardNum);
+    }
+
+    @Override //게시글 수정
+    public void update(int boardNum) {
+        sqlSession.update("boardMapper.update",boardNum);
     }
 
 

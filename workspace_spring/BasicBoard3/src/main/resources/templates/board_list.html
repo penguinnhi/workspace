@@ -32,11 +32,12 @@
               <td colspan="5">없음</td>
             </tr>
           </th:block>
+          
           <!-- 있을때 -->
-          <th:block th:if="${#lists.isEmpty(boardList)}">
+          <th:block th:unless="${#lists.isEmpty(boardList)}">
            <tr th:each="board : ${boardList}">
             <td>[[${board.boardNum}]]</td>
-            <td>[[${board.title}]]</td>
+            <td><a th:href="@{/boardDetail(boardNum=${board.boardNum})}">[[${board.title}]]</a></td>
             <td>[[${board.writer}]]</td>
             <td>[[${board.createDate}]]</td>
             <td>[[${board.viewCnt}]]</td>
@@ -48,6 +49,7 @@
       </table>
       
       <input type="submit" value="글쓰기">
+
     </form>
 
   </div>

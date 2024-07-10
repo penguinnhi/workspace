@@ -10,12 +10,19 @@ public interface BoardService {
     List<BoardVO> getAllList();
 
     //게시글 작성
-    void insert(int boardNum);
+    void insert(BoardVO boardVO);
 
     //게시글 상세조회
+    BoardVO selectDetail(int boardNum);
 
     //게시글 삭제
+    void delete(int boardNum);
 
     //게시글 수정
+    void update(int boardNum);
+
+    //조회수 증가
+
+
 
 }

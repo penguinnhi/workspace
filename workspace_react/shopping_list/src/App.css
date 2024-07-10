@@ -1,0 +1,30 @@
+.App {
+  width: 600px;
+  margin: 0 auto;
+  margin-top: 30px;
+}
+
+.box{
+  background-color: #eeeeee;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+button{
+  width: 80px;
+  margin: 5px 8px;
+}
+
+button:hover{
+  cursor: pointer
+}
+
+span.item{
+  
+  display: inline-block;
+  width: 200px;
+}
+
+.item-div{
+  margin-bottom: 6px;
+}

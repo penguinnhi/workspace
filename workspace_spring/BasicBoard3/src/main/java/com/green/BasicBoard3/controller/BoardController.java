@@ -20,9 +20,9 @@ public class BoardController {
     //게시글 목록
     @RequestMapping("/")
     public String boardList(Model model){
+
         List<BoardVO> boardList=boardService.getAllList();
         model.addAttribute("boardList",boardList);
-
         return "board_list";
     }
 
@@ -35,22 +35,47 @@ public class BoardController {
 
     //작성 후 목록페이지로
     @PostMapping("/writeList")
-    public String writeList(@RequestParam(name="boardNum")int boardNum,Model model){
+    public String writeList(Model model,BoardVO boardVO){
 
-        boardService.insert(boardNum);
-        model.addAttribute("boardNum",boardNum);
+        boardService.insert(boardVO);
+        //System.out.println(boardVO);
+        //model.addAttribute("board",boardVO);
 
         return "redirect:/";
     }
 
     //게시글 상세조회 페이지로
+    @GetMapping("/boardDetail")
+    public String boardDetail(@RequestParam(name="boardNum")int boardNum,Model model){
+        BoardVO board=boardService.selectDetail(boardNum);
+        model.addAttribute("board",board);
 
-    //상세조회 후 목록으로
+        return "board_detail";
+    }
 
-    //게시글 삭제
+    //게시글 삭제 후 리스트로
+    @GetMapping("/deleteBoard")
+    public String deleteBoard(int boardNum){
+        boardService.delete(boardNum);
+
+        return "redirect:/";
+    }
 
     //게시글 수정
+    @PostMapping("/updateForm")
+    public String updateForm(@RequestParam(name="boardNum")int boardNum,Model model){
+
+        boardService.update(boardNum);
+        //model.addAttribute("boardNum",boardNum);
+
+
+        return "/update_form";
+    }
 
     //게시글 수정 후 상세페이지로
+    @PostMapping("/updateList")
+    public String updateList(){
+        return "";
+    }
 
 }

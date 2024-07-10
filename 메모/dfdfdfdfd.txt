@@ -96,5 +96,5 @@ spring (웹 개발, java html css
 
 자바 실행 자체가 안되는 이유 mapper 
 
-
+<img src={process.env.PUBLIC_URL + 'header.jpg'}/>
 
