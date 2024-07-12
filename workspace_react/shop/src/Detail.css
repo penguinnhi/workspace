@@ -1,0 +1,23 @@
+.detail{
+  background-color: #EBF4F6;
+  padding: 20px;
+  /* width: 60%; */
+  margin: 0 auto;
+}
+
+.d1{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+
+
+.d2{
+  padding: 20px;
+}
+
+.intro{
+  text-align: center;
+}

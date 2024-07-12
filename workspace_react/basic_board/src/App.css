@@ -1,0 +1,15 @@
+.App {
+  text-align: center;
+}
+
+body{
+  width: 100vw;
+}
+
+table{
+  width: 80%;
+  /* border: 1px solid black; */
+  margin: 0 auto;
+}
+
+

@@ -1,0 +1,29 @@
+thead{
+  background-color: #B6C7AA;
+  font-size: 1.2rem;
+  height: 35px;
+  font-weight: bold;
+  color: white;
+}
+
+thead td{
+  width: 300px;
+}
+
+thead td:first-child{
+  width: 15%;
+}
+
+thead td:nth-child(2){
+  width: 50%;
+}
+
+thead td:nth-child(3){
+  width: 20%;
+}
+thead td:nth-child(4){
+  width: 15%;
+}
+
+
+

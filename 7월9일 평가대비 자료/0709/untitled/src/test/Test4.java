@@ -15,7 +15,7 @@ public class Test4 {
 
         int cnt=0;
 
-        if(a==3||a==6||a==9){
+        if(a==3||a==6||a==9){ //if (a%3==0 && a!=0)
             cnt++;
         }
         if(b==3||b==6||b==9){

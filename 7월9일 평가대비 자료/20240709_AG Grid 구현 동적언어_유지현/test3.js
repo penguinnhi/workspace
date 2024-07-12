@@ -8,7 +8,9 @@ function create(){
   const num1=input1.value;//input태그에 입력한 값
   const num2=input2.value;//input태그에 입력한 값
 
-  let str=`<table>`;
+  let str=``;
+  
+  str+=`<table>`;
 
   for(let i=0;i<num1;i++){
     

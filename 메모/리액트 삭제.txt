@@ -1,0 +1,35 @@
+import React from 'react';
+
+const PostList = ({ posts, onDelete }) => {
+  const handleDelete = (index) => {
+    // 새로운 배열을 생성하여 삭제할 요소를 제외하고 나머지 요소들을 포함시킵니다.
+    const updatedPosts = [];
+    for (let i = 0; i < posts.length; i++) {
+      if (i !== index) {
+        updatedPosts.push(posts[i]);
+      }
+    }
+    // onDelete prop으로 전달된 함수를 호출하여 삭제 작업을 처리합니다.
+    onDelete(updatedPosts);
+  };
+
+  return (
+    <div>
+      <h1>게시글 목록</h1>
+      {posts.map((post, index) => (
+        <div key={post.id}>
+          <p>{post.content}</p>
+          {/* 삭제 버튼 클릭 시 handleDelete 함수 호출 */}
+          <button onClick={() => handleDelete(index)}>삭제</button>
+        </div>
+      ))}
+    </div>
+  );
+};
+
+export default PostList;
+
+
+
+posts 는 게시글 배열
+handleDelete는 그냥 함수명 

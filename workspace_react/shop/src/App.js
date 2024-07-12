@@ -4,11 +4,13 @@ import { useState } from 'react';
 import data from './data';
 import Book from './Book';
 import axios from 'axios';
+import { Link, Route, Routes } from 'react-router-dom';
+import Detail from './Detail';
 
 function App() {
   // 상품목록데이터
-  //const item_list=data;
-  let item_list=[];
+  const item_list=data;
+  //let item_list=[];
 
   // const response = axios.get('/test1');
   // console.log(response.data);
@@ -31,11 +33,12 @@ function App() {
   // });
 
   //let a1=[];
-  axios.get('/test4').then((re)=>{
-    item_list=re.data;
-    console.log(re.data);
+  // axios.get('/test4').then((re)=>{
+  //   item_list=re.data;
+  //   console.log(re.data);
     
-  });
+  // });
+
   //console.log(a1);
 
   //구조 분해 할당
@@ -66,19 +69,38 @@ function App() {
 
 
 
-
   return (
     <div className="App">
       
       <div className='header'>
-        Book Shop
+        
+        <Link to={'/'}>Book Shop </Link>
+        <Link to={'/list'}>상품 목록</Link>
+        <Link to={'/detail'}>상품 상세</Link>
+
+        
       </div>
       <div className='banner'>
         <img src={process.env.PUBLIC_URL + 'header.jpg'}/>
         
       </div>
       
-      <Book item_list={item_list}/>
+      {/* 이동할 수 있는 페이지의 url들 */}
+      <Routes>
+
+        <Route path='/' element={<div>메인페이지 </div>} />
+
+        <Route path='/list' element={<Book item_list={item_list}/>}/>
+
+        <Route path='/detail/:id' element={<Detail item_list={item_list}/>} />
+        {/* /detail/:id/:name <- 여러개 데이터 가져가기 가능 */}
+        <Route path='*' element={<div>hey 모두들 내가 누군지 아니 잘못된 페이지 </div>} />
+
+      </Routes>
+
+      {/* path='*' : 나머지 경로를 뺀 모든 경로 */}
+
+      {/* <Book item_list={item_list}/> */}
 
 
 
@@ -97,7 +119,7 @@ function App() {
         </div> */}
 
 
-        <Test name={'고길동'} age={40}></Test>
+        {/* <Test name={'고길동'} age={40}></Test> */}
         {/* props로 안받고 key값으로 받는다는거 같은데?  */}
         
       </div>

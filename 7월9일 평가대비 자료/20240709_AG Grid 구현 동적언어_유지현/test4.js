@@ -11,6 +11,8 @@ function checkAllMenu(){
       e.checked=false;
     }
   })
+
+  
   
 }
 
