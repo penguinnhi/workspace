@@ -1,0 +1,45 @@
+
+table{
+  /* text-align: center; */
+  margin: 0 auto;
+  font-size: 1.3rem;
+}
+
+.head{
+  /* background-color: #6096B4; */
+  /* color: white; */
+  border-top: 1px solid black;
+  border-bottom: 4px double black;
+}
+
+.head>tr{
+  width: 500px;
+  background-color: #6097b4f1;
+  color: white;
+}
+
+.td-name:hover{
+  cursor: pointer;
+}
+
+.head>tr>td{
+  padding: 8px;
+}
+
+.listBody >tr {
+  border-bottom: 1px solid black;
+
+}
+
+.listBody>tr>td{
+  padding: 5px;
+}
+
+.listBody>tr:nth-child(even){
+  background-color: #EEE9DA;
+}
+
+.listBody>tr:hover{
+  background-color: #bdcdd662;
+}
+

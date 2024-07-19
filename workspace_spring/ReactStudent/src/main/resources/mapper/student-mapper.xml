@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 해당 파일에 모든 쿼리문을 작성 -->
+<mapper namespace="studentMapper">
+    <resultMap id="stu" type="com.green.ReactStudent.vo.StudentVO">
+        <id column="STU_NUM" property="stuNum"/>
+        <result column="STU_NAME" property="stuName"/>
+        <result column="KOR_SCORE" property="korScore"/>
+        <result column="ENG_SCORE" property="engScore"/>
+        <result column="MATH_SCORE" property="mathScore"/>
+        <result column="STU_AGE" property="stuAge"/>
+        <result column="STU_TEL" property="stuTel"/>
+        <result column="STU_ADDR" property="stuAddr"/>
+    </resultMap>
+
+    <!--전체 학생 조회-->
+    <select id="getList" resultMap="stu">
+        SELECT STU_NUM
+            ,STU_NAME
+            ,KOR_SCORE
+            ,ENG_SCORE
+            ,MATH_SCORE
+        FROM REACT_STUDENT
+    </select>
+
+    <!--학생 상세 조회-->
+    <select id="getDetail" resultMap="stu">
+        SELECT STU_NUM
+            , STU_NAME
+            , STU_AGE
+            , STU_TEL
+            , KOR_SCORE
+            , ENG_SCORE
+            , MATH_SCORE
+            , STU_ADDR
+        FROM REACT_STUDENT
+        WHERE STU_NUM=#{stuNum}
+    </select>
+
+    <!--학생 등록-->
+    <insert id="insert1">
+        INSERT INTO REACT_STUDENT (
+            STU_NAME
+            , STU_AGE
+            , STU_TEL
+            , STU_ADDR
+        )
+        VALUES (
+            #{stuName}
+            , #{stuAge}
+            , #{stuTel}
+            , #{stuAddr}
+        )
+
+    </insert>
+
+    <delete id="delete1">
+        DELETE FROM REACT_STUDENT
+        WHERE STU_NUM=#{stuNum}
+    </delete>
+
+    <!--점수 등록-->
+    <update id="inputScore">
+        UPDATE REACT_STUDENT
+        SET KOR_SCORE=#{korScore}
+            , ENG_SCORE=#{engScore}
+            , MATH_SCORE=#{mathScore}
+        WHERE STU_NUM=#{stuNum}
+    </update>
+	
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

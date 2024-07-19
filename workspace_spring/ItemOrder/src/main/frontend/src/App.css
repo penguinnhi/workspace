@@ -1,0 +1,17 @@
+.App {
+  /* border: 1px solid black; */
+  width: 800px;
+  text-align: center;
+  font-size: 1.3rem;
+  margin: 0 auto;
+} 
+
+body{
+  width: 100vw;
+}
+
+
+.header>ul{
+  display: flex;
+  gap: 100px;
+}

@@ -53,7 +53,20 @@ function Detail({board_list}){
         navigate(-1);
       }}>뒤로가기</button>
       <button type="button" onClick={(e)=>{
+        //삭제할 게시글의 글번호
+        //게시글 목록
+
+        board_list.forEach((board, i)=>{
+          if(board.boardNum==id){
+            board_list.splice(i,1);
+            //(n,m) n번째 요소부터 m개 지우겠음 그렇대 모르겟음
+            //안좋은  코드라네요 
+          }
+        }); //boardNum으로 찾아서 지운거임 
+        
+
         <Delete board_list={board_list}></Delete>
+
         navigate(`/`);
       }}>삭제</button>
     </div>

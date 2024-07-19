@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 해당 파일에 모든 쿼리문을 작성 -->
+<mapper namespace="itemOrder">
+    <resultMap id="item" type="com.green.ItemOrder.vo.ItemVO">
+        <result column="ITEM_NUM" property="itemNum"/>
+        <result column="ITEM_NAME" property="itemName"/>
+        <result column="ITEM_PRICE" property="itemPrice"/>
+        <result column="SELLER" property="seller"/>
+        <result column="ITEM_INTRO" property="itemIntro"/>
+        <result column="REG_DATE" property="regDate"/>
+    </resultMap>
+
+    <!--상품목록-->
+    <select id="getList" resultMap="item">
+        SELECT ITEM_NUM
+            ,ITEM_NAME
+            ,ITEM_PRICE
+            ,SELLER
+        FROM ITEM_INFO
+    </select>
+
+    <!--상품 상세 정보-->
+    <select id="getDetail" resultMap="item">
+        SELECT ITEM_NUM
+            ,ITEM_NAME
+            ,ITEM_PRICE
+            ,SELLER
+            ,REG_DATE
+            ,ITEM_INTRO
+        FROM ITEM_INFO
+        WHERE ITEM_NUM=#{itemNum}
+    </select>
+
+    <!--상품 등록-->
+    <insert id="insertItem">
+        INSERT INTO ITEM_INFO (
+            ITEM_NAME
+            ,ITEM_PRICE
+            ,SELLER
+            ,ITEM_INTRO
+        ) VALUES (
+            #{itemName}
+            ,#{itemPrice}
+            ,#{seller}
+            ,#{itemIntro}
+        )
+    </insert>
+
+    <update id="updateItem">
+        UPDATE ITEM_INFO (
+            ITEM_NUM
+            ,ITEM_NAME
+            ,ITEM_PRICE
+            ,SELLER
+            ,REG_DATE
+            ,ITEM_INTRO
+        ) VALUES (
+            #{itemNum}
+            ,#{itemName}
+            ,#{itemPrice}
+            ,#{seller}
+            ,#{regDate}
+            ,#{itemIntro}
+        )
+    </update>
+	
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
