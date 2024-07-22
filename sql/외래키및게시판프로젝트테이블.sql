@@ -1,0 +1,107 @@
+
+-- 데이터베이스에서 키 종류
+-- KEY : 데이터베이스에서 각 행을 구분하는 식별자를 의미
+-- SUPER KEY : 하나의 행을 식별할 수 있는 하나 이상의 컬럼 
+-- 후보키 CANDIDTAE KEY : 기본 키가 될 수 있는 후보
+-- 기본키 PRIMARY KEY : 후보키 중에 각 행을 구분짓기 위해 결정한 키
+-- 대체키 ALTERNATE KEY : 후보키 중에서 기본키를 제외한 키
+-- 외래키 FOREIGN KEY : 다른 테이블의 기본키로 사용되는 키 
+
+-- 로그인, 게시글, 댓글 관련 기능 포함 게시판 프로젝트 
+-- 테이블 : 회원정보 , 게시글정보, 댓글 정보 
+
+-- 회원정보 
+-- USER:일반회원 , ADMIN:관리자 
+CREATE TABLE BOARD_MEMBER (
+	MEM_ID VARCHAR(50) PRIMARY KEY
+	, MEM_PW VARCHAR(50) NOT NULL
+	, MEM_NAME VARCHAR(50) NOT NULL
+	, GENDER VARCHAR(10) 
+	, MEM_ROLE VARCHAR(20) DEFAULT 'USER'	
+);
+
+SELECT * FROM BOARD_MEMBER;
+
+-- 임시 회원데이터 
+INSERT INTO BOARD_MEMBER (
+	MEM_ID
+	, MEM_PW
+	, MEM_NAME
+	, GENDER
+	, MEM_ROLE
+) VALUES (
+	'눈을떠'
+	,'123'
+	,'소릴높여봐'
+	,'female'
+	,'USER'
+);
+INSERT INTO BOARD_MEMBER (
+	MEM_ID
+	, MEM_PW
+	, MEM_NAME
+	, GENDER
+	, MEM_ROLE
+) VALUES (
+	'admin'
+	,'321'
+	,'관리자'
+	,'female'
+	,'ADMIN'
+);
+
+
+-- 게시판 정보
+-- 로그인 한 회원만 게시글 작성 가능
+CREATE TABLE BOARD (
+	BOARD_NUM INT PRIMARY KEY AUTO_INCREMENT
+	,TITLE VARCHAR(50) NOT NULL
+	,CONTENT VARCHAR(100)
+	,MEM_ID VARCHAR(50) REFERENCES BOARD_MEMBER (MEM_ID) -- 외래키 
+	,CREATE_DATE DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+
+SELECT * FROM BOARD;
+
+-- 임시 게시글 데이터 
+INSERT INTO BOARD (TITLE, CONTENT, MEM_ID) 
+VALUES ('그래그리쉽지는않겠지','나를허락해준세상이란','눈을떠');
+INSERT INTO BOARD (TITLE, CONTENT, MEM_ID) 
+VALUES ('손쉽게다가오는지','편하고도감미로운공간은아냐','눈을떠');
+INSERT INTO BOARD (TITLE, CONTENT, MEM_ID) 
+VALUES ('그래도날아오를거야','어쩌구저쩌구꿈을담아','ADMIN');
+
+-- 댓글 정보 (회원만 가능)
+CREATE TABLE BOARD_REPLY (
+	REPLY_NUM INT PRIMARY KEY AUTO_INCREMENT
+	,BOARD_NUM INT REFERENCES BOARD (BOARD_NUM) 
+	,REPLY_CONTENT VARCHAR(50) NOT NULL
+	,MEM_ID VARCHAR(50) REFERENCES BOARD_MEMBER (MEM_ID)
+	,REPLY_DATE DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+
+SELECT * FROM BOARD_REPLY;
+DELETE FROM BOARD_REPLY;
+
+-- 임시 댓글 데이터
+INSERT INTO BOARD_REPLY (REPLY_CONTENT,MEM_ID,BOARD_NUM) VALUES ('아침에눈을뜨면','눈을떠',1);
+INSERT INTO BOARD_REPLY (REPLY_CONTENT,MEM_ID,BOARD_NUM) VALUES ('오늘은어떤사건이날부를까','눈을떠',1);
+INSERT INTO BOARD_REPLY (REPLY_CONTENT,MEM_ID,BOARD_NUM) VALUES ('모두들어렵다고모두들안된다고','ADMIN',1);
+INSERT INTO BOARD_REPLY (REPLY_CONTENT,MEM_ID,BOARD_NUM) VALUES ('지난밤이궁금해','ADMIN',2);
+
+-- 데이터 조회
+-- 회원의 이름이 눈을떠 인 회원이 작성한 게시글의 글번호, 제목, 작성자ID,작성자 이름 조회 
+-- 작성일 기준 최신글 정렬 내림차순
+SELECT BOARD.BOARD_NUM, BOARD.TITLE, BOARD.MEM_ID, BOARD_MEMBER.MEM_NAME
+FROM BOARD,BOARD_MEMBER
+WHERE BOARD_MEMBER.MEM_NAME='소릴높여봐' AND BOARD.MEM_ID=BOARD_MEMBER.MEM_ID
+ORDER BY CREATE_DATE DESC;
+
+-- 모든 글의 글 번호, 제목, 작성자 및 해당 글에 작성된 댓글의 댓글내용 , 댓글 작성자 댓글 작성일 조회
+-- 게시글 번호 기준 최신순으로 정렬 후 같은 게시글에 대한 댓글은 가장 최근에 달린 댓글 순으로 조회
+SELECT BOARD.BOARD_NUM, BOARD.TITLE, BOARD.MEM_ID, 
+	BOARD_REPLY.REPLY_CONTENT, BOARD_REPLY.MEM_ID, BOARD_REPLY.REPLY_DATE
+FROM BOARD,BOARD_REPLY
+WHERE BOARD.BOARD_NUM=BOARD_REPLY.BOARD_NUM
+ORDER BY BOARD.BOARD_NUM DESC, BOARD_REPLY.REPLY_DATE DESC;
+
