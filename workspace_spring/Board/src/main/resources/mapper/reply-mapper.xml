@@ -10,6 +10,38 @@
         <result column="REPLY_CONTENT" property="replyContent" />
         <result column="REPLY_DATE" property="replyDate" />
     </resultMap>
+
+    <!--댓글 조회-->
+    <select id="selectReply" resultMap="reply">
+        SELECT REPLY_NUM
+            , MEM_ID
+            ,BOARD_NUM
+            ,REPLY_CONTENT
+            ,REPLY_DATE
+        FROM BOARD_REPLY
+        WHERE BOARD_NUM=#{boardNum}
+    </select>
+
+    <!--댓글작성-->
+    <insert id="insertReply">
+        INSERT INTO BOARD_REPLY (
+            REPLY_CONTENT
+            , MEM_ID
+            , BOARD_NUM
+        ) VALUES (
+            #{replyContent}
+            ,#{memId}
+            ,#{boardNum}
+        )
+
+    </insert>
+
+    <!--댓글삭제-->
+    <delete id="delReply">
+        DELETE FROM BOARD_REPLY
+        WHERE REPLY_NUM=#{replyNum}
+    </delete>
+
 	
 </mapper>
 

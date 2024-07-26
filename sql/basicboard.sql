@@ -1,0 +1,17 @@
+
+
+-- 게시판 프로그램 테이블 생성
+
+CREATE TABLE BASIC_BOARD (
+	-- 컬럼명 데이터타입 [제약조건들] / DATETIME 날짜,시분초까지 나옴
+	BOARD_NUstudy_dbstudy_dbM INT PRIMARY KEY
+	, TITLE VARCHAR(50) NOT NULL
+	, WRITER VARCHAR(50) NOT NULL
+	, CONTENT VARCHAR(100) 
+	, CREATE_DATE DATETIME 
+	, READ_CNT INT 
+	
+	
+);
+
+SELECT * FROM BASIC_BOARD;

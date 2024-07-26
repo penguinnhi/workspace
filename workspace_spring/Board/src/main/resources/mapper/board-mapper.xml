@@ -22,6 +22,7 @@
     </select>
 
     <!--게시글 상세조회-->
+    <!--게시글 상세정보 조회 따로 댓글목록 따로-->
     <select id="getDetail" resultMap="board">
         SELECT BOARD_NUM
             ,TITLE
@@ -32,7 +33,48 @@
         WHERE BOARD_NUM=#{boardNum}
     </select>
 
+    <!--게시글 수정-->
+    <update id="updateBoard">
+        UPDATE BOARD
+        SET TITLE=#{title}
+            ,CONTENT=#{content}
+        WHERE BOARD_NUM=#{boardNum}
+    </update>
 
+    <!--게시글 등록-->
+    <insert id="insertBoard">
+        INSERT INTO BOARD (
+            TITLE
+            ,CONTENT
+            ,MEM_ID
+        )VALUES (
+            #{title}
+            ,#{content}
+            ,#{memId}
+        )
+    </insert>
+
+    <!--게시글삭제-->
+    <delete id="delBoard">
+        DELETE FROM BOARD
+        WHERE BOARD_NUM=#{boardNum}
+    </delete>
+
+    <!--게시글 상세정보보기, 댓글목록 같이 select 하기 -->
+<!--    <select id="selectAll">-->
+<!--        SELECT B.BOARD_NUM-->
+<!--            ,B.TITLE-->
+<!--            ,B.MEM_ID-->
+<!--            ,B.CONTENT-->
+<!--            ,B.CREATE_DATE-->
+<!--            ,R.REPLY_NUM-->
+<!--            ,R.MEM_ID-->
+<!--            ,R.REPLY_CONTENT-->
+<!--            ,R.REPLY_DATE-->
+<!--        FROM BOARD B,BOARD_REPLY R-->
+<!--        WHERE BOARD_NUM=#{boardNum}-->
+<!--        AND B.BOARD_NUM=R.BOARD_NUM-->
+<!--    </select>-->
 
 </mapper>
 

@@ -29,10 +29,39 @@
     <!--로그인-->
     <select id="logIn" resultMap="member">
         SELECT MEM_ID
-            ,MEM_PW
+            ,MEM_NAME
+            ,MEM_ROLE
         FROM BOARD_MEMBER
-        WHERE MEM_ID=#{memId}, MEM_PW=#{memPw}
+        WHERE MEM_ID=#{memId}
+        AND MEM_PW=#{memPw}
     </select>
+
+    <!--멤버리스트-->
+    <select id="memberList" resultMap="member">
+        SELECT MEM_ID
+            , MEM_PW
+            , MEM_NAME
+            , GENDER
+            , MEM_ROLE
+        FROM BOARD_MEMBER
+    </select>
+
+    <!--아이디 중복여부 확인-->
+    <select id="isDuplicated" resultType="String">
+        SELECT MEM_ID
+        FROM BOARD_MEMBER
+        WHERE MEM_ID=#{memId};
+    </select>
+
+    <!--작성자정보조회-->
+<!--    <select id="writer" resultMap="member">-->
+<!--        SELECT MEM_ID-->
+<!--            ,MEM_NAME-->
+<!--            ,MEM_ROLE-->
+<!--            -->
+<!--        FROM BOARD B, BOARD_MEMBER M-->
+<!--        WHERE MEM_ID=#{memId}-->
+<!--    </select>-->
 	
 </mapper>
 

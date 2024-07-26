@@ -3,9 +3,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
 @font-face {
-	font-family: 'Cafe24Supermagic-Bold-v1.0';
-	src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2307-2@1.0/Cafe24Supermagic-Bold-v1.0.woff2') format('woff2');
-	font-weight: 700;
+	font-family: 'KCC-Hanbit';
+	src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2403-2@1.0/KCC-Hanbit.woff2') format('woff2');
+	font-weight: normal;
 	font-style: normal;
 }
 
@@ -56,5 +56,5 @@ table {
 *{
   box-sizing: border-box;
 	/* font-family: "Noto Sans", sans-serif; */
-	font-family: "Cafe24Supermagic-Bold-v1.0", sans-serif; 
+	font-family: "KCC-Hanbit", sans-serif; 
 }

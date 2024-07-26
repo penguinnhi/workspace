@@ -1,6 +1,7 @@
 .container {
-  font-size: 1.3rem;
-  width: 80%;
+  /* font-size: 1.2rem; */
+  width: 100%;
+  padding: 20px;
 }
 
 body{
@@ -34,8 +35,22 @@ body{
 
 
 .regMem{
-  width: 100%;
-  text-align: center;
+  margin: 0 auto;
+  width: 50%;
+  /* border: 1px solid black; */
+  padding: 4px;
+  
+}
+
+.regMem input{
+  outline: none;
+  margin-top: 2px;
+  margin-bottom: 5px;
+}
+
+.regMem input:focus{
+  border: 2px solid #AAD7D9;
+  
 }
 
 .logIn{
@@ -53,6 +68,11 @@ button{
   border-radius: 3px;
   margin-left: 10px;
   color: white;
+  height: 20px;
+}
+
+button:disabled{
+  background-color: #dddddd;
 }
 
 button:hover{
@@ -71,5 +91,25 @@ button-small{
   font-size: 0.7rem;
   padding: 2px 6px;
 } */
+
+.write{
+  margin: 0 auto;
+}
+
+.title:hover{
+  cursor: pointer;
+}
+
+.replyContent{
+  /* border-bottom: 1px solid black; */
+  border-top: 1px solid black;
+  width: 300px;
+  margin: 10px 0px;
+}
+
+.replyDetail{
+  color: #dddddd;
+  font-size: 0.8rem;
+}
 
 
