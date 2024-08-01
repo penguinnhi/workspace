@@ -3,6 +3,14 @@
 
 <!-- 해당 파일에 모든 쿼리문을 작성 -->
 <mapper namespace="memberMapper">
+    <resultMap id="member" type="com.green.Board2.vo.MemberVO">
+        <result column="MEM_ID" property="memId"/>
+        <result column="MEM_PW" property="memPw"/>
+        <result column="MEM_NAME" property="memName"/>
+        <result column="GENDER" property="gender"/>
+        <result column="MEM_ROLE" property="memRole"/>
+
+    </resultMap>
 	
 </mapper>
 

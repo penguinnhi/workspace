@@ -99,5 +99,14 @@ spring (웹 개발, java html css
 <img src={process.env.PUBLIC_URL + 'header.jpg'}/>
 
 
+Required request body is missing:
+=>
+@RequiredBody(required = false) 조건부.. 뭐,, vo... 
+
+
+
+ ON DELETE CASCADE
+: 게시글 지우면 거기에 달린 댓글들도 같이 지울 수 있음 
+
 
 

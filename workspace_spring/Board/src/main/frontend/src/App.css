@@ -2,6 +2,7 @@
   /* font-size: 1.2rem; */
   width: 100%;
   padding: 20px;
+  margin: 0 auto;
 }
 
 body{
@@ -21,6 +22,7 @@ body{
 
 .content{
   margin-top: 30px;
+  margin: 0 auto;
 }
 
 .searchBox{
@@ -112,4 +114,18 @@ button-small{
   font-size: 0.8rem;
 }
 
+.board thead td{
+  background-color: #92C7CF ;
+  color: white;
+  padding: 7px;
+}
 
+.board tbody td{
+  padding: 2px;
+}
+
+.page-span{
+  display: inline-block;
+  padding: 0 5px;
+  cursor: pointer;
+}

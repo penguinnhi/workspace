@@ -11,6 +11,9 @@
         <result column="CREATE_DATE" property="CreateDate" />
     </resultMap>
 
+
+
+
     <!--게시글 목록 조회-->
     <select id="getList" resultMap="board">
         SELECT BOARD_NUM
@@ -18,7 +21,13 @@
             ,MEM_ID
             ,CREATE_DATE
         FROM BOARD
-        ORDER BY CREATE_DATE DESC
+<!--        <if test=' searchValue != null and !searchValue.equals("") '>
+            &lt;!&ndash;searchValue가 null이 아니거나
+            searchValue가 ""빈문자열이 아닐때&ndash;&gt;
+            WHERE ${searchType} LIKE CONCAT('%',#{searchValue},'%')
+        </if>-->
+        ORDER BY BOARD_NUM DESC
+        LIMIT #{displayPageCnt} OFFSET #{offset}
     </select>
 
     <!--게시글 상세조회-->
@@ -59,6 +68,22 @@
         DELETE FROM BOARD
         WHERE BOARD_NUM=#{boardNum}
     </delete>
+
+    <!--게시글 검색-->
+    <select id="search" resultMap="board">
+        SELECT BOARD_NUM
+            ,TITLE
+            ,MEM_ID
+            ,CREATE_DATE
+        FROM BOARD
+        WHERE ${searchType} LIKE CONCAT('%',#{searchValue},'%')
+    </select>
+
+    <!--전체 게시글 수 조회-->
+    <select id="getBoardCnt" resultType="int">
+        SELECT COUNT(BOARD_NUM)
+        FROM BOARD
+    </select>
 
     <!--게시글 상세정보보기, 댓글목록 같이 select 하기 -->
 <!--    <select id="selectAll">-->

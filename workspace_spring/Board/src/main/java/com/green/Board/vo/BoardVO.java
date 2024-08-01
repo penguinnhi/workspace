@@ -16,4 +16,7 @@ public class BoardVO {
     // 쿼리 작성 시 association 1:1
 //    private List<ReplyVO> replyList;
     // boardVO 하나는 replyVO 여러개를 가질 수 있다는 뜻
+
+
+
 }

@@ -31,5 +31,22 @@ public class ReplyController {
         replyService.delReply(replyNum);
     }
 
+    @DeleteMapping("/del/{boardNum}")
+    public void delBoardNum(@PathVariable("boardNum")int boardNum){
+        replyService.delReplyBoardNum(boardNum);
+    }
+
+//    @DeleteMapping("/deleteAll/{boardNum}")
+//    public void delAll(@PathVariable("boardNum")int boardNum){
+//        replyService.del(boardNum);
+//    }
+
+    @PutMapping("/update")
+    public void updateReply(@RequestBody ReplyVO replyVO){
+        replyService.updateReply(replyVO);
+    }
+
+
+
 
 }

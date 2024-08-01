@@ -1,12 +1,14 @@
 package com.green.Board.service;
 
 import com.green.Board.vo.BoardVO;
+import com.green.Board.vo.PageVO;
+import com.green.Board.vo.SearchVO;
 
 import java.util.List;
 
 public interface BoardService {
 
-    List<BoardVO> getList();
+    List<BoardVO> getList(PageVO pageVO);
 
     BoardVO getDetail(int boardNum);
 
@@ -18,6 +20,7 @@ public interface BoardService {
 
     String selectAll(int boardNum);
 
+    int getBoardCnt();
 
 
 

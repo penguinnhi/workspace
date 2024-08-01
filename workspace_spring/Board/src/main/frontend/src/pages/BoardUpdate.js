@@ -1,11 +1,12 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom';
+import BoardDetail from './BoardDetail';
 
 const BoardUpdate = () => {
 
   const navigate=useNavigate();
-  const [boardList,setBoardList]=useState([]);
+  const [boardList,setBoardList]=useState({});
   // const [board,setBoard]=useState({});
 
   const {boardNum} = useParams();
@@ -56,13 +57,13 @@ const BoardUpdate = () => {
             <tr>
               <td>제목</td>
               <td colSpan={3}>
-                <input type='text' name='title' onChange={(e)=>{changeBoard1(e)}}></input>
+                <input type='text' name='title' defaultValue={boardList.title} onChange={(e)=>{changeBoard1(e)}}></input>
               </td>
             </tr>
             <tr>
               <td>내용</td>
               <td colSpan={3}>
-                <textarea name='content' onChange={(e)=>{changeBoard1(e)}}></textarea>
+                <textarea name='content' defaultValue={boardList.content} onChange={(e)=>{changeBoard1(e)}}></textarea>
               </td>
             </tr>
           </tbody>

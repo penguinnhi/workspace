@@ -7,9 +7,13 @@ const ReplyWrite = ({loginInfo}) => {
   const navigate=useNavigate();
   const {boardNum}=useParams();
   const {replyNum}=useParams();
+  const {cnt}=useParams();
+  const {setCnt}=useParams();
   //const [isShow,setIsShow]=useState(false);
+  
 
   const [reply,setReply]=useState({
+    replyContent:'',
     boardNum : boardNum,
     memId : loginInfo.memId
   })
@@ -26,6 +30,7 @@ const ReplyWrite = ({loginInfo}) => {
     })
 
   },[]);
+
 
   function changeReply(e){
     setReply({
@@ -45,6 +50,13 @@ const ReplyWrite = ({loginInfo}) => {
       //   )
       // })
       // setReplyList([...re])
+      alert('ㅇㅇ')
+      document.querySelector('textarea').value='';
+
+      // 추가된 댓글이 화면에 바로 보이게 코드를 작성
+      setCnt(cnt+1);
+      
+
 
     })
     .catch((error)=>{

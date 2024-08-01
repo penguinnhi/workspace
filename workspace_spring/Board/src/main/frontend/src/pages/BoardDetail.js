@@ -5,17 +5,41 @@ import ReplyContent from './ReplyContent';
 import ReplyWrite from './ReplyWrite';
 //import { getBoardList } from '../apis/boardApi';
 import { getBoardDetail } from '../apis/boardApi';
+import { getReplyList } from '../apis/replyApi';
 
 const BoardDetail = ({loginInfo}) => {
+  //console.log(loginInfo.memId)
+  // console.log('실행')
+  const {boardNum} = useParams();
+  //const {setLoginInfo}=useParams();
+  
+  //const [cnt,setCnt]=useState(0)
   const [isShow,setIsShow]=useState(false);
   const clickReply=()=>{
     setIsShow(!isShow)
   }
 
+
   const navigate=useNavigate();
   const [boardList,setBoardList]=useState([]);
   // const [replyList,setreplyList]=useState([]);
-  const {boardNum} = useParams();
+
+
+
+
+  const [replyList,setReplyList]=useState([])
+
+  useEffect(()=>{
+    getReplyList(boardNum)
+    .then((res)=>{
+      setReplyList(res.data)
+    })
+    .catch((error)=>{
+      console.log(error)
+    })
+
+  },[]);
+
   
   useEffect(()=>{
     axios
@@ -23,6 +47,7 @@ const BoardDetail = ({loginInfo}) => {
     .then((res)=>{setBoardList(res.data)})
     .catch((error)=>{console.log(error)})
   },[]);
+
 
   //db에서 데이터 조회 여러개 동시에 실행하기
   // useEffect(()=>{
@@ -36,19 +61,76 @@ const BoardDetail = ({loginInfo}) => {
   // },[]);
 
 
+  const [reply,setReply]=useState({
+    replyContent:'',
+    boardNum : boardNum,
+    memId : loginInfo.memId
+  })
+  //console.log(reply.memId)
 
+
+  //삭제하려는 게시글에 달린 댓글 먼저 삭제 
   function delBoard(){
+    axios
+    .delete(`/reply/del/${boardNum}`)
+    .then((res)=>{
+      
+    })
+    .catch((error)=>{
+      alert('댓오류')
+      console.log(error)})
+
+
     axios
     .delete(`/board/delBoard/${boardNum}`)
     .then((res)=>{
       alert('게시글 삭제됨')
       navigate('/')
+    })
+    .catch((error)=>{
+      alert('글오류')
+      console.log(error)
+    })
+  }
+
+
+  function changeReply(e){
+    setReply({
+      ...reply,
+      [e.target.name] : e.target.value
+    })
+  }
+
+  //console.log(reply.memId)
+
+
+  function insertReply(){
+    axios
+    .post('/reply/insert',reply)
+    .then((res)=>{
+      // setReply([...reply])
+      // const re=replyList.filter((reply)=>{
+      //   return(
+      //     reply.replyNum=replyNum
+      //   )
+      // })
+      // setReplyList([...re])
+      alert('ㅇㅇ')
+      //document.querySelector('textarea').value='';
+
+      // 추가된 댓글이 화면에 바로 보이게 코드를 작성
+      // setReply({
+      //   ...reply,
+      //   replyContent:''
+      // })
 
     })
     .catch((error)=>{
-      alert('삭제오류')
-      console.log(error)})
+      console.log(error)
+    })
   }
+
+
 
   return (
     <div>
@@ -95,7 +177,12 @@ const BoardDetail = ({loginInfo}) => {
      </div>
 
       {
-        isShow ? <ReplyWrite loginInfo={loginInfo} boardNum={boardNum}></ReplyWrite> : null
+        isShow ? 
+        <div>
+          <textarea value={reply.replyContent} name='replyContent' onChange={(e)=>{changeReply(e)}}></textarea>
+          <button type='button' onClick={(e)=>{insertReply()}}>등록</button>
+        </div>
+        : null
       }
 
      <div className='replyContent'>

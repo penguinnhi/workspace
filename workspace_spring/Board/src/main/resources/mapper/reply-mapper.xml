@@ -42,6 +42,17 @@
         WHERE REPLY_NUM=#{replyNum}
     </delete>
 
+    <delete id="delBoardNum">
+        DELETE FROM BOARD_REPLY
+        WHERE BOARD_NUM=#{boardNum}
+    </delete>
+
+    <update id="updateReply">
+        UPDATE BOARD_REPLY
+        SET REPLY_CONTENT=#{replyContent}
+        WHERE REPLY_NUM=#{replyNum}
+    </update>
+
 	
 </mapper>
 

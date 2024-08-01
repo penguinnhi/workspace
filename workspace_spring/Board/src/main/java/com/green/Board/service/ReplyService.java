@@ -11,4 +11,11 @@ public interface ReplyService {
     void insertReply(ReplyVO replyVO);
 
     void delReply(int replyNum);
+
+    void delReplyBoardNum(int boardNum);
+
+//    void del(int boardNum);
+
+    void updateReply(ReplyVO replyVO);
+
 }

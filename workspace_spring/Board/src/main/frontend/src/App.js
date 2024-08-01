@@ -16,13 +16,15 @@ function App() {
 
   const [loginInfo,setLoginInfo]=useState({});
 
-  useEffect(()=>{
-    const loginDataString=window.sessionStorage.getItem('memInfo');
+  const loginDataString=window.sessionStorage.getItem('memInfo');
 
-    if(loginDataString != null){
-      const loginData=JSON.parse(loginDataString)
+  useEffect(()=>{
+    
+    if(window.sessionStorage.getItem('memInfo') != null){
+      const loginData=JSON.parse(window.sessionStorage.getItem('memInfo'))
       setLoginInfo(loginData);
     }
+
   },[]);
   
   function logOut(){
@@ -65,12 +67,13 @@ function App() {
       </div>
 
       <div className='content'>
+
         <Routes>
           <Route path='/' element={<BoardList1 loginInfo={loginInfo}></BoardList1>}></Route>
           <Route path='/regMember' element={<RegMember ></RegMember>}></Route>
           <Route path='/logIn' element={<LogIn setLoginInfo={setLoginInfo}></LogIn>}></Route>
           <Route path='/boardWrite'element={<BoardWrite loginInfo={loginInfo}></BoardWrite>}></Route>
-          <Route path='/bDetail/:boardNum' element={<BoardDetail loginInfo={loginInfo}></BoardDetail>}></Route>
+          <Route path='/bDetail/:boardNum' element={<BoardDetail loginInfo={loginInfo} setLoginInfo={setLoginInfo}></BoardDetail>}></Route>
           <Route path='/boardUpdate/:boardNum' element={<BoardUpdate ></BoardUpdate>}></Route>
 
 
