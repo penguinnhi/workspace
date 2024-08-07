@@ -44,6 +44,15 @@
         FROM SHOP_MEMBER2
         WHERE MEM_ID=#{memId}
     </select>
+
+    <select id="login" resultMap="member">
+        SELECT MEM_ID
+            ,MEM_NAME
+            ,MEM_ROLE
+        FROM SHOP_MEMBER2
+        WHERE MEM_ID=#{memId}
+            ,MEM_PW=#{memPw}
+    </select>
 	
 </mapper>
 

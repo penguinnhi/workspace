@@ -7,4 +7,6 @@ public interface MemberService {
     void insertMem(MemberVO memberVO);
 
     boolean isDup(String memId);
+
+    MemberVO goLogin(MemberVO memberVO);
 }

@@ -1,0 +1,6 @@
+SELECT EMPNO, ENAME, SAL
+FROM emp
+WHERE SAL > AVG(SAL);
+이 쿼리는 잘못된 문법입니다. SQL에서는 AVG(SAL) 같은 집계 함수는 GROUP BY 절 없이 직접 WHERE 절에서 사용할 수 없습니다. 집계 함수는 일반적으로 SELECT 절이나 HAVING 절에서 사용되며, WHERE 절에서는 사용되지 않습니다.
+
+WHERE 절에서는 개별 행에 대한 조건을 지정할 수 있지만, AVG(SAL)은 집계 함수이므로 개별 행에 대해 적용할 수 없습니다.

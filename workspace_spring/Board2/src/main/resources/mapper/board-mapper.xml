@@ -19,7 +19,9 @@
             ,CREATE_DATE
         FROM BOARD2
     </select>
-	
+
+
+
 </mapper>
 
 

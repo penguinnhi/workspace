@@ -1,6 +1,8 @@
 package com.green.Shop.member.vo;
 
+import lombok.Data;
 
+@Data
 public class MemberVO {
     private String memId;
     private String memPw;

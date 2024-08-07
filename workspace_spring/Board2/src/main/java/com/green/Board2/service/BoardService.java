@@ -7,4 +7,6 @@ import java.util.List;
 public interface BoardService {
 
     List<BoardVO> getAllList();
+
+
 }

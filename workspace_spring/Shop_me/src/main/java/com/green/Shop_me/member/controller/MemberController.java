@@ -24,6 +24,13 @@ public class MemberController {
         return memberService.isDup(inputId);
     }
 
+    @PutMapping("/goLogin")
+    public MemberVO goLogin(@RequestBody MemberVO memberVO){
+        return memberService.goLogin(memberVO);
+    }
+
+
+
 
 
 }

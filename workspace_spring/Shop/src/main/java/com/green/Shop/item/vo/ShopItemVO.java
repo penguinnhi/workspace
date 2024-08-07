@@ -1,5 +1,8 @@
 package com.green.Shop.item.vo;
 
+import lombok.Data;
+
+@Data
 public class ShopItemVO {
     private int itemCode;
     private String itemName;
@@ -8,4 +11,5 @@ public class ShopItemVO {
     private int itemStock;
     private String itemStatus;
     private int cateCode;
+    private CategoryVO categoryVO;
 }

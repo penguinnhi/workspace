@@ -1,0 +1,26 @@
+package com.green.Shop.admin.service;
+
+import com.green.Shop.item.vo.CategoryVO;
+import com.green.Shop.item.vo.ShopItemVO;
+import org.mybatis.spring.SqlSessionTemplate;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
+@Service("adminService")
+public class AdminServiceImpl implements AdminService{
+    @Autowired
+    private SqlSessionTemplate sqlSession;
+
+
+    @Override
+    public void insertItem(ShopItemVO itemVO) {
+        sqlSession.insert("adminMapper.insertItem",itemVO);
+    }
+
+    @Override
+    public List<CategoryVO> getCate() {
+        return sqlSession.selectList("adminMapper.selectAllCate");
+    }
+}

@@ -1,6 +1,9 @@
 package com.green.Shop.item.vo;
 
-public class ItemCategoryVO {
+import lombok.Data;
+
+@Data
+public class CategoryVO {
     private int cateCode;
     private String cateName;
 }

@@ -4,13 +4,34 @@
 <!-- 해당 파일에 모든 쿼리문을 작성 -->
 <mapper namespace="memberMapper">
     <resultMap id="member" type="com.green.Board2.vo.MemberVO">
-        <result column="MEM_ID" property="memId"/>
+        <id column="MEM_ID" property="memId"/>
         <result column="MEM_PW" property="memPw"/>
         <result column="MEM_NAME" property="memName"/>
         <result column="GENDER" property="gender"/>
         <result column="MEM_ROLE" property="memRole"/>
 
     </resultMap>
+
+    <insert id="joinMem">
+        INSERT INTO BOARD_MEMBER2 (
+            MEM_ID
+            ,MEM_PW
+            ,MEM_NAME
+            ,GENDER
+        ) VALUES (
+            #{memId}
+            ,#{memPw}
+            ,#{memName}
+            ,#{gender}
+        )
+    </insert>
+
+    <!--아이디 중복 확인-->
+    <select id="isDuplicated" resultType="String">
+        SELECT MEM_ID
+        FROM BOARD_MEMBER2
+        WHERE MEM_ID=#{memId}
+    </select>
 	
 </mapper>
 

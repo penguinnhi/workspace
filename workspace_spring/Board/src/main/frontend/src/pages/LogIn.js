@@ -32,11 +32,11 @@ const LogIn = ({setLoginInfo}) => {
   //window.sessionStorage.setItem('age',200);
 
 
-  const m = {
-    stuNum : 1,
-    stuName : 'hihi',
-    score : 100
-  };
+  // const m = {
+  //   stuNum : 1,
+  //   stuName : 'hihi',
+  //   score : 100
+  // };
 
   //JSON.stringify(); // 객체를 json타입으로 변환 (객체를 문자로 변환 )
   //JSON.parse(); // json을 객체로 바꾸기
