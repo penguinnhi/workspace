@@ -109,6 +109,12 @@ body{
   
 }
 
+.category{
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+}
+
 
 .item-header{
   background-color: #D3E4CD;

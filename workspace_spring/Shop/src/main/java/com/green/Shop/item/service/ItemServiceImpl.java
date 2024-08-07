@@ -15,8 +15,8 @@ public class ItemServiceImpl implements ItemService{
 
 
     @Override
-    public List<ShopItemVO> getItemList() {
-        return sqlSession.selectList("itemMapper.getItemList");
+    public List<ShopItemVO> getItemList(int cateCode) {
+        return sqlSession.selectList("itemMapper.getItemList",cateCode);
     }
 
     @Override

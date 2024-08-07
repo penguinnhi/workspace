@@ -30,6 +30,7 @@
             ,CATE_NAME
         FROM SHOP_ITEM I,ITEM_CATEGORY C
         WHERE I.CATE_CODE=C.CATE_CODE
+        AND I.CATE_CODE=#{cateCode}
     </select>
 
     <!--아이템 상세정보-->

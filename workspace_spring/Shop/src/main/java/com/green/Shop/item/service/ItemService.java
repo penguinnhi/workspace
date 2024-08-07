@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface ItemService {
 
-    List<ShopItemVO> getItemList();
+    List<ShopItemVO> getItemList(int cateCode);
 
     ShopItemVO getDetail(int itemCode);
 
