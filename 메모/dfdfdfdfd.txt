@@ -110,3 +110,4 @@ Required request body is missing:
 
 
 
+const fileConfig={headers : {'Content-Type':'multipart/form-data'}}

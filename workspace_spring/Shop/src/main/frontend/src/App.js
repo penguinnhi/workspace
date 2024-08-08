@@ -9,6 +9,7 @@ import ItemList from './pages/user/ItemList';
 import ItemReg from './pages/admin/ItemReg';
 import { useEffect, useState } from 'react';
 import ItemDetail from './pages/user/ItemDetail';
+import CateList from './pages/user/CateList';
 
 function App() {
   const navigate=useNavigate();
@@ -113,6 +114,8 @@ function App() {
         <Route path='/' element={<UserLayout></UserLayout>}>
           {/* 상푸 목록 화면 */}
           <Route path='/itemList' element={<ItemList loginInfo={loginInfo}/>}/>
+          {/* 카테고리별  */}
+          <Route path='/cateList' element={<CateList/>}/>
           {/* 상세페이지 */}
           <Route path='/detail' element={<ItemDetail/>}/>
           {/* 회원 가입 페이지 */}

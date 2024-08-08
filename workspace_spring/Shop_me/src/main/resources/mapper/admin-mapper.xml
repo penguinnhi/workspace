@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 해당 파일에 모든 쿼리문을 작성 -->
+<mapper namespace="adminMapper">
+
+
+
+    <!--카테 목록-->
+    <select id="getCateList" resultMap="itemMapper.cate">
+        SELECT CATE_CODE
+            ,CATE_NAME
+        FROM ITEM_CATEGORY2
+        ORDER BY CATE_CODE
+    </select>
+
+    <!--상품 등록-->
+    <insert id="insertItem">
+        INSERT INTO SHOP_ITEM2 (
+            ITEM_CODE
+            ,ITEM_NAME
+            ,ITEM_PRICE
+            ,ITEM_INTRO
+            ,CATE_CODE
+        ) VALUES (
+            #{itemCode}
+            ,#{itemName}
+            ,#{itemPrice}
+            ,#{itemIntro}
+            ,#{cateCode}
+        )
+    </insert>
+
+
+
+	
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

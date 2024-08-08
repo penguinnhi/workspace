@@ -16,7 +16,7 @@ const UserLayout = () => {
   },[])
 
   function goCateDetail(cateNum){
-    navigate(``)
+    navigate(`/`)
   }
 
   return (
@@ -24,7 +24,7 @@ const UserLayout = () => {
     <div>
       <div>유저 전용 페이지입니다 👾</div>
       <ul className='category'>
-        <li>전체상품</li>
+        <li onClick={(e)=>{navigate('/itemList')}}>전체상품</li>
         {
           cateList.map((cate,i)=>{
             return(

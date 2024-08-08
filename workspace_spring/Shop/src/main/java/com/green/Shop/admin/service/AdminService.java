@@ -11,4 +11,9 @@ public interface AdminService {
 
     List<CategoryVO> getCate();
 
+    void insertImgs(ShopItemVO itemVO);
+
+    //다음에 들어갈 item_code 조회
+    int getNextItemCode();
+
 }

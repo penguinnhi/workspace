@@ -27,8 +27,6 @@ const ItemList = ({loginInfo}) => {
   }
 
 
-  // 카테고리별 리스트가 나오는거같은데 
-
 
   return (
     <div className='join-div itemList'>

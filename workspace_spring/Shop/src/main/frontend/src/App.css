@@ -115,6 +115,10 @@ body{
   gap: 50px;
 }
 
+.category li{
+  cursor: pointer;
+}
+
 
 .item-header{
   background-color: #D3E4CD;

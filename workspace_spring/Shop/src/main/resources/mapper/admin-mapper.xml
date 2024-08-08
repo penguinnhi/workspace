@@ -31,6 +31,29 @@
         )
     </insert>
 
+    <!--상품 이미지 등록-->
+    <insert id="insertImgs">
+        INSERT INTO ITEM_IMG (
+            ORIGIN_FILE_NAME
+            ,ATTACHED_FILE_NAME
+            ,IS_MAIN
+            ,ITEM_CODE
+        ) VALUES
+        <foreach collection="imgList" item="img" separator=",">
+        (
+            #{img.originFileName}
+            ,#{img.attachedFileName}
+            ,#{img.isMain}
+            ,#{itemCode}
+        )</foreach>
+    </insert>
+
+    <!--다음에 들어갈..item_code 조회-->
+    <select id="getNextItemCode" resultType="int">
+        SELECT MAX(ITEM_CODE) + 1
+        FROM SHOP_ITEM
+    </select>
+
 
 </mapper>
 

@@ -18,14 +18,19 @@ public class ItemController {
     @Resource(name="itemService")
     private ItemService itemService;
 
-    @GetMapping("/list/{cateCode}")
-    public List<ShopItemVO> getAllList(@PathVariable("cateCode")int cateCode){
-        return itemService.getItemList(cateCode);
+    @GetMapping("/list")
+    public List<ShopItemVO> getAllList(){
+        return itemService.getItemList();
     }
 
     @GetMapping("/detail/{itemCode}")
     public ShopItemVO getDetail(@PathVariable("itemCode")int itemCode){
         return itemService.getDetail(itemCode);
+    }
+
+    @GetMapping("/cateList/{cateCode}")
+    public List<ShopItemVO> getCateList(@PathVariable("cateCode")int cateCode){
+        return itemService.getCateList(cateCode);
     }
 
 }

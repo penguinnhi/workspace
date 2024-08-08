@@ -21,7 +21,7 @@
 
     <!-- 카테고리와 연결되는 resultmap -->
 
-    <!--아이템 리스트-->
+    <!--전체 아이템 리스트-->
     <select id="getItemList" resultMap="item">
         SELECT ITEM_CODE
             ,ITEM_NAME
@@ -30,8 +30,21 @@
             ,CATE_NAME
         FROM SHOP_ITEM I,ITEM_CATEGORY C
         WHERE I.CATE_CODE=C.CATE_CODE
+        ORDER BY ITEM_CODE
+    </select>
+
+
+    <select id="getCateList" resultMap="item">
+        SELECT ITEM_CODE
+        ,ITEM_NAME
+        ,ITEM_PRICE
+        ,ITEM_STATUS
+        ,CATE_NAME
+        FROM SHOP_ITEM I,ITEM_CATEGORY C
+        WHERE I.CATE_CODE=C.CATE_CODE
         AND I.CATE_CODE=#{cateCode}
     </select>
+
 
     <!--아이템 상세정보-->
     <select id="itemDetail" resultMap="item">
