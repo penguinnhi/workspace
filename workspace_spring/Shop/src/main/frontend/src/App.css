@@ -101,6 +101,34 @@ body{
   
 }
 
+.join-div.itemList{
+  /* border: 1px solid black; */
+  width: 90%;
+
+  display: grid;
+  /* 컬럼의 크기와 개수 */
+  grid-template-columns: repeat(5,1fr);
+  gap: 20px;
+}
+
+.join-div.itemList > .item-div> img{
+  /* border: 1px solid blue; */
+  width: 100%;
+  height: 150px;
+}
+
+.join-div.itemList > .item-div> h4{
+  padding: 5px 3px;
+  cursor: pointer;
+  text-align: left;
+}
+
+.join-div.itemList > .item-div> p{
+  text-align: left;
+  padding: 3px;
+
+}
+
 
 .join-div.itemList table{
   /* border: 1px solid black; */

@@ -115,9 +115,9 @@ function App() {
           {/* 상푸 목록 화면 */}
           <Route path='/itemList' element={<ItemList loginInfo={loginInfo}/>}/>
           {/* 카테고리별  */}
-          <Route path='/cateList' element={<CateList/>}/>
+          <Route path='/cateList/:cateNum' element={<CateList/>}/>
           {/* 상세페이지 */}
-          <Route path='/detail' element={<ItemDetail/>}/>
+          <Route path='/detail/:itemCode' element={<ItemDetail/>}/>
           {/* 회원 가입 페이지 */}
           <Route path='/join' element={<Join/>}/>
           {/* 로그인 페이지 */}

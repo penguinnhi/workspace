@@ -13,6 +13,8 @@ public class ShopItemVO {
     private int itemStock;
     private String itemStatus;
     private int cateCode;
+//    private String attachedFileName;
+    private ImgVO imgVO;
     private CategoryVO categoryVO;
     private List<ImgVO> imgList;
 }

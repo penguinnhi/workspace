@@ -16,7 +16,7 @@ const UserLayout = () => {
   },[])
 
   function goCateDetail(cateNum){
-    navigate(`/`)
+    navigate(`/cateList/${cateNum}`)
   }
 
   return (

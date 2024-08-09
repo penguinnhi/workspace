@@ -8,6 +8,14 @@
         <result column="CATE_NAME" property="cateName"/>
     </resultMap>
 
+    <resultMap id="img" type="com.green.Shop.item.vo.ImgVO">
+        <id column="IMG_CODE" property="imgCode"/>
+        <result column="ORIGIN_FILE_NAME" property="originFileName"/>
+        <result column="ATTACHED_FILE_NAME" property="attachedFileName"/>
+        <result column="IS_MAIN" property="isMain"/>
+        <result column="ITEM_CODE" property="itemCode"/>
+    </resultMap>
+
     <resultMap id="item" type="com.green.Shop.item.vo.ShopItemVO">
         <id column="ITEM_CODE" property="itemCode"/>
         <result column="ITEM_NAME" property="itemName"/>
@@ -16,21 +24,35 @@
         <result column="ITEM_STOCK" property="itemStock"/>
         <result column="ITEM_STATUS" property="itemStatus"/>
         <result column="CATE_CODE" property="cateCode"/>
+<!--        <result column="ATTACHED_FILE_NAME" property="attachedFileName"/>-->
         <association property="categoryVO" resultMap="category"/>
+        <collection property="imgList" resultMap="img"/>
     </resultMap>
+
+
 
     <!-- 카테고리와 연결되는 resultmap -->
 
     <!--전체 아이템 리스트-->
+    <!--조회 시 조인, 서브쿼리가 사용되면 조회한 데이터를
+    자바로 가져오기 위해 정의한
+    resultMap에 association 혹은 collection 추가-->
+    <!--둘 중에 무엇을 쓸지는 테이블의 관계가
+    1:1관계인지 1:n관계인지에 따라 결정-->
+    <!--어떤 ㅔ이블을 기준으로 삼는지에 따라 달라짐-->
+
+    <!--상품 테이블을 기준으로 이미지 테이블과 1:n관계-->
+    <!--이렇게 결정한 테이블간의 관계를 vo에 먼저 적용-->
     <select id="getItemList" resultMap="item">
-        SELECT ITEM_CODE
+        SELECT I.ITEM_CODE
             ,ITEM_NAME
             ,ITEM_PRICE
             ,ITEM_STATUS
-            ,CATE_NAME
-        FROM SHOP_ITEM I,ITEM_CATEGORY C
-        WHERE I.CATE_CODE=C.CATE_CODE
-        ORDER BY ITEM_CODE
+            ,ATTACHED_FILE_NAME
+        FROM SHOP_ITEM I,ITEM_IMG IMG
+        WHERE I.ITEM_CODE=IMG.ITEM_CODE
+        AND IS_MAIN='Y'
+        ORDER BY ITEM_CODE DESC
     </select>
 
 

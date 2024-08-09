@@ -25,6 +25,7 @@ public class ItemController {
 
     @GetMapping("/detail/{itemCode}")
     public ShopItemVO getDetail(@PathVariable("itemCode")int itemCode){
+        System.out.println(itemCode);
         return itemService.getDetail(itemCode);
     }
 
