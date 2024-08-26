@@ -99,7 +99,7 @@ const LoginForm = ({setLoginInfo,loginInfo}) => {
         return
       }
       else if(loginInfo.memRole=='ADMIN'){
-        navigate('/admin/itemReg')
+        navigate('/admin/itemManage')
         return
       }
 

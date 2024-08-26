@@ -14,6 +14,18 @@
     </select>
 
 
+    <!--
+        일반적으로 insert 쿼리 진행 시 pk 컬럼의 값을
+        테이블 생성 시 선언한 AUTO_INCREMENT 설정에 의해
+        굳이 데이터를 넣지 않고 자동으로 1씩 증가한 값을 삽입
+        하지만 insert의 경우 ITEM_CODE로 들어간 동일한 값을
+        ITEM_IMG 테이블의 ITEM_CODE 컬럼에 저장해야 한다.
+        그래서 자동으로 증가한 값을 저장하게 되면
+        우리가 자동으로 저장된 값이 어떤 값인지 알 수 없게 됨
+        그렇기 때문에 자동으로 증가된 값을 넣지않고
+        우리가 정의한 데이터를 직접 INSERT 하도록 코드를 구현
+        ㄴ 먼소린지 모르겠음
+     -->
     <!-- 상품 등록 쿼리 -->
     <insert id="insertItem">
         INSERT INTO SHOP_ITEM (
@@ -49,6 +61,10 @@
     </insert>
 
     <!--다음에 들어갈..item_code 조회-->
+    <!--
+        MAX(ITEM_CODE) ITEM_CODE의 가장 큰 값 +1
+        해서 다음 ITEM_CODE 찾는거
+    -->
     <select id="getNextItemCode" resultType="int">
         SELECT IFNULL(MAX(ITEM_CODE), 0) + 1
         FROM SHOP_ITEM

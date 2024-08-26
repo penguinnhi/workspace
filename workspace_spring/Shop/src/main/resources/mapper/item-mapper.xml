@@ -57,31 +57,37 @@
 
 
     <select id="getCateList" resultMap="item">
-        SELECT ITEM_CODE
-        ,ITEM_NAME
-        ,ITEM_PRICE
-        ,ITEM_STATUS
-        ,CATE_NAME
-        FROM SHOP_ITEM I,ITEM_CATEGORY C
+        SELECT C.CATE_CODE
+            ,I.ITEM_CODE
+            ,ITEM_NAME
+            ,ITEM_PRICE
+            ,ITEM_STATUS
+            ,CATE_NAME
+            ,ATTACHED_FILE_NAME
+        FROM SHOP_ITEM I,ITEM_CATEGORY C,ITEM_IMG IMG
         WHERE I.CATE_CODE=C.CATE_CODE
         AND I.CATE_CODE=#{cateCode}
+        AND I.ITEM_CODE=IMG.ITEM_CODE
+        AND IS_MAIN='Y'
+        ORDER BY ITEM_CODE DESC
     </select>
 
 
     <!--아이템 상세정보-->
     <select id="itemDetail" resultMap="item">
-        SELECT ITEM_CODE
+        SELECT I.ITEM_CODE
             ,ITEM_NAME
             ,ITEM_PRICE
             ,ITEM_INTRO
+            ,ITEM_STOCK
             ,ITEM_STATUS
             ,CATE_NAME
-        FROM SHOP_ITEM I,ITEM_CATEGORY C
+            ,ATTACHED_FILE_NAME
+        FROM SHOP_ITEM I,ITEM_CATEGORY C,ITEM_IMG IMG
         WHERE I.CATE_CODE=C.CATE_CODE
-        AND ITEM_CODE=#{itemCode}
+        AND I.ITEM_CODE=IMG.ITEM_CODE
+        AND I.ITEM_CODE=#{itemCode}
     </select>
-
-
 
 </mapper>
 

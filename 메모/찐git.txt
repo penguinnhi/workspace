@@ -1,0 +1,41 @@
+//--- 프로젝트 최초 깃허브에 올리기 ( 팀장
+1. dev 폴더에 프로젝트 생성
+2. 깃허브에 프로젝트를 공유할 원격 저장소 생성
+ 원격 저장소의 이름은 프로젝트명도 동일하게 작성 권장 
+3. 인텔리제이로 프로젝트 실행 -> 기본적인 세팅 완료 
+	ㄴ 다
+4. 세팅된 프로젝트를 깃허브에 등록
+ git init > git branch -M main > git remote add origin url
+> (LF오류시 git config --global core.autocrlf true)
+> git add . > git commit -m "메시지" > git push origin main
+5. 원격 저장소에 팀원들 초대 
+
+
+
+//--- 팀장이 올린 프로젝트 최초 내려받기 ( 팀원
+1. 프로젝트를 받을 디렉토리dev 에 git bash 실행
+2. 프로젝트 내려받기 
+ git clone 팀장의 원격저장소 url
+
+//--- github 연동 후 작업 순서
+1. 본인이 작업할 개인 브랜치 생성 git branch 브랜치명(이니셜)
+2. 생성한 개인 브랜치로 이동 git checkout 이동할 브랜치명
+
+3. 코딩한다. 
+4. 개인 브랜치에서 작업 후에는 add/commit 실행 git commit -m ""
+(파일을 올릴 때는 반드시 내려받기 후에 올리기)
+5. main 브랜치로 이동 git checkout main
+5-1. 다른 팀원이 올린 파일을 먼저 내려받기 git pull origin main
+	* 위의 명령어 실행 시 이상한 화면으로 이동 -> :exit 엔터
+6. main 브랜치로 개인 브랜치에서 작업한 내용을 병합 git merge 병합할 브랜치명 
+7. 이상이 없으면 main 브랜치를 push 공유 git push origin main 
+8. 다음 작업을 하기위해 개인 브랜치로 이동
+9. 다른 팀원들이 공유한 내용을 개인브랜치에 받아 최신화
+ git merge main
+ (같은 브랜치 pull 다른 브랜치 merge 
+10. 최신화된 개인브랜치를 공유한다
+ git push origin 개인브랜치명
+
+3~끝까지 반복 
+
+ 

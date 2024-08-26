@@ -105,7 +105,7 @@ const ItemReg = () => {
   
   return (
 
-    <div>
+    <div className='container'>
       
       <div className='join-div'>
         <div>

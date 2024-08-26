@@ -27,7 +27,7 @@ const ItemList = ({loginInfo}) => {
         itemList.map((item,i)=>{
           return(
             <div key={i} className='item-div' >
-              <img src={`http://localhost:8080/upload/${item.imgList[0].attachedFileName}`}/>
+              <img onClick={(e)=>{navigate(`/detail/${item.itemCode}`)}} src={`http://localhost:8080/upload/${item.imgList[0].attachedFileName}`}/>
               <h4><span onClick={(e)=>{navigate(`/detail/${item.itemCode}`)}}>{item.itemName}</span></h4>
               <p>{item.itemPrice.toLocaleString()+' 원'}</p>
             </div>

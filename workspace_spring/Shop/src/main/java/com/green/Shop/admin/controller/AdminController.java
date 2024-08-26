@@ -43,7 +43,7 @@ public class AdminController {
         ImgVO subImgVO = FileUploadUtil.fileUpload(subImg);//static이 붙어있어서 객체 안 만들고 바로 불러오기 가능
         subImgVO.setIsMain("N");
 
-        //등록한 상품의 item_code 조회
+        //등록할 상품의 item_code 조회
         int nextItemCode= adminService.getNextItemCode();
 
         //itemVO에 조회한 item_code 저장

@@ -12,27 +12,50 @@ const UserLayout = () => {
     .then((res)=>{
       setCateList(res.data)
     })
-    .catch((error)=>{})
+    .catch((error)=>{console.log(error)})
   },[])
 
-  function goCateDetail(cateNum){
-    navigate(`/cateList/${cateNum}`)
+  //console.log(cateList)
+
+  function changeBold(e){
+    
+    let li=document.querySelectorAll('.category li')
+    li.forEach((l,i)=>{
+      if(e.currentTarget==l){
+        l.classList.add('active')
+      }
+      else{
+        l.classList.remove('active')
+      }
+    })
+
   }
 
   return (
 
     <div>
-      <div>유저 전용 페이지입니다 👾</div>
+      <div>👾</div>
       <ul className='category'>
-        <li onClick={(e)=>{navigate('/itemList')}}>전체상품</li>
+        <li onClick={(e)=>{
+          changeBold(e)
+          navigate('/itemList')}}>전체상품</li>
         {
           cateList.map((cate,i)=>{
             return(
-              <li key={i}><span onClick={(e)=>{goCateDetail(cate.cateNum)}}>{cate.cateName}</span></li>
+              <li key={i} onClick={(e)=>{
+                changeBold(e) 
+                navigate(`/cateList/${cate.cateCode}`)}}>
+                {cate.cateName}
+              </li>
             )
           })
         }
       </ul>
+      
+      <div className='home-main'>
+        <p>안녕하세요! 감사해요! 잘있어요! 다시 만나요!</p>
+      </div>
+
       <Outlet />
       
     </div>

@@ -1,0 +1,70 @@
+body{
+  width: 100vw;
+}
+
+.App {
+  /* border: 1px solid black; */
+  width: 100%;
+  text-align: center;
+  /* padding: 30px; */
+  font-size: 1.2rem;
+}
+
+.main{
+  margin: 0 auto;
+  width: 100vw;
+}
+
+
+.main>thead{
+  background-color: #52616B;
+  color: white;
+  font-weight: bold;
+}
+
+.main td{
+  padding: 10px;
+}
+
+.main>thead td>span{
+  cursor: pointer;
+}
+
+button{
+  background-color: #52616B;
+  color: #F4F4F2 ;
+  border: none;
+  border-radius: 3px;
+  width: 50px;
+  margin-top: 10px;
+  padding: 4px ;
+
+}
+
+button:hover{
+  cursor: pointer;
+}
+
+.list{
+  margin: 0 auto;
+  
+}
+
+.list>thead{
+  background-color: #52616B;
+  color: #F4F4F2;
+}
+
+.list td{
+  padding: 10px;
+}
+
+.content{
+  padding: 30px;
+}
+
+.insert{
+  margin-bottom: 20px;
+}
+
+
