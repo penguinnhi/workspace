@@ -34,6 +34,7 @@ public class BoardController {
         //페이지 정보를 담을 수 있는 PageVO객체 생성
         PageVO pageInfo=new PageVO(boardService.getBoardCnt());
 
+        //화면상에 나타나는 현재 페이지 번호
         if(searchVO.getPageNo()!=0){
             pageInfo.setNowPage(searchVO.getPageNo());
         }
@@ -49,7 +50,7 @@ public class BoardController {
 
         //리액트로 가져갈 모든 데이터를 담을 변수
         Map<String,Object> mapData=new HashMap<>();
-        //페이징 정보가 담긴 데이터를
+        //페이징 정보가 담긴 데이터
         mapData.put("pageInfo",pageInfo);
         mapData.put("boardList",boardList);
 

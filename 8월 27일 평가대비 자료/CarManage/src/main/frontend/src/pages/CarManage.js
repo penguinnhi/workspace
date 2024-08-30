@@ -41,6 +41,9 @@ const CarManage = () => {
         price:0,
         make:'현대'
       })
+
+      document.querySelectorAll("input[type='text']").value='';
+      // document.querySelector('option').value='현대';
       
     })
     .catch((error)=>{
@@ -87,6 +90,11 @@ const CarManage = () => {
           </thead>
           <tbody>
             {
+              carList.length==0?
+              <tr>
+                <td colSpan={3}>등록된 차량이 없습니다.</td>
+              </tr>
+              :
               carList.map((car,i)=>{
                 return(
                   <tr key={i}>

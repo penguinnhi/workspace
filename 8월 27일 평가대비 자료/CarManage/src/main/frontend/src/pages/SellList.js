@@ -40,6 +40,11 @@ const SellList = () => {
         </thead>
         <tbody>
           {
+            sellerList.length==0?
+            <tr>
+              <td colSpan={7}>등록된 구매자가 없습니다.</td>
+            </tr>
+            :
             sellerList.map((seller,i)=>{
               return(
               <tr key={i}>

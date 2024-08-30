@@ -7,9 +7,10 @@ const RecordOfMonth = () => {
   const [value,onChange]=useState(new Date())//초기값은 현재날짜
 
   return (
-    <div>
+    <div className='cal'>
       <Calendar onChange={onChange} value={value}/>
     </div>
+
   )
 }
 
