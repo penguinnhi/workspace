@@ -82,7 +82,7 @@ public class PageVO {
         //이전 버튼 유무
         prev= beginPage!=1;
         //다음 버튼 유무
-        next= endPage!=totalDataCnt;
+        next= endPage!=totalPageCnt;
 
 
         offset=displayDataCnt*(nowPage-1);

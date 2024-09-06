@@ -1,9 +1,17 @@
+
 import React from 'react'
+import Weather from './Weather';
+
 
 const SearchUser = () => {
+
+
   return (
-    <div>SearchUser</div>
+    <div><Weather/></div>
   )
+
 }
 
 export default SearchUser
+
+

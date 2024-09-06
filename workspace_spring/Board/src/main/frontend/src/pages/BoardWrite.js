@@ -30,6 +30,7 @@ const BoardWrite = ({loginInfo}) => {
       console.log(error)})
   }
 
+  
   return (
     <div className='container'>
 
