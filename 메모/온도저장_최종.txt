@@ -1,0 +1,143 @@
+import Adafruit_BMP.BMP085 as BMP085
+import pymysql
+import schedule
+import time
+import RPi.GPIO as GPIO
+from functools import partial
+import smtplib 
+from email.mime.text import MIMEText
+
+# 핀번호
+LED=4
+BUZZER=18
+
+# 불필요한 워닝 제거 
+GPIO.setwarnings(False)
+# GPIO핀 넘버 부르는 방식으로 지정 
+GPIO.setmode(GPIO.BCM)
+# 출력
+GPIO.setup(LED,GPIO.OUT)
+GPIO.setup(BUZZER,GPIO.OUT)
+
+p=GPIO.PWM(BUZZER,1)
+
+
+# Frq=[330,294,262,294,330,330,330]
+
+
+# 부저 알람
+def buzzerOn():
+    # for i in range(0,8):
+    
+    # PWM시작 / 듀티사이클 50%
+    p.start(50)
+    
+    # 주파수
+    p.ChangeFrequency(262)
+
+    time.sleep(0.1)
+
+    p.stop()
+    
+
+sensor=BMP085.BMP085(busnum=1)
+
+
+
+def sendMail():
+    # 메일 보낼거임
+    smtp = smtplib.SMTP('smtp.gmail.com',587)
+
+    smtp.ehlo()
+    smtp.starttls()
+
+    # 로그인을 통해 지메일 접속
+    smtp.login('tork1355@gmail.com','iett ifkq qkka lvje')
+
+    # 내용을 입력하는 MIMEText > 다른 라이브러리 사용가능  
+msg = MIMEText('?뚮┝:?⑤룄?댁긽')
+    msg['Subject']='?⑤룄?댁긽'
+
+    # 메일을 보내기 위한 설정
+    smtp.sendmail('tork1355@gmail.com','tork1355@gmail.com',msg.as_string())
+
+    # 객체 닫기 
+    smtp.quit()
+
+    
+
+# 받아온 데이터를 팀원들 데이터베이스로 보낼 ip 주소 
+ipList = ['192.168.30.116', '192.168.30.30','192.168.30.60']
+
+
+
+# 온도저장
+def insert_temp(ip,temp):
+    # 데이터베이스 연결
+    conn=pymysql.connect(
+        host=ip,
+        user='team_mediclick',
+        password='mariadb',
+        db='mediclick',
+        charset='utf8'
+    ) 
+    with conn.cursor() as cur:
+        # 데이터 베이스로 insert     
+sql='insert into TEMP_DATA (CURRENT_TEMP) values (%s)'
+        print(sql)
+        cur.execute(sql,(temp,))
+	conn.commit()
+        
+        
+    conn.close()
+    
+
+def sendTemp(ipList):
+	# 센서로 받아온 온도
+    temp=sensor.read_temperature()
+    print(temp)
+    
+    # 각 ip 데이터 베이스로 온도 저장    
+for ip in ipList:
+        insert_temp(ip,temp)
+        time.sleep(1)
+    
+    # 저장되는 온도가 23.0 이하일 시 
+if temp<=23.0:
+        # 알람
+        buzzerOn()
+        # 메일 
+        sendMail()
+        # LED 깜빡
+        # 켜짐
+        GPIO.output(LED,GPIO.HIGH)
+        # 대기
+        time.sleep(1)
+        # 꺼짐
+        GPIO.output(LED,GPIO.LOW)
+        time.sleep(1)
+        
+
+
+scheduled_task = partial(sendTemp, ipList)    
+
+# 자동저장
+job2 = schedule.every(1).minutes.do(scheduled_task)
+
+count=0
+while True:
+    schedule.run_pending()
+    time.sleep(1)
+    
+    count = count +1
+    
+    # 초단위/ 자동저장 멈추기
+    if count > 120:
+        schedule.cancel_job(job2)
+        break
+    
+
+# 초기화 
+GPIO.cleanup()
+
+

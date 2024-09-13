@@ -1,0 +1,119 @@
+
+각 ip 데이터베이스로 온도 저장 
+def sendTemp(ipList):
+    for ip in ipList:
+        
+        # database
+        conn = pymysql.connect(host=ip,
+            user='team_mediclick',
+            password='mariadb',
+            db='mediclick',
+            charset='utf8'
+        )
+        
+        cur = conn.cursor()
+        
+        temp=sensor.read_temperature()
+        print(temp)
+        
+        sql = 'insert into TEMP_DATA (CURRENT_TEMP) values (%s)'
+        print(sql)
+
+        cur.execute(sql,(temp,))
+        
+        conn.commit()
+
+
+        
+           if temp<=23.0:
+
+            
+            # buzzerOn()
+            sendMail()
+                
+            # LED on
+            GPIO.output(LED,GPIO.HIGH)
+            time.sleep(1)
+            # LED off
+            GPIO.output(LED,GPIO.LOW)
+            time.sleep(1)
+                
+        
+        else: GPIO.output(LED,GPIO.LOW)    
+        
+        conn.close()
+
+
+
+
+
+-------------------------------------------------------
+
+
+def insert_temp(ip,temp):
+	# database
+	//이게 보내는거고
+        conn = pymysql.connect(host=ip,
+            user='team_mediclick',
+            password='mariadb',
+            db='mediclick',
+            charset='utf8'
+        )
+	with conn.cursor() as cur:
+	    sql = 'insert into TEMP_DATA (CURRENT_TEMP) values (%s)'
+            print(sql)
+	    cur.execute(sql,(temp,))
+	    conn.commit()
+	
+	conn.close()
+
+
+
+온도를 각 데이터베이스로 보내
+def sendTemp(ipList):
+	//이게 받는건데 
+	temp=sensor.read_temperature()
+        print(temp)
+
+	for ip in ipList :
+	// 각 ip로 보내 
+	  insert_temp(ip,temp)
+	  time.sleep(1)
+	
+
+
+
+저장하고 
+내 데이터베이스에서 파이썬으로 select를 불러와서
+
+
+cur.execute 보내기
+cur.execute('select current_temp 
+from temp_data
+ORDER BY temp_time desc 
+LIMIT 1; ')
+
+cur.fetchall 받기
+fetchall() 함수를 썼기 때문에 딕셔너리 타입 자료들이 
+리스트에 저장된 형태로 데이터를 받았다.
+
+nowTemp=cur.fetchall()
+
+
+
+가장 최근 저장된 온도가 몇도 이상이거나 몇도 이하면 
+        
+           if nowTemp and nowTemp[0][0]<=23.0:
+
+            
+            # buzzerOn()
+            sendMail()
+                
+            # LED on
+            GPIO.output(LED,GPIO.HIGH)
+            time.sleep(1)
+            # LED off
+            GPIO.output(LED,GPIO.LOW)
+            time.sleep(1)
+                
+

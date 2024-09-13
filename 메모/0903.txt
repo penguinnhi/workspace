@@ -1,0 +1,40 @@
+app > react native + spring 
+vscode 작업
+
+1 expo를 사용해서 app 프로젝트를 만들 수 있는 세팅
+최초 1회
+npm install --global expo-cli
+
+2 app 프로젝트 생성 first-test-app
+npx create-expo-app 프로젝트명 --template blank
+
+3 
+cd 폴더명
+
+
+4 프로젝트 새ㅣㄹ행후 web으로 열기
+npm start > w > 설치 > 다시 npm start > w
+
+안드로이드 스튜디오 설치: 컴퓨터에 가상 핸드폰 띄우기 가능
++ 에뮬레이터 실행
+
+폰에서 실행하기 위해서는 
+expo에 회원가입 : 실제 기기에서 실행하기 위한 세팅 
+폰에 expo 설치
+
+
+ngrok 사이트 방문 후 회원가입 > authtoken 세팅
+
+ngrok.exe 실행 후 
+
+ngrok config add -authtoken 키
+ngrok http 8081
+
+npx expo start --tunnel
+
+에뮬레이터로 실행
+1 cmd 
+emulator -avd expo
+
+
+
