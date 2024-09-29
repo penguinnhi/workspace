@@ -1,0 +1,113 @@
+
+
+.join-div{
+  border: 1px solid #eeeeee;
+  background-color: #eeeeee36;
+  width: 800px;
+  margin: 10px auto;
+  padding: 20px;
+  border-radius: 5px;
+  /* box-shadow: 3px 3px 3px #eeeeee; */
+}
+
+/* .join-div img{
+  
+  height: 150px;
+} */
+
+.join-table{
+  
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.join-table td{
+  padding: 5px;
+}
+
+.join-table tr>td:nth-child(1){
+  text-align: right;
+  
+}
+
+.join-div.itemList{
+  /* border: 1px solid black; */
+  width: 90%;
+
+  display: grid;
+  /* 컬럼의 크기와 개수 */
+  grid-template-columns: repeat(5,1fr);
+  gap: 20px;
+}
+
+.join-div.itemList > .item-div> img{
+  /* border: 1px solid blue; */
+  width: 90%;
+  height: 180px;
+}
+
+.join-div.itemList > .item-div> h4{
+  padding: 5px 3px;
+  cursor: pointer;
+  text-align: left;
+}
+
+.join-div.itemList > .item-div> p{
+  text-align: left;
+  padding: 3px;
+
+}
+
+
+.join-div.itemList table{
+  /* border: 1px solid black; */
+  width: 100%;
+  text-align: center;
+  
+}
+
+.join-Btn{
+  background-color: #C1CFA1;
+  border: none;
+  width: 80px;
+  color: white;
+  border-radius: 5px;
+  padding: 3px 8px;
+  cursor: pointer;
+}
+
+.join-Btn:hover{
+  font-weight: bold;
+  background-color: #A5B68D;
+}
+
+.join-Btn:active{
+  background-color: #A5B68D;
+} 
+
+
+.twoBtn{
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+
+
+/* validation 디자인 */
+
+.feedback{
+  font-size: 0.7rem;
+  text-align: left;
+  margin-top: 4px;
+  /* color: #99A799; */
+  visibility: hidden;
+}
+
+.feedback.error{
+  color: red;
+  visibility: visible;
+}
+.feedback.good{
+  color: #D0B8A8;
+  visibility: visible;
+}

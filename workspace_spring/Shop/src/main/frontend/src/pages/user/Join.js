@@ -4,6 +4,7 @@ import { useDaumPostcodePopup } from 'react-daum-postcode';
 import { useNavigate } from 'react-router-dom';
 import Modal from '../../common/Modal';
 import { joinValidate } from '../../validate/joinValidate';
+import './Join.css'
 
 const Join = () => {
 
@@ -186,7 +187,7 @@ const Join = () => {
                 <div className='inline-input'>
                   <input type='text' name='memId' className='form-control' 
                   onChange={(e)=>{inputData(e); setIsCheckId(false);}}></input>
-                  <button type='button' className='btn-primary' 
+                  <button type='button' className='join-Btn' 
                   onClick={(e)=>{isDup()}}>중복확인</button>
                 </div>
                 <div className='feedback' ref={valid_tag[0]} ></div>
@@ -228,7 +229,8 @@ const Join = () => {
                   <input type='text' name='post' value={joinData.post} className='form-control' 
                   onChange={(e)=>{inputData(e)}} placeholder='우편번호' readOnly={true} 
                   onClick={handleClick}></input>
-                  <button type='button' onClick={handleClick}>검색</button>
+                  <button type='button' className='join-Btn'
+                    onClick={handleClick}>검색</button>
                 </div>
               </td>
             </tr>
@@ -257,7 +259,8 @@ const Join = () => {
           </tbody>
         </table>
   
-        <button type='button' onClick={(e)=>{goJoin()}}>회원가입</button>
+        <button type='button' className='join-Btn'
+          onClick={(e)=>{goJoin()}}>회원가입</button>
   
       </div>
 

@@ -51,6 +51,7 @@ function App() {
       
     }
 
+
   },[]);
 
 
@@ -77,27 +78,9 @@ function App() {
 
   return (
     <div className="container">
-      <div className='login-div'>
+      <div className='main-top-div'>
         
-        {/* {
-          loginInfo.memId==null
-          ?
-          <div className='loginDetail'>
-            <ul>
-              <li><span onClick={(e)=>{navigate('/loginForm')}}>Login</span></li>
-              <li><span onClick={(e)=>{navigate('/join')}}>Join</span></li>
-            </ul>
-          </div>
-          :
-          <div className='loginDetail'>
-            <div>
-              <span>{loginInfo.memName}님 ㅎㅇ🐥</span>
-              <span onClick={(e)=>{goLogout()}}>Logout</span>
-            </div>
-          </div>
-        } */}
-        
-        <div className='hihi'>
+        <div className='main-top'>
           {/* <div className='logo'>🐲</div> */}
           {
             Object.keys(loginInfo).length==0
@@ -121,61 +104,79 @@ function App() {
 
 
         <div className='banner'>
-          <div>
-            <img className='banner-img' src='http://localhost:8080/upload/animal-8082317_1280.jpg'></img>
-          </div>
-          <div className='title' 
-          onClick={(e)=>{navigate('/')}}>😼BOOK SHOP😼</div>
+          <h1 className='title' 
+            onClick={(e)=>{navigate('/')}}> 😾 고양이 서점</h1>
         </div>
-        </div>
+
+
+      </div>
 
       <div className='layout-div'>
-      <Routes>
 
-        {/* 일반 유저용 */}
-        <Route path='/' element={<UserLayout></UserLayout>}>
-          {/* 상푸 목록 화면 */}
-          <Route path='/itemList' element={<ItemList loginInfo={loginInfo}/>}/>
-          {/* 카테고리별  */}
-          <Route path='/cateList/:cateCode' element={<CateList/>}/>
-          {/* 상세페이지 */}
-          <Route path='/detail/:itemCode' element={<ItemDetail loginInfo={loginInfo}/>}/>
-          {/* 장바구니 */}
-          <Route path='/cart/:memId' element={<CartList loginInfo={loginInfo}/>}/>
-          {/* 회원 가입 페이지 */}
-          <Route path='/join' element={<Join/>}/>
-          {/* 로그인 페이지 */}
-          <Route path='/loginForm' element={<LoginForm setLoginInfo={setLoginInfo} loginInfo={loginInfo}/>}/>
-        </Route>
+
+        <Routes>
+
+          {/* 일반 유저용 */}
+          <Route path='/' element={<UserLayout></UserLayout>}>
+            {/* 메인 홈 */}
+            <Route path='/' element={<Home/>}/>
+            {/* 상푸 목록 화면 */}
+            <Route path='/itemList' element={<ItemList loginInfo={loginInfo}/>}/>
+            {/* 카테고리별  */}
+            <Route path='/cateList/:cateCode' element={<CateList/>}/>
+            {/* 상세페이지 */}
+            <Route path='/detail/:itemCode' element={<ItemDetail loginInfo={loginInfo}/>}/>
+            {/* 장바구니 */}
+            <Route path='/cart/:memId' element={<CartList loginInfo={loginInfo}/>}/>
+            {/* 회원 가입 페이지 */}
+            <Route path='/join' element={<Join/>}/>
+            {/* 로그인 페이지 */}
+            <Route path='/loginForm' element={<LoginForm setLoginInfo={setLoginInfo} loginInfo={loginInfo}/>}/>
+          </Route>
           
 
 
-        {/* 관리자용 */}
-        <Route path='/admin' element={<AdminLayout />}>
-          <Route path='test1' element={<div>뿡빵뿡빵🏃‍♀️=333</div>}/>
-          
-          {/* 상품관리 */}
-          <Route path='itemReg' element={<ItemReg/>}/>
-          <Route path='itemManage' element={<ItemManage/>}/>
-          <Route path='cateManage' element={<CateManage/>}/>
+          {/* 관리자용 */}
+          <Route path='/admin' element={<AdminLayout />}>
+            <Route path='test1' element={<div>뿡빵뿡빵🏃‍♀️=333</div>}/>
+            
+            {/* 상품관리 */}
+            <Route path='itemReg' element={<ItemReg/>}/>
+            <Route path='itemManage' element={<ItemManage/>}/>
+            <Route path='cateManage' element={<CateManage/>}/>
 
-          {/* 구매관리 */}
-          <Route path='saleHistoryOfMonth' element={<SaleHistoryOfMonth/>}/>
+            {/* 구매관리 */}
+            <Route path='saleHistoryOfMonth' element={<SaleHistoryOfMonth/>}/>
 
-          {/* 유저관리 */}
-          <Route path='searchUser' element={<SearchUser/>}/>
+            {/* 유저관리 */}
+            <Route path='searchUser' element={<SearchUser/>}/>
 
-          {/* 매출관리 */}
-          <Route path='recordOfMonth' element={<RecordOfMonth/>}/>
-          
-        </Route>
+            {/* 매출관리 */}
+            <Route path='recordOfMonth' element={<RecordOfMonth/>}/>
+            
+          </Route>
 
-      </Routes>
+        </Routes>
       </div>
 
 
     </div>
   );
+}
+
+
+function Home(){
+
+  return(
+
+
+    <div className='home-img-div'>
+      <img className='home-img' 
+        src='http://localhost:8080/upload/animal-8082317_1280.jpg'></img>
+    </div>
+
+  )
+
 }
 
 export default App;
