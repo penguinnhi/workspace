@@ -1,0 +1,20 @@
+의존성 주입 방식 : 생성자 주입(적극 권장), setter 주입, 필드 주입 
+
+생성자 주입
+기존과 달라진점
+1. 선언한 객체 위에 어노테이션 생략
+2. 선언한 변수에 final 키워드가 붙는다
+3. 클래스에 @RequiredArgsConstructor 어노테이션이 붙는다.
+
+
+@RequiredArgsConstructor 
+// Lombok, final이 붙어있는 변수를 매개변수로 갖는 생성자
+public class MemberServiceImpl implements MemberService {
+
+// 클래스에 생성자가 하나라면 autowired 어노테이션이 생략 가능
+private final SqlSessionTemplate sqlSession; 
+// final이 붙으면 초기값이 필요함
+// final : 한 번 변한 값은 다시 변하지 않음 (코드의 안정성)
+
+
+
