@@ -2,6 +2,7 @@ import axios from 'axios'
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import Modal from '../../common/Modal'
+import './LoginForm.css'
 
 const LoginForm = ({setLoginInfo,loginInfo}) => {
   //로그인버튼 클릭시 화면에 보여지는 모달창의 상태
@@ -111,10 +112,10 @@ const LoginForm = ({setLoginInfo,loginInfo}) => {
 
 
   return (
-    <div className='join-div'>
+    <div className='login-div'>
 
       <div>
-        <table className='join-table'>
+        <table className='login-table'>
           <thead></thead>
           <tbody>
             <tr>
@@ -129,7 +130,8 @@ const LoginForm = ({setLoginInfo,loginInfo}) => {
             </tr>
           </tbody>
         </table>
-        <button type='button' onClick={(e)=>{goLogin()}}>로그인</button>
+        <button type='button' className='login-Btn'
+          onClick={(e)=>{goLogin()}}>로그인</button>
       </div>
 
       {/* 로그인 중 아이디,비밀번호 입력여부를 확이하는 모달창 */}

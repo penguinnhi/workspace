@@ -12,147 +12,91 @@ body{
   margin: 0px auto;
 }
 
-.login-div{
-  width: 100%;
-  background-color: #D0B8A8;
-  color: white;
-  margin: 0 auto;
-  /* padding: 10px; */
-  
-}
-
-.loginDetail{
-  text-align: right;
+.main-top{
+  background-color: #eeeeee;
+  width:100%;
 }
 
 .banner{
-  position: relative;
-}
-
-.banner-img{
   width: 100%;
-  height: 260px;
-  object-fit: cover;
-  object-position: center;
-  display: block;
+  height: 160px;
+  border: 1px solid red;
+  
 }
 
-.banner>div:nth-child(2){
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  font-size: 1.5rem;
-  font-weight: bold;
+
+@font-face {
+  font-family: 'Freesentation-9Black';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2404@1.0/Freesentation-9Black.woff2') format('woff2');
+  font-weight: 900;
+  font-style: normal;
+}
+
+
+.title{
+  font-family: 'Freesentation-9Black';
+  width: 1440px;
+  cursor: pointer;
+  text-align: left;
   letter-spacing: 10px;
-  transform: translate(-150px,-50%);
+  margin: 0 auto;
 }
 
+
+
+.main-top-div{
+  width: 100%;
+  background-color: #ffffff;
+  margin: 0 auto;
+  /* padding: 10px; */
+}
+
+
+.main-top-div span:hover{
+  cursor: pointer;
+}
+
+
+
+
+.loginDetail{
+  width: 100px;
+  width: 1440px ;
+}
 
 .loginDetail>ul,.loginDetail>div{
-  height: 50px;
+  height: 30px;
   display: flex;
   align-items: center;
-  width: 20%;
-  /* border: 1px solid black; */
-  margin-left: auto;
+  width: 200px;
   
 }
 
 .loginDetail li,.loginDetail span{
   text-align: center;
   width: 100%;
-  /* border: 1px solid black; */
+
 }
 
-.login-div span:hover{
-  cursor: pointer;
-}
+
 
 
 .layout-div{
-  width: 900px;
-  margin: 10px auto;
+  width: 100%;
+  margin: 0 auto;
   /* background-color: #FEF5ED; */
   
 }
 
-.title{
-  cursor: pointer;
-}
+
 
 .home-main{
   border: 1px solid #eeeeee;
   width: 500px;
   margin: 10px auto;
-  padding: 5px ;
   border-radius: 20px;
 }
 
-.join-div{
-  border: 1px solid #eeeeee;
-  background-color: #eeeeee36;
-  width: 90%;
-  margin: 10px auto;
-  padding: 20px;
-  border-radius: 5px;
-  /* box-shadow: 3px 3px 3px #eeeeee; */
-}
-
-/* .join-div img{
-  
-  height: 150px;
-} */
-
-.join-table{
-  
-  width: 100%;
-  margin-bottom: 20px;
-}
-
-.join-table td{
-  padding: 5px;
-}
-
-.join-table tr>td:nth-child(1){
-  text-align: right;
-  
-}
-
-.join-div.itemList{
-  /* border: 1px solid black; */
-  width: 90%;
-
-  display: grid;
-  /* 컬럼의 크기와 개수 */
-  grid-template-columns: repeat(5,1fr);
-  gap: 20px;
-}
-
-.join-div.itemList > .item-div> img{
-  /* border: 1px solid blue; */
-  width: 90%;
-  height: 180px;
-}
-
-.join-div.itemList > .item-div> h4{
-  padding: 5px 3px;
-  cursor: pointer;
-  text-align: left;
-}
-
-.join-div.itemList > .item-div> p{
-  text-align: left;
-  padding: 3px;
-
-}
-
-
-.join-div.itemList table{
-  /* border: 1px solid black; */
-  width: 100%;
-  text-align: center;
-  
-}
 
 .cart-div{
   margin: 20px auto;
@@ -409,51 +353,23 @@ body{
   width: 260px;
 }
 
-/* button{
-  background-color: #DFD3C3;
-  border: none;
-  width: 80px;
-  color: white;
-  border-radius: 5px;
-  padding: 3px 8px;
-  cursor: pointer;
-} */
 
-/* button:hover{
-  font-weight: bold;
-} */
+/* 메인 홈 */
 
-/* button:active{
-  background-color: #D0B8A8;
-} */
-
-.twoBtn{
-  margin-right: 10px;
-  margin-left: 10px;
+.home-img-div{
+  border: 1px solid red;
+  width: 1440px;
+  margin: 100px auto;
 }
 
-.btn-primary{
-  background-color: #D0B8A8;
+.home-img{
+  width: 100%;
+  height: 570px;
+  object-fit: cover;
+  object-position: center;
+
 }
 
-/* validation 디자인 */
-
-.feedback{
-  font-size: 0.7rem;
-  text-align: left;
-  margin-top: 4px;
-  /* color: #99A799; */
-  visibility: hidden;
-}
-
-.feedback.error{
-  color: red;
-  visibility: visible;
-}
-.feedback.good{
-  color: #D0B8A8;
-  visibility: visible;
-}
 
 
 /* 모달 창 디자인 */
