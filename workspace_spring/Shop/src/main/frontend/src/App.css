@@ -19,8 +19,7 @@ body{
 
 .banner{
   width: 100%;
-  height: 160px;
-  border: 1px solid red;
+  height: 200px;
   
 }
 
@@ -80,21 +79,10 @@ body{
 
 
 
-
 .layout-div{
-  width: 100%;
+  width: 1440px;
   margin: 0 auto;
-  /* background-color: #FEF5ED; */
   
-}
-
-
-
-.home-main{
-  border: 1px solid #eeeeee;
-  width: 500px;
-  margin: 10px auto;
-  border-radius: 20px;
 }
 
 
@@ -262,32 +250,7 @@ body{
   color: white;
 }
 
-.inline-input{
-  display: flex;
-  gap: 5px;
-  align-items: center;
-}
 
-.inline-input>input{
-  width: 70%;
-}
-
-.inline-input>button{
-  width: 30%;
-}
-
-.inline-select{
-  display: flex;
-  gap: 5px;
-}
-
-.inline-select>input{
-  width: 50%;
-}
-
-.inline-select>select{
-  width: 50%;
-}
 
 .cartCnt{
   width: 35px;
@@ -312,19 +275,6 @@ body{
   height: 50px;
 }
 
-
-
-.form-control{
-  width: 60%;
-  padding: 4px;
-  border-radius: 6px;
-  border: 1px solid #DFD3C3;
-}
-
-
-.form-control:focus{
-  outline: 1px solid #D0B8A8;
-}
 
 .cart-header{
   /* border-top: 2px solid #D3E4CD; */
@@ -357,7 +307,6 @@ body{
 /* 메인 홈 */
 
 .home-img-div{
-  border: 1px solid red;
   width: 1440px;
   margin: 100px auto;
 }

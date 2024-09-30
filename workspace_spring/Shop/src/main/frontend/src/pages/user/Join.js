@@ -174,6 +174,7 @@ const Join = () => {
 
   return (
     <div className='join-div'>
+      <h2>회원가입</h2>
       
 
       <div>
@@ -185,8 +186,9 @@ const Join = () => {
               <td>아이디</td>
               <td>
                 <div className='inline-input'>
-                  <input type='text' name='memId' className='form-control' 
-                  onChange={(e)=>{inputData(e); setIsCheckId(false);}}></input>
+                  <input type='text' name='memId' 
+                    className='join-input' placeholder='4~12자리의 영문자'
+                    onChange={(e)=>{inputData(e); setIsCheckId(false);}}></input>
                   <button type='button' className='join-Btn' 
                   onClick={(e)=>{isDup()}}>중복확인</button>
                 </div>
@@ -195,30 +197,34 @@ const Join = () => {
             </tr>
             <tr>
               <td>비밀번호</td>
-              <td><input type='password' name='memPw' className='form-control' 
-              onChange={(e)=>{inputData(e)}}></input>
+              <td><input type='password' name='memPw' 
+                className='join-input' placeholder='영문,숫자를 조합하여 4~12자리'
+                onChange={(e)=>{inputData(e)}}></input>
               <div  className='feedback' ref={memPw_valid_tag}></div>
               </td>
             </tr>
             <tr>
               <td>비밀번호 확인</td>
-              <td><input type='password' name='confirmPw' className='form-control' 
-              onChange={(e)=>{inputData(e)}}></input>
+              <td><input type='password' name='confirmPw' 
+                className='join-input' placeholder='비밀번호를 다시 한 번 입력해주세요.'
+                onChange={(e)=>{inputData(e)}}></input>
               <div className='feedback' ref={confirmPw_valid_tag} ></div>
               </td>
             </tr>
             <tr>
               <td>이름</td>
               <td>
-                <input type='text' name='memName' className='form-control' 
-                onChange={(e)=>{inputData(e)}}></input>
+                <input type='text' name='memName' 
+                  className='join-input' 
+                  onChange={(e)=>{inputData(e)}}></input>
                 <div className='feedback' ref={valid_tag[1]}></div>
               </td>
             </tr>
             <tr>
               <td>연락처</td>
-              <td><input type='text' name='memTel' className='form-control' 
-              onChange={(e)=>{inputData(e)}} placeholder='숫자입력'></input>
+              <td><input type='text' name='memTel' 
+                className='join-input' 
+                onChange={(e)=>{inputData(e)}}></input>
               <div className='feedback' ref={memTel_valid_tag}></div>
               </td>
             </tr>
@@ -226,30 +232,32 @@ const Join = () => {
               <td rowSpan={3}>주소</td>
               <td>
                 <div className='inline-input'>
-                  <input type='text' name='post' value={joinData.post} className='form-control' 
-                  onChange={(e)=>{inputData(e)}} placeholder='우편번호' readOnly={true} 
-                  onClick={handleClick}></input>
+                  <input type='text' name='post' value={joinData.post} 
+                    className='join-input' 
+                    onChange={(e)=>{inputData(e)}} placeholder='우편번호' readOnly={true} 
+                    onClick={handleClick}></input>
                   <button type='button' className='join-Btn'
                     onClick={handleClick}>검색</button>
                 </div>
               </td>
             </tr>
             <tr>
-              <td><input type='text' name='memAddr' value={joinData.memAddr} className='form-control' onChange={(e)=>{inputData(e)}} placeholder='주소' readOnly={true} 
-              onClick={handleClick}></input></td>
+              <td><input type='text' name='memAddr' value={joinData.memAddr} 
+                className='join-input' onChange={(e)=>{inputData(e)}} placeholder='주소' readOnly={true} 
+                onClick={handleClick}></input></td>
             </tr>
             <tr>
-              <td><input type='text' name='addrDetail' className='form-control' 
-              onChange={(e)=>{inputData(e)}} placeholder='상세주소'></input></td>
+              <td><input type='text' name='addrDetail' className='join-input' 
+                onChange={(e)=>{inputData(e)}} placeholder='상세주소'></input></td>
             </tr>
             <tr>
               <td>이메일</td>
               <td>
                 <div className='inline-select'>
-                  <input type='text' name='memEmail' className='form-control' ref={email_1} 
-                  onChange={(e)=>{inputData(e)}}></input>
-                  <select name='memEmail' className='form-control' ref={email_2} 
-                  onChange={(e)=>{inputData(e)}}>
+                  <input type='text' name='memEmail' className='join-input' ref={email_1} 
+                    onChange={(e)=>{inputData(e)}}></input>
+                  <select name='memEmail' className='join-input' ref={email_2} 
+                    onChange={(e)=>{inputData(e)}}>
                     <option value={'@naver.com'}>naver.com</option>
                     <option value={'@gmail.com'}>gmail.com</option>
                   </select>
@@ -259,7 +267,7 @@ const Join = () => {
           </tbody>
         </table>
   
-        <button type='button' className='join-Btn'
+        <button type='button' className='get-join-btn'
           onClick={(e)=>{goJoin()}}>회원가입</button>
   
       </div>

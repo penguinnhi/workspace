@@ -33,8 +33,8 @@ const UserLayout = () => {
 
   return (
 
-    <div>
-      <div>👾</div>
+    <div className='layout-div'>
+      
       <ul className='category'>
         <li onClick={(e)=>{
           changeBold(e)
@@ -52,10 +52,7 @@ const UserLayout = () => {
         }
       </ul>
       
-      <div className='home-main'>
-        <p>안녕하세요! 감사해요! 잘있어요! 다시 만나요!</p>
-      </div>
-
+      
       <Outlet />
       
     </div>

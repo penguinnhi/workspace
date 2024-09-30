@@ -2,6 +2,7 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import Modal from '../../common/Modal';
+import './ItemReg.css'
 
 const ItemReg = () => {
   //첨부파일을 저장할 State변수 
@@ -106,11 +107,12 @@ const ItemReg = () => {
   return (
 
     <div className='container'>
+      <h2>상품 등록</h2>
       
-      <div className='join-div'>
+      <div className='item-reg-div'>
         <div>
           <p>상품 카테고리</p>
-          <select className='form-control' name='cateCode' onChange={(e)=>{inputData(e)}}>
+          <select className='reg-input' name='cateCode' onChange={(e)=>{inputData(e)}}>
             {
               cateList.map((cate,i)=>{
                   return(
@@ -122,22 +124,23 @@ const ItemReg = () => {
         </div>
         <div>
           <p>상품명</p>
-          <input type='text' name='itemName' className='form-control'
+          <input type='text' name='itemName' className='reg-input'
            onChange={(e)=>{inputData(e)}}></input>
         </div>
         <div>
           <p>상품 가격</p>
-          <input type='text' name='itemPrice' className='form-control'
+          <input type='text' name='itemPrice' className='reg-input'
            onChange={(e)=>{inputData(e)}}></input>
         </div>
         <div>
           <p>상품 소개</p>
-          <textarea name='itemIntro' className='form-control'
+          <textarea name='itemIntro' className='reg-input'
            onChange={(e)=>{inputData(e)}}/>
         </div>
 
         <div>
-          <input type='file' className='form-control'
+          <p>메인 이미지</p>
+          <input type='file' className='reg-input'
           onChange={(e)=>{
             //선택한 파일정보(배열로 가져옴)
             setMainImg(e.target.files[0]) 
@@ -145,13 +148,15 @@ const ItemReg = () => {
           }}></input>
         </div>
         <div>
-          <input type='file' className='form-control'
+          <p>상세 이미지</p>
+          <input type='file' className='reg-input'
           onChange={(e)=>{
             setSubImg(e.target.files[0])
           }}></input>
         </div>
   
-        <button type='button' onClick={(e)=>{regItem()}}>상품 등록</button>
+        <button type='button' className='reg-btn'
+          onClick={(e)=>{regItem()}}>상품 등록</button>
       </div>
 
       {

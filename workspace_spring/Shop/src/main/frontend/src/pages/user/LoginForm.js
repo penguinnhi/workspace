@@ -113,19 +113,19 @@ const LoginForm = ({setLoginInfo,loginInfo}) => {
 
   return (
     <div className='login-div'>
-
+      <h2>로그인</h2>
+      
       <div>
+
         <table className='login-table'>
           <thead></thead>
           <tbody>
             <tr>
-              <td>아이디</td>
-              <td><input type='text' name='memId' placeholder='아이디를 입력하세요' className='form-control'
+              <td><input type='text' name='memId' placeholder='아이디를 입력하세요' className='login-input'
               onChange={(e)=>{inputLogin(e)}}></input></td>
             </tr>
             <tr>
-              <td>비밀번호</td>
-              <td><input type='password' name='memPw' placeholder='비밀번호를 입력하세요' className='form-control'
+              <td><input type='password' name='memPw' placeholder='비밀번호를 입력하세요' className='login-input'
               onChange={(e)=>{inputLogin(e)}}></input></td>
             </tr>
           </tbody>

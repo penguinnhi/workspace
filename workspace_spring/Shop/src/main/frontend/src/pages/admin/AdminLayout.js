@@ -73,7 +73,7 @@ const AdminLayout = () => {
 
 
   return (
-    <div>
+    <div className='layout-div'>
       <div>🦄</div>
       <div>
         <ul className='category'>

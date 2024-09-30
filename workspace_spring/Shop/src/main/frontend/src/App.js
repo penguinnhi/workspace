@@ -102,12 +102,10 @@ function App() {
           }
         </div>
 
-
         <div className='banner'>
           <h1 className='title' 
             onClick={(e)=>{navigate('/')}}> 😾 고양이 서점</h1>
         </div>
-
 
       </div>
 
