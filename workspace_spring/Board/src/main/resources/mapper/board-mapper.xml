@@ -21,11 +21,11 @@
             ,MEM_ID
             ,CREATE_DATE
         FROM BOARD
-<!--        <if test=' searchValue != null and !searchValue.equals("") '>
-            &lt;!&ndash;searchValue가 null이 아니거나
-            searchValue가 ""빈문자열이 아닐때&ndash;&gt;
+        <if test=' searchValue != null and !searchValue.equals("") '>
+<!--            &lt;!&ndash;searchValue가 null이 아니거나-->
+<!--            searchValue가 ""빈문자열이 아닐때&ndash;&gt;-->
             WHERE ${searchType} LIKE CONCAT('%',#{searchValue},'%')
-        </if>-->
+        </if>
         ORDER BY BOARD_NUM DESC
         LIMIT #{displayPageCnt} OFFSET #{offset}
     </select>
