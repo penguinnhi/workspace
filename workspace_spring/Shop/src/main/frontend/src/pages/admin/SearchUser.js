@@ -7,7 +7,9 @@ const SearchUser = () => {
 
 
   return (
-    <div><Weather/></div>
+    <div>
+      유저 검색
+    </div>
   )
 
 }
