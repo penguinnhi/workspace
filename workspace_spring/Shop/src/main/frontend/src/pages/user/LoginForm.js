@@ -85,7 +85,7 @@ const LoginForm = ({setLoginInfo,loginInfo}) => {
           ?
           <div>환영합니다🥳</div>
           :
-          <div>실패😛</div>
+          <div>존재하지 않는 회원입니다.</div>
         }
       </div>
 
@@ -110,13 +110,18 @@ const LoginForm = ({setLoginInfo,loginInfo}) => {
     }
   }
 
+  function handleKeyPress(e){
+    if(e.key==='Enter'){
+      goLogin()
+    }
+  }
+
 
   return (
     <div className='login-div'>
       <h2>로그인</h2>
       
       <div>
-
         <table className='login-table'>
           <thead></thead>
           <tbody>
@@ -126,12 +131,13 @@ const LoginForm = ({setLoginInfo,loginInfo}) => {
             </tr>
             <tr>
               <td><input type='password' name='memPw' placeholder='비밀번호를 입력하세요' className='login-input'
-              onChange={(e)=>{inputLogin(e)}}></input></td>
+                onKeyDown={(e)=>{handleKeyPress(e)}}
+                onChange={(e)=>{inputLogin(e)}}></input></td>
             </tr>
           </tbody>
         </table>
         <button type='button' className='login-Btn'
-          onClick={(e)=>{goLogin()}}>로그인</button>
+          onClick={(e)=>{goLogin();}}>로그인</button>
       </div>
 
       {/* 로그인 중 아이디,비밀번호 입력여부를 확이하는 모달창 */}

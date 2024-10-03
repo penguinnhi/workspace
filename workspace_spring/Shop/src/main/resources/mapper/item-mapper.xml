@@ -45,12 +45,15 @@
     <!--이렇게 결정한 테이블간의 관계를 vo에 먼저 적용-->
     <select id="getItemList" resultMap="item">
         SELECT I.ITEM_CODE
+            ,I.CATE_CODE
+            ,C.CATE_NAME
             ,ITEM_NAME
             ,ITEM_PRICE
             ,ITEM_STATUS
             ,ATTACHED_FILE_NAME
-        FROM SHOP_ITEM I,ITEM_IMG IMG
+        FROM SHOP_ITEM I,ITEM_IMG IMG,ITEM_CATEGORY C
         WHERE I.ITEM_CODE=IMG.ITEM_CODE
+        AND C.CATE_CODE=I.CATE_CODE
         AND IS_MAIN='Y'
         ORDER BY ITEM_CODE DESC
     </select>
@@ -88,6 +91,7 @@
         AND I.ITEM_CODE=IMG.ITEM_CODE
         AND I.ITEM_CODE=#{itemCode}
     </select>
+
 
 </mapper>
 

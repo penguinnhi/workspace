@@ -36,7 +36,8 @@ const Modal = ({isShow,content,setIsShow,clickCloseBtn}) => {
           </div>
 
           <div className='modal-footer'>
-            <button type='button' onClick={(e)=>{
+            <button type='button' className='modal-btn'
+              onClick={(e)=>{
               modalContainer.current.className='modal-container'
               setTimeout(() => {
                 //모달창 닫기 

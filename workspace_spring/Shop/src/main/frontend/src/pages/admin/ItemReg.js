@@ -93,9 +93,9 @@ const ItemReg = () => {
         {
         successInput
         ?
-        <div>상품이 등록되었습니다</div>
-        :
         <div>상품 정보를 입력하세요</div>
+        :
+        <div>상품이 등록되었습니다</div>
         }
       </div>
       
@@ -160,14 +160,14 @@ const ItemReg = () => {
       </div>
 
       {
-      isModalShow
-      ?
-      <Modal content={drawModalContent}
-      setIsShow={setCloseModal}
-      clickCloseBtn={()=>{navigate('/itemList')}}/>
-      :
-      null
-    }
+        isModalShow
+        ?
+        <Modal content={drawModalContent}
+        setIsShow={setCloseModal}
+        clickCloseBtn={()=>{navigate('/itemList')}}/>
+        :
+        null
+      }
 
     </div>
 

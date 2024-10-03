@@ -23,7 +23,8 @@ public class FileUploadUtil {
             imgVO = new ImgVO();
 
             //업로드 될 경로
-            String uploadPath="D:\\01-STUDY\\dev\\workspace\\workspace_spring\\Shop\\src\\main\\resources\\static\\upload\\";
+            //String uploadPath="D:\\01-STUDY\\dev\\workspace\\workspace_spring\\Shop\\src\\main\\resources\\static\\upload\\";
+            String uploadPath="C:\\Users\\유지현\\Desktop\\workspace\\workspace_spring\\Shop\\src\\main\\resources\\static\\upload\\";
 
             //내가 선택한 원본 파일명
             String originFileName = uploadFile.getOriginalFilename();

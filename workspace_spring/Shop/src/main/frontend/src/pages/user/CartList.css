@@ -1,0 +1,94 @@
+.cart-div{
+  width: 1440px;
+  margin: 20px auto;
+}
+
+.cart-div>h2{
+  margin-top: 100px;
+  margin-bottom: 50px;
+}
+
+.cart-table{
+  width: 70%;
+  margin: 20px auto;
+}
+
+.cart-header{
+  /* border-top: 2px solid #D3E4CD; */
+  border-bottom: 2px solid lightgray;
+  font-weight: bold;
+  /* color: white; */
+}
+
+.cart-body tr:hover{
+  background-color: #eeeeee;
+}
+
+
+.cart-body td{
+  border-bottom: 1px solid #eeeeee;
+  
+}
+
+
+/* 장바구니에 담긴 상품이 없을 때 */
+
+.blank{
+  text-align: center;
+  padding: 15px;
+  /* margin: 20px auto; */
+}
+
+.blank>button{
+  background-color: black;
+  color:white;
+  width: 110px;
+  height: 30px;
+  border-radius: 50px;
+  /* padding: 3px 8px; */
+  cursor: pointer;
+}
+
+.blank>button:hover{
+  background-color: rgba(0, 0, 0, 0.788);
+}
+
+
+/* 총 구매금액 */
+
+.totalPrice{
+  text-align: right;
+  margin: 20px auto;
+  width: 70%;
+}
+
+
+/* 버튼 */
+
+.cart-btn{
+  background-color: black;
+  color:white;
+  width: 80px;
+  height: 30px;
+  border-radius: 50px;
+  /* padding: 3px 8px; */
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.cart-btn:hover{
+  background-color: rgba(0, 0, 0, 0.788);
+}
+
+.cart-del-btn{
+  background-color: white;
+  border: none;
+  outline: 1px solid lightgray;
+  width: 40px;
+  padding: 4px 8px;
+  cursor: pointer;
+}
+
+.cart-del-btn:hover{
+  background-color: #eeeeee;
+}

@@ -27,7 +27,6 @@ public class ItemController {
 
     @GetMapping("/cateList/{cateCode}")
     public List<ShopItemVO> getCateList(@PathVariable("cateCode")int cateCode){
-        System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!"+cateCode);
         return itemService.getCateList(cateCode);
     }
 

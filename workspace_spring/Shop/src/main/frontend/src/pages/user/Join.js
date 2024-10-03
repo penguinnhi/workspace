@@ -101,32 +101,28 @@ const Join = () => {
   //id중복여부 저장할 변수
   const [isCheckId,setIsCheckId]=useState(false)
 
-
   function isDup(){
     const inputId=joinData.memId
     if(inputId==''){
-      alert('ㅇㅇㄷ ㅇㄹ')
+      alert('아이디를 입력해주세요.')
     }
 
     axios
     .get(`/member/isDup/${inputId}`)
     .then((res)=>{
-      // alert(res.data?'중복':setIsCheckId(true))
       if(res.data){
-        alert('중복')
+        alert('중복 아이디입니다.')
       }
       else{
-        alert('사용가능')
+        alert('사용 가능한 아이디입니다.')
         setIsCheckId(true)
         
       }
-
     })
     .catch((error)=>{
       console.log(error)
     })
   }
-  // console.log(isCheckId)
 
   function goJoin(){
     //유효성 검사 결과가 false면 회원가입 로직 중지 

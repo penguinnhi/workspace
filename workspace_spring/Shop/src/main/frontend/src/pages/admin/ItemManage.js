@@ -1,5 +1,6 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
+import './itemManage.css'
 
 const ItemManage = () => {
   const [itemList,setItemList]=useState([])
@@ -14,15 +15,35 @@ const ItemManage = () => {
   // console.log(itemList)
 
   return (
-    <div>
-      상품관리
-      {
-        itemList.map((item,i)=>{
-          return(
-            <div key={i}>{item.itemName}</div>
-          )
-        })  
-      }
+    <div className='container'>
+      <h2>상품 관리</h2>
+      <div className='item-reg-div'>
+        <table className='manage-table'>
+          <thead>
+            <tr>
+              <td>카테고리</td>
+              <td>상품명</td>
+              <td></td>
+            </tr>
+          </thead>
+          <tbody>
+            {
+              itemList.map((item,i)=>{
+                return(
+                  <tr key={i}>
+                    <td>{item.categoryVO.cateName}</td>
+                    <td>{item.itemName}</td>
+                    <td>
+                      <button type='button' className='cart-del-btn'
+                        onClick={()=>{}}>삭제</button></td>
+                  </tr>
+                  )
+                })  
+            }
+          </tbody>
+        </table>
+      </div>
+
     </div>
   )
 }

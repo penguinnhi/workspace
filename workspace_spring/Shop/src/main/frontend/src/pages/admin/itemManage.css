@@ -1,0 +1,13 @@
+.manage-table{
+  margin: 0 auto;
+  width: 80%;
+}
+
+.manage-table thead{
+  font-weight: bold;
+  border-bottom: 2px solid lightgray;
+}
+
+.manage-table td{
+  padding: 6px;
+}

@@ -23,10 +23,8 @@ public class CartServiceImpl implements CartService {
             sqlSession.insert("cartMapper.putInCart",cartVO);
         }
         else {
-
             sqlSession.update("cartMapper.updateCartCntWhenReg",cartVO);
         }
-
     }
 
     @Override

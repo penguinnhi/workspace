@@ -55,8 +55,6 @@ const ItemDetail = ({loginInfo}) => {
     else{
       setItemCnt(cnt)
       setTotalPrice(price)
-
-      //장바구니 등록 시 수량데이터 변경 
     }
   
   }
@@ -147,8 +145,9 @@ const ItemDetail = ({loginInfo}) => {
                   <span>{totalPrice.toLocaleString()}원</span>
                 </div>
                 <div className='detail-button'>
-                  <button type='button'>구매하기</button>
-                  <button type='button' onClick={(e)=>{goCart()}}>장바구니</button>
+                  <button type='button' className='cart-btn'>구매하기</button>
+                  <button type='button' className='cart-btn' 
+                    onClick={(e)=>{goCart()}}>장바구니</button>
                 </div>
               </div>
             </div>

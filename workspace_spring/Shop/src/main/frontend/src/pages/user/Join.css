@@ -39,23 +39,7 @@
   gap: 20px;
 }
 
-.join-div.itemList > .item-div> img{
-  /* border: 1px solid blue; */
-  width: 90%;
-  height: 180px;
-}
 
-.join-div.itemList > .item-div> h4{
-  padding: 5px 3px;
-  cursor: pointer;
-  text-align: left;
-}
-
-.join-div.itemList > .item-div> p{
-  text-align: left;
-  padding: 3px;
-
-}
 
 
 .join-div.itemList table{

@@ -18,25 +18,42 @@ const ItemList = ({loginInfo}) => {
     
   },[])
 
-  // console.log(itemList)
+  console.log(itemList)
+
+
+  function getSearch(){
+
+  }
 
 
   return (
-    <div className='join-div itemList'>
+    <div>
+      <div className='searchBox'>
+        <input type='text' name='searchValue'></input>
+        <i className="bi bi-search" 
+          onClick={()=>{}}></i>
+      </div>
+      <div className='join-div itemList'>
       
-      {
-        itemList.map((item,i)=>{
-          return(
-            <div key={i} className='item-div' >
-              <img onClick={(e)=>{navigate(`/detail/${item.itemCode}`)}} src={`http://localhost:8080/upload/${item.imgList[0].attachedFileName}`}/>
-              <h4><span onClick={(e)=>{navigate(`/detail/${item.itemCode}`)}}>{item.itemName}</span></h4>
-              <p>{item.itemPrice.toLocaleString()+' 원'}</p>
-            </div>
-          )
-        })
-      }
-
+        {
+          itemList.map((item,i)=>{
+            return(
+              <div key={i} className='item-div' >
+                <img 
+                  onClick={(e)=>{navigate(`/detail/${item.itemCode}`)}} 
+                  src={`http://localhost:8080/upload/${item.imgList[0].attachedFileName}`}/>
+                <p>{item.categoryVO.cateName}</p>
+                <h3><span onClick={(e)=>{navigate(`/detail/${item.itemCode}`)}}>{item.itemName}</span></h3>
+                <p>{item.itemPrice.toLocaleString()+' 원'}</p>
+              </div>
+            )
+          })
+        }
+  
+      </div>
     </div>
+
+
   )
 }
 
