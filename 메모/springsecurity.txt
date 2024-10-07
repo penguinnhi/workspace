@@ -23,4 +23,10 @@ Json 객체에 인증에 필요한 정보들을 담은 후
 공식적으로 인증(Authentication) & 권한허가(Authorization) 방식으로 사용된다.
 
 
+UsernamePasswordAuthenticationFilter
+인증 관리자
+폼 기반 로그인시 사용되는 필터로 아이디, 비밀번호 테이터를 파싱하여 인증 요청을 위임
+인증이 성공하면 successHandler, 실패하면 failureHandler를 실행
+
+
 
