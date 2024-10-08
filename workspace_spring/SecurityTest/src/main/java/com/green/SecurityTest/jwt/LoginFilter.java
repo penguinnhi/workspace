@@ -86,14 +86,17 @@ public class LoginFilter extends UsernamePasswordAuthenticationFilter {
     @Override
     protected void successfulAuthentication(HttpServletRequest request, HttpServletResponse response, FilterChain chain, Authentication authResult) throws IOException, ServletException {
         log.info("로그인 성공");
-        super.successfulAuthentication(request, response, chain, authResult);
+
+
+
+//        super.successfulAuthentication(request, response, chain, authResult);
     }
 
     // 로그인 실패 시 실행되는 메서드
     @Override
     protected void unsuccessfulAuthentication(HttpServletRequest request, HttpServletResponse response, AuthenticationException failed) throws IOException, ServletException {
         log.info("로그인 실패");
-        super.unsuccessfulAuthentication(request, response, failed);
+//        super.unsuccessfulAuthentication(request, response, failed);
     }
 
 
