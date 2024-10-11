@@ -1,5 +1,7 @@
 package com.green.SecurityTest.config;
 
+import com.green.SecurityTest.jwt.JwtConfirmFilter;
+import com.green.SecurityTest.jwt.JwtUtil;
 import com.green.SecurityTest.jwt.LoginFilter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
@@ -13,6 +15,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import org.springframework.web.bind.annotation.PutMapping;
 
 
 // 이 클래스에서 시큐리티의 인증 및 인가에 대한 설정
@@ -21,6 +24,8 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 @RequiredArgsConstructor
 public class SecurityConfig {
     private final AuthenticationConfiguration configuration;
+
+    private final JwtUtil jwtUtil;
 
     // 비밀번호를 암호화 시켜줄 수 있는 객체 생성 메서드
     @Bean
@@ -49,6 +54,8 @@ public class SecurityConfig {
     public SecurityFilterChain filterChain(HttpSecurity httpSecurity) throws Exception {
         // throws Exception : 여기에서 예외가 발생할 경우 다른 데로 던지겠음
 
+
+
         // csrf - Cross-site Request Forgery
         // csrf 공격에 대한 방어기제를 사용하지 않겠다.
         // jwt 로그인은 csrf 공격에 상대적으로 안전하기 때문에 사용 안 함
@@ -71,8 +78,11 @@ public class SecurityConfig {
 
         );
 
+        // LoginFilter 앞에 JwtConfirmFilter를 추가
+        httpSecurity.addFilterBefore(new JwtConfirmFilter(jwtUtil), LoginFilter.class);
+
         //LoginFilter 클래스를 Filter에 추가 (모르겠음!)
-        httpSecurity.addFilterAt(new LoginFilter(getAuthenticationManager(configuration)), UsernamePasswordAuthenticationFilter.class);
+        httpSecurity.addFilterAt(new LoginFilter(getAuthenticationManager(configuration),jwtUtil), UsernamePasswordAuthenticationFilter.class);
 
         // 인증 및 인가 설정
         httpSecurity.authorizeHttpRequests(
@@ -81,8 +91,12 @@ public class SecurityConfig {
                         "/member/loginForm",
                         "/member/joinForm",
                         "/member/join",
-                        "/member/login").permitAll(). // 인증 설정 "/" 요청은 누구나 접근 가능
-                        anyRequest().authenticated()
+                        "/member/login",
+                        "/test1").permitAll() // 인증 설정 "/" 요청은 누구나 접근 가능
+                        .requestMatchers("/test3").hasRole("USER")
+                        .requestMatchers("/test4").hasRole("ADMIN")
+                        .requestMatchers("/test5").hasAnyRole("MANAGER","ADMIN")
+                        .anyRequest().authenticated()
                 // any~ : 나머지 요청은 인증 받아야 접근 가능
 
 
