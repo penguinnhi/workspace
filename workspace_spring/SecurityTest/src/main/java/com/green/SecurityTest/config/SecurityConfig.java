@@ -93,9 +93,9 @@ public class SecurityConfig {
                         "/member/join",
                         "/member/login",
                         "/test1").permitAll() // 인증 설정 "/" 요청은 누구나 접근 가능
-                        .requestMatchers("/test3").hasRole("USER")
-                        .requestMatchers("/test4").hasRole("ADMIN")
-                        .requestMatchers("/test5").hasAnyRole("MANAGER","ADMIN")
+                        .requestMatchers("/test3").hasAuthority("USER")
+                        .requestMatchers("/test4").hasAuthority("ADMIN")
+                        .requestMatchers("/test5").hasAnyAuthority("MANAGER","ADMIN")
                         .anyRequest().authenticated()
                 // any~ : 나머지 요청은 인증 받아야 접근 가능
 

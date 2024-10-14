@@ -33,7 +33,7 @@ public class JwtUtil {
                 .header().add("typ","JWT") //토큰 타입 지정
                 .and().claim("userID",userId).claim("role",role) // 로그인 id,role을 payload에 등록
                 .issuedAt(new Date(System.currentTimeMillis())) //토큰 발행 시간
-                .expiration(new Date(System.currentTimeMillis()+ (1000*60*2) )) // 토큰의 유효기간. 1000=1초 * 60 = 1분 * 60= 1시간
+                .expiration(new Date(System.currentTimeMillis()+ (1000*60*10) )) // 토큰의 유효기간. 1000=1초 * 60 = 1분 * 60= 1시간
                 .compact();
     }
 

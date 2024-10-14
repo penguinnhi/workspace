@@ -19,16 +19,35 @@ const LoginForm = () => {
     })
   }
 
+
   //로그인 버튼 클릭 시 실항 함수
   const goLogin=()=>{
     axios.post('/member/login',loginData)
     .then((res)=>{
       alert('환영합니다.')
       console.log(res)
+
+      // 응답 헤더에 담긴 토큰을 localStorage에 저장
+      // localStorage.setItem(저장할 이름, 저장할 데이터)
+      localStorage.setItem("Authorization",res.headers.authorization)
+
       navigate('/')
+      
     })
-    .catch((error)=>{console.log(error)})
+    .catch((error)=>{
+      // 오류코드가 401이면 다시 로그인, 
+      if(error.response.status==401){
+        alert('아이디와 비밀번호를 확인하세요.')
+      }
+
+      // 그 외의 오류코드 발생 시 
+      else{
+        alert('알 수 없는 오류 발생')
+      }
+      
+    })
   }
+
 
   //아이디와 비밀번호 input 태그의 name 속성은 반드시 
   // 자바의 LoginFilter 클래스 생성자 안에서 설정한 Parameter 이름으로 지정
