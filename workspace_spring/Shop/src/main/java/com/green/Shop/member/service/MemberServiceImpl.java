@@ -27,4 +27,9 @@ public class MemberServiceImpl implements MemberService{
     public MemberVO goLogin(MemberVO memberVO) {
         return sqlSession.selectOne("memberMapper.goLogin",memberVO);
     }
+
+    @Override
+    public MemberVO selectMem(String memId) {
+        return sqlSession.selectOne("memberMapper.selectMem",memId);
+    }
 }

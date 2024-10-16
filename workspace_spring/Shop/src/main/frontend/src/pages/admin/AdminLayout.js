@@ -38,7 +38,7 @@ const AdminLayout = () => {
     else if(sideMenu=='memberManage'){
       return(
         <>
-          <li><span onClick={(e)=>{navigate('/admin/searchUser')}}>유저 검색</span>
+          <li><span onClick={(e)=>{navigate('/admin/adminBoard')}}>공지사항</span>
           <span><i className="bi bi-chevron-right"></i></span></li>
           <li><span>유저 정보 변경</span>
           <span><i className="bi bi-chevron-right"></i></span></li>
@@ -79,7 +79,7 @@ const AdminLayout = () => {
         <ul className='category'>
           <li><span onClick={(e)=>{navigate('/admin/itemManage'); setSideMenu('itemManage')}}>상품 관리</span></li>
           <li><span onClick={(e)=>{navigate('/admin/saleHistoryOfMonth'); setSideMenu('buyManage')}}>구매 관리</span></li>
-          <li><span onClick={(e)=>{navigate('/admin/searchUser'); setSideMenu('memberManage')}}>유저관리</span></li>
+          <li><span onClick={(e)=>{navigate('/admin/adminBoard'); setSideMenu('memberManage')}}>유저관리</span></li>
           <li><span onClick={(e)=>{navigate('/admin/recordOfMonth'); setSideMenu('saleManage')}}>매출 관리</span></li>
         </ul>
       </div>

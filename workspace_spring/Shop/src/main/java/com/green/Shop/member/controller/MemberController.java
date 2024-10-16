@@ -28,5 +28,10 @@ public class MemberController {
         return memberService.goLogin(memberVO);
     }
 
+    @GetMapping("/selectMem/{memId}")
+    public MemberVO selectMem(@PathVariable("memId") String memId){
+        System.out.println(memId);
+        return memberService.selectMem(memId);
+    }
 
 }

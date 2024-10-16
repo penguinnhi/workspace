@@ -1,0 +1,18 @@
+.myBoard-ul{
+  border: 1px solid lightgray;
+  width: 60%;
+  height: 300px;
+  margin: 20px auto;
+  border-radius: 10px;
+}
+
+.myBoard-ul>h3{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.myBoard-ul>ul>li:first-child{
+  /* font-size: 1.1rem; */
+  font-weight: bold;
+  margin-top: 10px;
+}

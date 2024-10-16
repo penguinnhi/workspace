@@ -55,6 +55,10 @@
         WHERE I.ITEM_CODE=IMG.ITEM_CODE
         AND C.CATE_CODE=I.CATE_CODE
         AND IS_MAIN='Y'
+        <if test="searchValue != null and !searchValue.equals('')">
+            AND(ITEM_NAME LIKE CONCAT('%',#{searchValue},'%')
+            OR C.CATE_NAME LIKE CONCAT('%',#{searchValue},'%'))
+        </if>
         ORDER BY ITEM_CODE DESC
     </select>
 
@@ -91,6 +95,11 @@
         AND I.ITEM_CODE=IMG.ITEM_CODE
         AND I.ITEM_CODE=#{itemCode}
     </select>
+
+    <delete id="delItem">
+        DELETE FROM SHOP_ITEM
+        WHERE ITEM_CODE=#{itemCode}
+    </delete>
 
 
 </mapper>

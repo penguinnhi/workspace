@@ -16,6 +16,11 @@ import SaleHistoryOfMonth from './pages/admin/SaleHistoryOfMonth';
 import SearchUser from './pages/admin/SearchUser';
 import RecordOfMonth from './pages/admin/RecordOfMonth';
 import CartList from './pages/user/CartList';
+import BoardList from './pages/user/board/BoardList';
+import BoardWrite from './pages/user/board/BoardWrite';
+import BoardUpdate from './pages/user/board/BoardUpdate';
+import MyBoard from './pages/user/board/MyBoard';
+import AdminBoard from './pages/user/board/AdminBoard';
 
 function App() {
   const navigate=useNavigate();
@@ -71,7 +76,7 @@ function App() {
       navigate('/admin')
     }
     else{
-
+      navigate('/myBoard')
     }
   }
 
@@ -87,8 +92,9 @@ function App() {
             ?
             <div className='loginDetail'>
               <ul>
-                <li><span onClick={(e)=>{navigate('/loginForm')}}>Login</span></li>
-                <li><span onClick={(e)=>{navigate('/join')}}>Join</span></li>
+                <li><span onClick={(e)=>{navigate('/loginForm')}}>로그인</span></li>
+                <li><span onClick={(e)=>{navigate('/join')}}>회원가입</span></li>
+                <li><span onClick={(e)=>{navigate('/boardList')}}>고객센터</span></li>
               </ul>
             </div>
             :
@@ -96,7 +102,8 @@ function App() {
               <div>
                 <span onClick={(e)=>{adminInfo()}}>{loginInfo.memName}님🐥</span>
                 <span onClick={(e)=>{navigate(`/cart/${loginInfo.memId}`)}}>🛒</span>
-                <span onClick={(e)=>{goLogout()}}>Logout</span>
+                <span onClick={(e)=>{goLogout()}}>로그아웃</span>
+                <span onClick={(e)=>{navigate('/boardList')}}>고객센터</span>
               </div>
             </div>
           }
@@ -130,6 +137,14 @@ function App() {
             <Route path='/join' element={<Join/>}/>
             {/* 로그인 페이지 */}
             <Route path='/loginForm' element={<LoginForm setLoginInfo={setLoginInfo} loginInfo={loginInfo}/>}/>
+            {/* 고개센터 글 목록 */}
+            <Route path='/boardList' element={<BoardList loginInfo={loginInfo}/>}/>
+            {/* 고개센터 글쓰기 */}
+            <Route path='/boardWrite' element={<BoardWrite loginInfo={loginInfo}/>}/>
+            {/* 고개센터 글 수정 */}
+            <Route path='/boardUpdate/:boardNum' element={<BoardUpdate loginInfo={loginInfo}/>}/>
+            {/* 마이페이지 - 내가 쓴 글 */}
+            <Route path='/myBoard' element={<MyBoard loginInfo={loginInfo}/>}/>
           </Route>
           
 
@@ -151,6 +166,9 @@ function App() {
 
             {/* 매출관리 */}
             <Route path='recordOfMonth' element={<RecordOfMonth/>}/>
+
+            {/* 공지사항 작성 */}
+            <Route path='adminBoard' element={<AdminBoard loginInfo={loginInfo}/>}/>
             
           </Route>
 

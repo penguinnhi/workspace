@@ -4,7 +4,7 @@
 <!-- 해당 파일에 모든 쿼리문을 작성 -->
 <mapper namespace="memberMapper">
     <resultMap id="member" type="com.green.Shop.member.vo.MemberVO">
-        <result column="MEM_ID" property="memId"/>
+        <id column="MEM_ID" property="memId"/>
         <result column="MEM_PW" property="memPw"/>
         <result column="MEM_NAME" property="memName"/>
         <result column="MEM_TEL" property="memTel"/>
@@ -52,6 +52,14 @@
         FROM SHOP_MEMBER
         WHERE MEM_ID=#{memId}
         AND MEM_PW=#{memPw}
+    </select>
+
+    <select id="selectMem" resultMap="member">
+        SELECT MEM_ID
+            ,MEM_TEL
+            ,MEM_EMAIL
+        FROM SHOP_MEMBER
+        WHERE MEM_ID=#{memId}
     </select>
 	
 </mapper>

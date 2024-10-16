@@ -1,0 +1,60 @@
+.adminBoard-div{
+  width: 800px;
+  margin: 20px auto;
+}
+
+.adminBoard-content>textarea{
+  height: 200px;
+  margin-top: 20px;
+}
+
+.adminBoard-div>button{
+  background-color: black;
+  color:white;
+  width: 80px;
+  height: 30px;
+  border-radius: 50px;
+  /* padding: 3px 8px; */
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.adminBoard-div>button:hover{
+  background-color: rgba(0, 0, 0, 0.788);
+}
+
+.adminBoard-table{
+  text-align: center;
+  font-weight: bold;
+  width: 700px;
+  margin: 50px auto;
+  
+}
+
+
+.adminBoard-table>tbody>tr>td:first-child{
+  width: 20%;
+}
+
+.adminBoard-table>tbody>tr>td:nth-child(2){
+  width: 80%;
+}
+
+.adminBoard-table>tbody>tr:nth-child(2)>td:first-child{
+  vertical-align: middle;
+}
+
+
+.adminBoard-table input,
+.adminBoard-table textarea{
+  width: 100%;
+  border-radius: 8px;
+  padding: 8px;
+  border: 1px solid lightgray;
+}
+
+.adminBoard-table input:focus,
+.adminBoard-table textarea:focus{
+  border: 1px solid black;
+  outline: none;
+}

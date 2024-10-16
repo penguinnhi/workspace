@@ -7,12 +7,31 @@ const ItemManage = () => {
 
   useEffect(()=>{
     axios
-    .get('/item/list')
+    .post('/item/list')
     .then((res)=>{setItemList(res.data)})
     .catch((error)=>{console.log(error)})
   },[])
 
   // console.log(itemList)
+
+  const delItem=(itemCode)=>{
+
+    if(window.confirm('해당 상품을 삭제하시겠습니까?')){
+      axios.delete(`/item/delItem/${itemCode}`)
+      .then((res)=>{
+        alert('상품이 삭제되었습니다.')
+
+        itemList.forEach((item,i)=>{
+          if(item.itemCode=itemCode){
+            itemList.splice(i,1)
+          }
+          setItemList([...itemList])
+        })
+      })
+      .catch((error)=>{console.log(error)})
+    }
+
+  }
 
   return (
     <div className='container'>
@@ -35,7 +54,7 @@ const ItemManage = () => {
                     <td>{item.itemName}</td>
                     <td>
                       <button type='button' className='cart-del-btn'
-                        onClick={()=>{}}>삭제</button></td>
+                        onClick={()=>{delItem(item.itemCode)}}>삭제</button></td>
                   </tr>
                   )
                 })  
