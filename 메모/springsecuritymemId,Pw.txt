@@ -1,0 +1,7 @@
+    "memId":"hihi",
+    "memPw":"hi123",
+    "memName":"우히히"
+
+
+jwt 토큰
+/5(p\w;Fiu#he$PfOq`QzHd{}_MUH4%&s`w*]Cb?0o3`B^aY@A*MUcH*:;q9xTv9
