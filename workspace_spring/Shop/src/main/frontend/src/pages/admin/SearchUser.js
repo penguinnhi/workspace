@@ -8,7 +8,7 @@ const SearchUser = () => {
 
   return (
     <div>
-      유저 검색
+      <h2>공지사항 작성</h2>
     </div>
   )
 

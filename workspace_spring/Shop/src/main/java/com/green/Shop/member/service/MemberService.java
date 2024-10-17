@@ -9,4 +9,6 @@ public interface MemberService {
     boolean isDup(String memId);
 
     MemberVO goLogin(MemberVO memberVO);
+
+    MemberVO selectMem(String memId);
 }

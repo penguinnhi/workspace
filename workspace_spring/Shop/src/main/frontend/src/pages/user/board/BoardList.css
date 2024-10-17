@@ -1,0 +1,35 @@
+.boardList-div{
+  margin: 50px auto;
+  cursor: context-menu;
+}
+
+.boardList-div>div{
+  margin-bottom: 100px;
+}
+
+.one-question>h2{
+  cursor: pointer;
+}
+
+.adminBoard-ul>ul{
+  margin-bottom: 50px;
+}
+
+.adminBoard-ul li>div:first-child{
+  margin-top: 10px;
+
+}
+
+.adminBtn{
+  background-color: white;
+  border: none;
+  outline: 1px solid lightgray;
+  width: 60px;
+  padding: 4px 8px;
+  cursor: pointer;
+  box-shadow: 2px 2px 5px lightgray;
+}
+
+.adminBtn:hover{
+  background-color: #eeeeee;
+}
