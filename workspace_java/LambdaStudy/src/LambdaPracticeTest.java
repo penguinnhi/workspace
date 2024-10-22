@@ -48,12 +48,45 @@ public class LambdaPracticeTest {
         LambdaPractice5 p5=(a,b)->a-b;
         p5.getResult(10,5);
 
-        LambdaPractice5 p6=(a,b)->a*b;
+        LambdaPractice5 p51=(a,b)->a*b;
         p5.getResult(10,5);
 
-        LambdaPractice5 p7=(a,b)->a/b;
+        LambdaPractice5 p52=(a,b)->a/b;
         p5.getResult(10,5);
+
+
+        // --- 1022
+
+        LambdaPractice6<Integer> p6=(a,b)->a+b;
+        p6.getResult(10,5);
+
+        LambdaPractice6<String> p61=(a,b)->a+b;
+        p61.getResult("a","b"); // = "ab"
+
+
+        // String 변수 자료형, Integer는 리턴타입
+        LambdaPractice7<String,Integer> p7=(a,b)->a.length()+b.length();
+        p7.getResult("뿡","123"); // 4 리턴
+
+
+
 
 
     }
 }
+
+class Aaa implements LambdaPractice6{
+
+    //메서드 오버라이딩
+    // : 상속 관계에서 부모 클래스의 메서드를 자식클래스에서 재정의 가능
+
+    @Override
+    public Object getResult(Object a, Object b) {
+        return null;
+    }
+
+
+}
+
+
+

@@ -29,3 +29,21 @@ interface LambdaPractice5 {
     int getResult(int a, int b);
 }
 
+
+// --1022
+
+// 람다식을 쓰기 위한 인터페이스
+// 제네릭 활용
+@FunctionalInterface
+interface LambdaPractice6<T> {
+    T getResult(T a, T b);
+//    void aaa();
+}
+
+@FunctionalInterface
+interface LambdaPractice7<T,R> {
+    R getResult(T a, T b);
+}
+
+
+
