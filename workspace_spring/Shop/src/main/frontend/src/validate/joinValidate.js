@@ -111,7 +111,7 @@ export const joinValidate = (newData,valid_tag,tagName) => {
 
       }
       else{
-        sendFeedbackMsg(valid_tag[1],'사용 불가능한 이름도 있냐고.','good')
+        sendFeedbackMsg(valid_tag[1],'사용 가능한 성함입니다.','good')
         resultArr[2]=true
       }
       break
@@ -121,7 +121,7 @@ export const joinValidate = (newData,valid_tag,tagName) => {
     case 'memTel':
       // 
       if(regex_memTel.test(newData.memTel)){
-        sendFeedbackMsg(valid_tag[4],'가능한','good')
+        sendFeedbackMsg(valid_tag[4],'사용 가능한 연락처입니다.','good')
         resultArr[3]=true
       }
       else{

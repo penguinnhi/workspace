@@ -127,7 +127,7 @@ const Join = () => {
   function goJoin(){
     //유효성 검사 결과가 false면 회원가입 로직 중지 
     if(!validate_result){
-      alert('입력 데이터를 확인하셔요.🙃')
+      alert('입력 데이터를 확인해주세요.')
       return
     }
 
@@ -156,7 +156,7 @@ const Join = () => {
   function setModalContent(){
 
     return(
-      <div>💰💰💰ㅊㅋ👽💰💰</div>
+      <div>회원 가입을 환영합니다.😇</div>
     )
 
   }
