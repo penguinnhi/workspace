@@ -1,0 +1,12 @@
+람다 (lambda)
+자바스크립트 화살표 함수보다 조건이 많음 
+인터페이스 사용 문법을 엄청나게 축약한 것 
+
+JPA - MyBatis와 같이 디비 작업 프레임워크 
+
+RDBMS
+(관계형)데이터베이스 - 프로그래밍 태생 다름
+테이블 - VO(Value Object), DTO(Data Transfer Object)
+테이블간의 관계 - MemberVO 안에 BoardVO 선언 (1:1, 1:N, N:N)
+
+
