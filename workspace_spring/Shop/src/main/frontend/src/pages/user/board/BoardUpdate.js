@@ -64,7 +64,7 @@ const BoardUpdate = ({loginInfo}) => {
               <td>내용</td>
               <td>
                 <div><input type='text' name='boardTitle' 
-                  defaultValue={boardData.boardTitle}
+                  defaultValue={boardData.boardTitle} 
                   onChange={(e)=>{insertData(e)}}></input></div>
                 <div><textarea name='boardContent' 
                   defaultValue={boardData.boardContent}
