@@ -36,7 +36,6 @@ const ItemDetail = ({loginInfo}) => {
   const [mainImgName,setMainImgName]=useState('')
   const [subImgName,setSubImgName]=useState('')
 
-  //console.log(loginInfo.memId)
   
   
   //let price=Number(itemData.itemPrice)
@@ -49,8 +48,6 @@ const ItemDetail = ({loginInfo}) => {
     if(cnt<1||cnt>10){
       setItemCnt(1)
       setTotalPrice(itemData.itemPrice)
-
-
     }
     else{
       setItemCnt(cnt)
@@ -58,8 +55,6 @@ const ItemDetail = ({loginInfo}) => {
     }
   
   }
-  //console.log(price)
-  //console.log(totalPrice)
 
   useEffect(()=>{
     axios
