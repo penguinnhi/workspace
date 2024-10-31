@@ -1,30 +1,20 @@
 public class Atest {
     public static void main(String[] args) {
-        int[] arr1= {3,5,9,2,1,5};
-        btest bt=new btest();
-        bt.pa(arr1,2);
+
+//        int i, hap=0;
+//        for (i=1;i<=10;++i, hap+=i){
+//            System.out.println(hap);
+//        };
+//        System.out.printf("%d, %d\n",i,hap);
+
+        int i=0, hap=0;
+        for (i=1;i<=5;++i,hap+=i){
+            System.out.printf("합은 %d %4d입니다.\n",i,hap);
+        }
+
 
     }
 
 
-}
-
-class btest{
-    void pa(int[] arr,int c){
-        int i;
-        if (c>1){
-            for (i=0; i<arr.length; i++){
-                if ((i+1)%c==0){
-                    System.out.printf("%d",arr[i]);
-                }
-
-            }
-        }
-        else {
-            for (i=0;i<arr.length;i++){
-                System.out.printf("%d",arr[i]);
-            }
-        }
-    }
 
 }
